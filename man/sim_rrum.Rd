@@ -15,13 +15,14 @@ to answer item j.  An entry of one indicates attribute k
 is not required.}
 
 \item{rstar}{A \code{matrix} a matrix with J rows and K columns indicating the
-penalties for failing to have each of the required attributes,
-where J represents the number of items and K the number of
-attributes.  rstar and Q must share the same 0 entries.}
+penalties for failing to have each of the required
+attributes, where J represents the number of items and K
+the number of attributes.  rstar and Q must share the same 0
+entries.}
 
 \item{pistar}{A \code{vector} of length J indicating the probabiliies of
-answering each item correctly for individuals who do not lack
-any required attribute, where J represents the number of items.}
+lack any required attribute, where J represents the number of
+items.}
 
 \item{alpha}{A \code{matrix} with N rows and K columns indicating the subjects
 attribute acquisition, where N reperesnts the number of

@@ -22,19 +22,19 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 }
 
 #' Simulation Responses from the DINA model
-#' 
+#'
 #' Sample responses from the DINA model for given attribute profiles, Q matrix,
 #' and item parmeters. Returns a `matrix` of dichotomous responses
 #' generated under DINA model.
-#' 
+#'
 #' @param alphas A \eqn{N} by K `matrix` of latent attributes.
-#' @param Q      A \eqn{N} by K `matrix` indicating which skills are required for which items.
+#' @param Q      A \eqn{N} by K `matrix` indicating which skills are required
+#'               for which items. 
 #' @param ss     A \eqn{J} `vector` of item slipping parameters.
 #' @param gs     A \eqn{J} `vector` of item guessing parameters.
 #' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
 #' @author Steven Andrew Culpepper
 #' @export
-#' @seealso \code{\link{DINA_Gibbs} }
 #' @examples
 #' ###########################################
 #' #de la Torre (2009) Simulation Replication
@@ -43,7 +43,7 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #' K = 5
 #' J = 30
 #' delta0 = rep(1,2^K)
-#'     
+#'
 #' # Creating Q matrix
 #' Q = matrix(rep(diag(K),2),2*K,K,byrow=TRUE)
 #' for(mm in 2:K){
@@ -53,12 +53,12 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #'     Q = rbind(Q,tempmat)
 #' }
 #' Q = Q[1:J,]
-#'         
+#'
 #' # Setting item parameters and generating attribute profiles
 #' ss = gs = rep(.2,J)
 #' PIs = rep(1/(2^K),2^K)
 #' CLs = c((1:(2^K))\%*\%rmultinom(n=N,size=1,prob=PIs) )
-#'             
+#'
 #' # Defining matrix of possible attribute profiles
 #' As = rep(0,K)
 #' for(j in 1:K){
@@ -68,11 +68,11 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #'     As = rbind(As,tempmat)
 #' }
 #' As = as.matrix(As)
-#'                     
+#'
 #' # Sample true attribute profiles
 #' Alphas = As[CLs,]
-#'                     
-#' # Simulate data under DINA model 
+#'
+#' # Simulate data under DINA model
 #' gen = sim_dina_items(Alphas,Q,ss,gs)
 #' Y_sim = gen$Y
 sim_dina <- function(alphas, Q, ss, gs) {
@@ -80,30 +80,31 @@ sim_dina <- function(alphas, Q, ss, gs) {
 }
 
 #' Generate data from the rRUM
-#' 
+#'
 #' Randomly generate response data according to the reduced Reparametrized
 #' Unified Model (rRUM).
-#' 
-#' @param Q       A `matrix` with J rows and K columns indicating which 
+#'
+#' @param Q       A `matrix` with J rows and K columns indicating which
 #'                attributes are required to answer each of the items, where
 #'                J represents the number of items and K the number of
 #'                attributes.  An entry of 1 indicates attribute k is required
 #'                to answer item j.  An entry of one indicates attribute k
 #'                is not required.
 #' @param rstar   A `matrix` a matrix with J rows and K columns indicating the
-#'                penalties for failing to have each of the required attributes,
-#'                where J represents the number of items and K the number of
-#'                attributes.  rstar and Q must share the same 0 entries.
-#' @param pistar  A `vector` of length J indicating the probabiliies of
-#'                answering each item correctly for individuals who do not lack
-#'                any required attribute, where J represents the number of items.
+#'                penalties for failing to have each of the required
+#'                attributes, where J represents the number of items and K
+#'                the number of attributes.  rstar and Q must share the same 0
+#'                entries.
+#' @param pistar  A `vector` of length J indicating the probabiliies of 
+#'                lack any required attribute, where J represents the number of
+#'                items.
 #' @param alpha   A `matrix` with N rows and K columns indicating the subjects
 #'                attribute acquisition, where N reperesnts the number of
 #'                individuals and K the number of attributes.  An entry of 1
 #'                indicates individual i has attained attribute k.  An entry of
 #'                0 indicates the attribute has not been attained.
-#' @return 
-#' A `matrix` with N rows and J columns indicating the indviduals' 
+#' @return
+#' A `matrix` with N rows and J columns indicating the indviduals'
 #' responses to each of the items, where J represents the number of items.
 #' @author Steven Andrew Culpepper
 #' @export

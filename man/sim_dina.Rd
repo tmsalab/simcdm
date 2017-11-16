@@ -9,7 +9,8 @@ sim_dina(alphas, Q, ss, gs)
 \arguments{
 \item{alphas}{A \eqn{N} by K \code{matrix} of latent attributes.}
 
-\item{Q}{A \eqn{N} by K \code{matrix} indicating which skills are required for which items.}
+\item{Q}{A \eqn{N} by K \code{matrix} indicating which skills are required
+for which items.}
 
 \item{ss}{A \eqn{J} \code{vector} of item slipping parameters.}
 
@@ -31,7 +32,7 @@ N = 200
 K = 5
 J = 30
 delta0 = rep(1,2^K)
-    
+
 # Creating Q matrix
 Q = matrix(rep(diag(K),2),2*K,K,byrow=TRUE)
 for(mm in 2:K){
@@ -41,12 +42,12 @@ for(mm in 2:K){
     Q = rbind(Q,tempmat)
 }
 Q = Q[1:J,]
-        
+
 # Setting item parameters and generating attribute profiles
 ss = gs = rep(.2,J)
 PIs = rep(1/(2^K),2^K)
 CLs = c((1:(2^K))\\\%*\\\%rmultinom(n=N,size=1,prob=PIs) )
-            
+
 # Defining matrix of possible attribute profiles
 As = rep(0,K)
 for(j in 1:K){
@@ -56,16 +57,13 @@ for(j in 1:K){
     As = rbind(As,tempmat)
 }
 As = as.matrix(As)
-                    
+
 # Sample true attribute profiles
 Alphas = As[CLs,]
-                    
-# Simulate data under DINA model 
+
+# Simulate data under DINA model
 gen = sim_dina_items(Alphas,Q,ss,gs)
 Y_sim = gen$Y
-}
-\seealso{
-\code{\link{DINA_Gibbs} }
 }
 \author{
 Steven Andrew Culpepper
