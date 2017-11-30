@@ -4,3 +4,4 @@
 ^src/\.clang-format$
 ^README\.Rmd$
 ^README-.*\.png$
+^\.travis\.yml$
