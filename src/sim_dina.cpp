@@ -53,7 +53,6 @@ arma::mat sim_dina_class(unsigned int N, unsigned int J, const arma::vec &CLASS,
 //' 
 //' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
 //' @author Steven Andrew Culpepper
-//' @export
 //' @examples
 //' ############################################
 //' # de la Torre (2009) Simulation Replication
@@ -95,6 +94,7 @@ arma::mat sim_dina_class(unsigned int N, unsigned int J, const arma::vec &CLASS,
 //' 
 //' # Simulate data under DINA model
 //' gen = sim_dina(Alphas, Q, ss, gs)
+//' @export
 // [[Rcpp::export]]
 arma::mat sim_dina(const arma::mat &alphas, const arma::mat &Q,
                    const arma::vec &ss, const arma::vec &gs)

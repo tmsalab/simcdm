@@ -11,11 +11,11 @@ model data for Deterministic Input, Noisy "And" Gate (DINA) and
 reduced Reparametrized Unifed Model (rRUM).
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu}
+\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} [copyright holder]
 
 Authors:
 \itemize{
-  \item Steven Culpepper \email{sculpepp@illinois.edu}
+  \item Steven Culpepper \email{sculpepp@illinois.edu} [copyright holder]
 }
 
 }
