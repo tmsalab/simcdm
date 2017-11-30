@@ -33,6 +33,7 @@
 //               represents the number of items.
 // @author Steven Andrew Culpepper
 // @template rrum-example
+// [[Rcpp::export]]
 arma::mat sim_rrum_main(const arma::mat &Q, const arma::mat &rstar,
                         const arma::vec &pistar, const arma::mat &alpha)
 {

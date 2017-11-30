@@ -84,6 +84,10 @@ sim_dina <- function(alphas, Q, ss, gs) {
     .Call(`_simcdm_sim_dina`, alphas, Q, ss, gs)
 }
 
+sim_rrum_main <- function(Q, rstar, pistar, alpha) {
+    .Call(`_simcdm_sim_rrum_main`, Q, rstar, pistar, alpha)
+}
+
 #' Generate data from the rRUM
 #'
 #' Randomly generate response data according to the reduced Reparametrized

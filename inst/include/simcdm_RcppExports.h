@@ -63,6 +63,25 @@ namespace simcdm {
         return Rcpp::as<arma::mat >(rcpp_result_gen);
     }
 
+    inline arma::mat sim_rrum_main(const arma::mat& Q, const arma::mat& rstar, const arma::vec& pistar, const arma::mat& alpha) {
+        typedef SEXP(*Ptr_sim_rrum_main)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_sim_rrum_main p_sim_rrum_main = NULL;
+        if (p_sim_rrum_main == NULL) {
+            validateSignature("arma::mat(*sim_rrum_main)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
+            p_sim_rrum_main = (Ptr_sim_rrum_main)R_GetCCallable("simcdm", "_simcdm_sim_rrum_main");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_sim_rrum_main(Shield<SEXP>(Rcpp::wrap(Q)), Shield<SEXP>(Rcpp::wrap(rstar)), Shield<SEXP>(Rcpp::wrap(pistar)), Shield<SEXP>(Rcpp::wrap(alpha)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<arma::mat >(rcpp_result_gen);
+    }
+
     inline arma::mat sim_rrum(const arma::mat& Q, const arma::mat& rstar, const arma::vec& pistar, const arma::mat& alpha) {
         typedef SEXP(*Ptr_sim_rrum)(SEXP,SEXP,SEXP,SEXP);
         static Ptr_sim_rrum p_sim_rrum = NULL;

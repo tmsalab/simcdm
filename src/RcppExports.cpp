@@ -77,6 +77,39 @@ RcppExport SEXP _simcdm_sim_dina(SEXP alphasSEXP, SEXP QSEXP, SEXP ssSEXP, SEXP 
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// sim_rrum_main
+arma::mat sim_rrum_main(const arma::mat& Q, const arma::mat& rstar, const arma::vec& pistar, const arma::mat& alpha);
+static SEXP _simcdm_sim_rrum_main_try(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSEXP, SEXP alphaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const arma::mat& >::type Q(QSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type rstar(rstarSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type pistar(pistarSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type alpha(alphaSEXP);
+    rcpp_result_gen = Rcpp::wrap(sim_rrum_main(Q, rstar, pistar, alpha));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _simcdm_sim_rrum_main(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSEXP, SEXP alphaSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_simcdm_sim_rrum_main_try(QSEXP, rstarSEXP, pistarSEXP, alphaSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 // sim_rrum
 arma::mat sim_rrum(const arma::mat& Q, const arma::mat& rstar, const arma::vec& pistar, const arma::mat& alpha);
 static SEXP _simcdm_sim_rrum_try(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSEXP, SEXP alphaSEXP) {
@@ -117,6 +150,7 @@ static int _simcdm_RcppExport_validate(const char* sig) {
     if (signatures.empty()) {
         signatures.insert("arma::mat(*sim_dina_class)(unsigned int,unsigned int,const arma::vec&,const arma::mat&,const arma::vec&,const arma::vec&)");
         signatures.insert("arma::mat(*sim_dina)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::vec&)");
+        signatures.insert("arma::mat(*sim_rrum_main)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
         signatures.insert("arma::mat(*sim_rrum)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
     }
     return signatures.find(sig) != signatures.end();
@@ -126,6 +160,7 @@ static int _simcdm_RcppExport_validate(const char* sig) {
 RcppExport SEXP _simcdm_RcppExport_registerCCallable() { 
     R_RegisterCCallable("simcdm", "_simcdm_sim_dina_class", (DL_FUNC)_simcdm_sim_dina_class_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_dina", (DL_FUNC)_simcdm_sim_dina_try);
+    R_RegisterCCallable("simcdm", "_simcdm_sim_rrum_main", (DL_FUNC)_simcdm_sim_rrum_main_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_rrum", (DL_FUNC)_simcdm_sim_rrum_try);
     R_RegisterCCallable("simcdm", "_simcdm_RcppExport_validate", (DL_FUNC)_simcdm_RcppExport_validate);
     return R_NilValue;
@@ -134,6 +169,7 @@ RcppExport SEXP _simcdm_RcppExport_registerCCallable() {
 static const R_CallMethodDef CallEntries[] = {
     {"_simcdm_sim_dina_class", (DL_FUNC) &_simcdm_sim_dina_class, 6},
     {"_simcdm_sim_dina", (DL_FUNC) &_simcdm_sim_dina, 4},
+    {"_simcdm_sim_rrum_main", (DL_FUNC) &_simcdm_sim_rrum_main, 4},
     {"_simcdm_sim_rrum", (DL_FUNC) &_simcdm_sim_rrum, 4},
     {"_simcdm_RcppExport_registerCCallable", (DL_FUNC) &_simcdm_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
