@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^man-roxygen$
 ^src/\.clang-format$
+^README\.Rmd$
+^README-.*\.png$
