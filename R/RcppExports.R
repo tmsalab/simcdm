@@ -4,6 +4,7 @@
 #' Simulate Binary Responses for DINA Model
 #'
 #' Simulation the Y Response for a DINA Model
+#' 
 #' @param N     Number of Observations
 #' @param J     Number of Assessment Items
 #' @param CLASS Does the individual possess all the necessary attributes?
@@ -14,8 +15,10 @@
 #' @param ss    A `vec` describing the probability of slipping or
 #'              the probability of an incorrect response for individuals with
 #'              all of the required attributes
+#' 
 #' @return A `mat`
 #' @author Steven A Culpepper
+#' @template sim-dina-class-example
 #' @export
 sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
     .Call(`_simcdm_sim_dina_class`, N, J, CLASS, ETA, gs, ss)
@@ -32,49 +35,51 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #'               for which items. 
 #' @param ss     A \eqn{J} `vector` of item slipping parameters.
 #' @param gs     A \eqn{J} `vector` of item guessing parameters.
+#' 
 #' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
 #' @author Steven Andrew Culpepper
 #' @export
 #' @examples
-#' ###########################################
-#' #de la Torre (2009) Simulation Replication
-#' ###########################################
+#' ############################################
+#' # de la Torre (2009) Simulation Replication
+#' ############################################
 #' N = 200
 #' K = 5
 #' J = 30
-#' delta0 = rep(1,2^K)
-#'
+#' delta0 = rep(1, 2 ^ K)
+#' 
 #' # Creating Q matrix
-#' Q = matrix(rep(diag(K),2),2*K,K,byrow=TRUE)
-#' for(mm in 2:K){
-#'     temp = combn(1:K,m=mm)
-#'     tempmat = matrix(0,ncol(temp),K)
-#'     for(j in 1:ncol(temp)) tempmat[j,temp[,j]] = 1
-#'     Q = rbind(Q,tempmat)
+#' Q = matrix(rep(diag(K), 2), 2 * K, K, byrow = TRUE)
+#' for (mm in 2:K) {
+#'   temp = combn(seq_len(K), m = mm)
+#'   tempmat = matrix(0, ncol(temp), K)
+#'   for (j in seq_len(ncol(temp)))
+#'     tempmat[j, temp[, j]] = 1
+#'   Q = rbind(Q, tempmat)
 #' }
-#' Q = Q[1:J,]
-#'
+#' Q = Q[seq_len(J), ]
+#' 
 #' # Setting item parameters and generating attribute profiles
-#' ss = gs = rep(.2,J)
-#' PIs = rep(1/(2^K),2^K)
-#' CLs = c((1:(2^K))\%*\%rmultinom(n=N,size=1,prob=PIs) )
-#'
+#' ss = gs = rep(.2, J)
+#' PIs = rep(1 / (2 ^ K), 2 ^ K)
+#' CLs = c((1:(2 ^ K)) %*% rmultinom(n = N, size = 1, prob = PIs))
+#' 
 #' # Defining matrix of possible attribute profiles
-#' As = rep(0,K)
-#' for(j in 1:K){
-#'     temp = combn(1:K,m=j)
-#'     tempmat = matrix(0,ncol(temp),K)
-#'     for(j in 1:ncol(temp)) tempmat[j,temp[,j]] = 1
-#'     As = rbind(As,tempmat)
+#' As = rep(0, K)
+#' for (j in seq_len(K)) {
+#'   temp = combn(1:K, m = j)
+#'   tempmat = matrix(0, ncol(temp), K)
+#'   for (j in seq_len(ncol(temp)))
+#'     tempmat[j, temp[, j]] = 1
+#'   As = rbind(As, tempmat)
 #' }
 #' As = as.matrix(As)
-#'
+#' 
 #' # Sample true attribute profiles
-#' Alphas = As[CLs,]
-#'
+#' Alphas = As[CLs, ]
+#' 
 #' # Simulate data under DINA model
-#' gen = sim_dina_items(Alphas,Q,ss,gs)
-#' Y_sim = gen$Y
+#' gen = sim_dina(Alphas, Q, ss, gs)
 sim_dina <- function(alphas, Q, ss, gs) {
     .Call(`_simcdm_sim_dina`, alphas, Q, ss, gs)
 }
