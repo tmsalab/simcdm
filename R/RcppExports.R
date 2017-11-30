@@ -38,7 +38,6 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #' 
 #' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
 #' @author Steven Andrew Culpepper
-#' @export
 #' @examples
 #' ############################################
 #' # de la Torre (2009) Simulation Replication
@@ -80,6 +79,7 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #' 
 #' # Simulate data under DINA model
 #' gen = sim_dina(Alphas, Q, ss, gs)
+#' @export
 sim_dina <- function(alphas, Q, ss, gs) {
     .Call(`_simcdm_sim_dina`, alphas, Q, ss, gs)
 }
