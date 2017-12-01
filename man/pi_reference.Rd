@@ -17,5 +17,5 @@ corresponding to entry \eqn{c} of \eqn{pi}
 Obtains mapping of entries of pi to latent attribute classes.
 }
 \author{
-Steven Andrew Culpepper, Aaron Hudson
+Steven Andrew Culpepper and Aaron Hudson
 }

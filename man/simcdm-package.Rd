@@ -8,7 +8,7 @@
 \description{
 Provides efficient R and 'C++' routines to simulate cognitive diagnostic
 model data for Deterministic Input, Noisy "And" Gate (DINA) and
-reduced Reparametrized Unifed Model (rRUM).
+reduced Reparameterized Unified Model (rRUM).
 }
 \author{
 \strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} [copyright holder]

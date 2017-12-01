@@ -90,32 +90,34 @@ sim_rrum_main <- function(Q, rstar, pistar, alpha) {
 
 #' Generate data from the rRUM
 #'
-#' Randomly generate response data according to the reduced Reparametrized
+#' Randomly generate response data according to the reduced Reparameterized
 #' Unified Model (rRUM).
 #'
-#' @param Q       A `matrix` with J rows and K columns indicating which
-#'                attributes are required to answer each of the items, where
-#'                J represents the number of items and K the number of
-#'                attributes.  An entry of 1 indicates attribute k is required
-#'                to answer item j.  An entry of one indicates attribute k
-#'                is not required.
-#' @param rstar   A `matrix` a matrix with J rows and K columns indicating the
-#'                penalties for failing to have each of the required
-#'                attributes, where J represents the number of items and K
-#'                the number of attributes.  rstar and Q must share the same 0
-#'                entries.
-#' @param pistar  A `vector` of length J indicating the probabiliies of 
-#'                lack any required attribute, where J represents the number of
-#'                items.
-#' @param alpha   A `matrix` with N rows and K columns indicating the subjects
-#'                attribute acquisition, where N reperesnts the number of
-#'                individuals and K the number of attributes.  An entry of 1
-#'                indicates individual i has attained attribute k.  An entry of
-#'                0 indicates the attribute has not been attained.
-#' @return
-#' A `matrix` with N rows and J columns indicating the indviduals'
-#' responses to each of the items, where J represents the number of items.
-#' @author Steven Andrew Culpepper
+#' @param Q      A `matrix` with \eqn{J} rows and \eqn{K} columns indicating
+#'               which attributes are required to answer each of the items,
+#'               where \eqn{J} represents the number of items and \eqn{K} the
+#'               number of attributes.  An entry of 1 indicates attribute
+#'               \eqn{k} is required to answer item \eqn{j}.  An entry of one
+#'               indicates attribute \eqn{k} is not required.
+#' @param rstar  A `matrix` a matrix with \eqn{J} rows and \eqn{K} columns
+#'               indicating the penalties for failing to have each of the
+#'               required attributes, where \eqn{J} represents the number of
+#'               items and \eqn{K} the number of attributes. `rstar` and `Q`
+#'               must share the same 0 entries.
+#' @param pistar A `vector` of length \eqn{J} indicating the probabiliies of
+#'               answering each item correctly for individuals who do not lack
+#'               any required attribute, where \eqn{J} represents the number
+#'               of items.
+#' @param alpha  A `matrix` with \eqn{N} rows and \eqn{K} columns indicating
+#'               the subjects attribute acquisition, where \eqn{K} represents
+#'               the number of attributes.  An entry of 1 indicates individual
+#'               \eqn{i} has attained attribute \eqn{k}. An entry of 0
+#'               indicates the attribute has not been attained.
+#'
+#' @return Y     A `matrix` with \eqn{N} rows and \eqn{J} columns indicating
+#'               the indviduals' responses to each of the items, where \eqn{J}
+#'               represents the number of items.
+#' @author Steven Andrew Culpepper and James Joseph Balamuta
 #' @export
 #' @template rrum-example
 #' @template rrum-references

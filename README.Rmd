@@ -115,7 +115,7 @@ arma::mat example_rrum_sim(const arma::mat &Q, const arma::mat &rstar,
 
 ## Authors
 
-James Joseph Balamuta and Prof. Steven Culpepper
+James Joseph Balamuta and Prof. Steven Andrew Culpepper
 
 ## License
 

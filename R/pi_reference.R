@@ -5,7 +5,7 @@
 #' @param K A `numeric`, denoting the number of attributes.
 #' @return A `matrix`, where row \eqn{c} represents the latent class
 #' corresponding to entry \eqn{c} of \eqn{pi}
-#' @author Steven Andrew Culpepper, Aaron Hudson
+#' @author Steven Andrew Culpepper and Aaron Hudson
 #' @export
 pi_reference = function(K) {
   biject.vector = bijectionvector(K)
