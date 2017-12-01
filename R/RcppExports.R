@@ -123,6 +123,20 @@ sim_rrum <- function(Q, rstar, pistar, alpha) {
     .Call(`_simcdm_sim_rrum`, Q, rstar, pistar, alpha)
 }
 
+#' Bijection Vector
+#'
+#' Computes the powers of 2 from 0 up to K - 1.
+#' @param K  Number of Attributes
+#' @return A \code{vec} with length \eqn{K} detailing the power's of 2.
+#' @examples
+#' 
+#' bijectionvector(3)
+#' 
+#' @export
+bijectionvector <- function(K) {
+    .Call(`_simcdm_bijectionvector`, K)
+}
+
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
     .Call('_simcdm_RcppExport_registerCCallable', PACKAGE = 'simcdm')
