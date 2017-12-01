@@ -10,8 +10,8 @@ pi_reference(K)
 \item{K}{A \code{numeric}, denoting the number of attributes.}
 }
 \value{
-A \code{matrix}, where row c represents the latent class
-corresponding to entry c of pi
+A \code{matrix}, where row \eqn{c} represents the latent class
+corresponding to entry \eqn{c} of \eqn{pi}
 }
 \description{
 Obtains mapping of entries of pi to latent attribute classes.

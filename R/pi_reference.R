@@ -3,8 +3,8 @@
 #'
 #' Obtains mapping of entries of pi to latent attribute classes.
 #' @param K A `numeric`, denoting the number of attributes.
-#' @return A `matrix`, where row c represents the latent class
-#' corresponding to entry c of pi
+#' @return A `matrix`, where row \eqn{c} represents the latent class
+#' corresponding to entry \eqn{c} of \eqn{pi}
 #' @author Steven Andrew Culpepper, Aaron Hudson
 #' @export
 pi_reference = function(K) {
