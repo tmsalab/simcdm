@@ -15,7 +15,7 @@ reduced Reparameterized Unified Model (rRUM).
 
 Authors:
 \itemize{
-  \item Steven Culpepper \email{sculpepp@illinois.edu} [copyright holder]
+  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} [copyright holder]
 }
 
 }
