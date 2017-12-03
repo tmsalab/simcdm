@@ -18,4 +18,9 @@ Authors:
   \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} [copyright holder]
 }
 
+Other contributors:
+\itemize{
+  \item Aaron Hudson \email{awhudson@uw.edu} [contributor, copyright holder]
+}
+
 }
