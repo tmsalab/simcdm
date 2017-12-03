@@ -2,9 +2,9 @@
 
 // [[Rcpp::interfaces(r, cpp)]]
 
-//' Simulate Binary Responses for DINA Model
+//' Simulate Binary Responses for a DINA Model
 //'
-//' Simulation the Y Response for a DINA Model
+//' Generate the dichotomous item matrix for a DINA Model.
 //' 
 //' @param N     Number of Observations
 //' @param J     Number of Assessment Items
@@ -18,7 +18,7 @@
 //'              all of the required attributes
 //' 
 //' @return A `mat`
-//' @author Steven A Culpepper
+//' @author Steven Andrew Culpepper
 //' @template sim-dina-class-example
 //' @export
 // [[Rcpp::export]]

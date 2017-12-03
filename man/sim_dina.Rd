@@ -67,5 +67,5 @@ Alphas = As[CLs, ]
 gen = sim_dina(Alphas, Q, ss, gs)
 }
 \author{
-Steven Andrew Culpepper
+Steven Andrew Culpepper and James Joseph Balamuta
 }

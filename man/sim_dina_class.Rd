@@ -27,7 +27,7 @@ all of the required attributes}
 A \code{mat}
 }
 \description{
-Simulation the Y Response for a DINA Model
+Simulation the dichotomous item matrix for a DINA Model.
 
 # Fixed Number of Assessment Items for Q
 J = 18
@@ -66,5 +66,5 @@ ETA = ETAmat(K, J, Q)
 Y_sim = sim_dina_class(N, J, CLs, ETA, gs, ss)
 }
 \author{
-Steven A Culpepper
+Steven Andrew Culpepper
 }
