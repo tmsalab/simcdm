@@ -11,6 +11,7 @@ Description: Provides efficient R and 'C++' routines to simulate cognitive diagn
 Depends:
     R (>= 3.3.0)
 LinkingTo: Rcpp, RcppArmadillo (>= 0.8.100)
+License: GPL (>= 2)
 Imports: Rcpp (>= 0.12.13)
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
