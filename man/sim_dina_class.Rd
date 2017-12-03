@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{sim_dina_class}
 \alias{sim_dina_class}
-\title{Simulate Binary Responses for DINA Model}
+\title{Simulate Binary Responses for a DINA Model}
 \usage{
 sim_dina_class(N, J, CLASS, ETA, gs, ss)
 }
@@ -24,15 +24,20 @@ the probability of an incorrect response for individuals with
 all of the required attributes}
 }
 \value{
-A \code{mat}
+A dichotomous item matrix
 }
 \description{
-Simulation the dichotomous item matrix for a DINA Model.
+Generate the dichotomous item matrix for a DINA Model.
+}
+\examples{
+# Set 
+N       = 100
+rho     = 0
+K       = 3
 
 # Fixed Number of Assessment Items for Q
 J = 18
-}
-\details{
+
 # Specify Q
 qbj = c(4, 2, 1, 4, 2, 1, 4, 2, 1, 6, 5, 3, 6, 5, 3, 7, 7, 7)
 
@@ -48,17 +53,17 @@ ss = gs = rep(.2, J)
 # Generating attribute classes depending on correlation
 if (rho == 0) {
   PIs = rep(1 / (2 ^ K), 2 ^ K)
-  CLs = c(seq_len(2 ^ K) %*% rmultinom(n = N, size = 1, prob = PIs)) - 1
+  CLs = c(seq_len(2 ^ K) \%*\% rmultinom(n = N, size = 1, prob = PIs)) - 1
 }
 
 if (rho > 0) {
   Z = matrix(rnorm(N * K), N, K)
   Sig = matrix(rho, K, K)
   diag(Sig) = 1
-  X = Z %*% chol(Sig)
+  X = Z \%*\% chol(Sig)
   thvals = matrix(rep(0, K), N, K, byrow = T)
   Alphas = 1 * (X > thvals)
-  CLs = Alphas %*% bijectionvector(K)
+  CLs = Alphas \%*\% bijectionvector(K)
 }
 
 # Simulate data under DINA model
@@ -66,5 +71,5 @@ ETA = ETAmat(K, J, Q)
 Y_sim = sim_dina_class(N, J, CLs, ETA, gs, ss)
 }
 \author{
-Steven Andrew Culpepper
+Steven Andrew Culpepper and James Joseph Balamuta
 }

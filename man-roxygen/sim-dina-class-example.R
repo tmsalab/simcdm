@@ -1,3 +1,4 @@
+#' @examples 
 #' # Set 
 #' N       = 100
 #' rho     = 0

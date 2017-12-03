@@ -17,8 +17,8 @@
 //'              the probability of an incorrect response for individuals with
 //'              all of the required attributes
 //' 
-//' @return A `mat`
-//' @author Steven Andrew Culpepper
+//' @return A dichotomous item matrix
+//' @author Steven Andrew Culpepper and James Joseph Balamuta
 //' @template sim-dina-class-example
 //' @export
 // [[Rcpp::export]]
