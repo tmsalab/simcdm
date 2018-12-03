@@ -3,6 +3,7 @@
 export(bijectionvector)
 export(pi_reference)
 export(sim_dina)
+export(sim_dina_attributes)
 export(sim_dina_class)
 export(sim_rrum)
 importFrom(Rcpp,evalCpp)
