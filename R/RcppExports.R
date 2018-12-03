@@ -24,6 +24,18 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
     .Call(`_simcdm_sim_dina_class`, N, J, CLASS, ETA, gs, ss)
 }
 
+#' Simulate a DINA Model's \eqn{\eta} Matrix
+#' 
+#' Generates a DINA model's \eqn{\eta} matrix based on alphas and
+#' the \eqn{\mathbf{Q}} matrix.
+#' @inheritParams sim_dina
+#' @author Steven Andrew Culpepper and James Joseph Balamuta
+#' @template sim-dina-example-body
+#' @export
+sim_dina_attributes <- function(alphas, Q) {
+    .Call(`_simcdm_sim_dina_attributes`, alphas, Q)
+}
+
 #' Simulation Responses from the DINA model
 #'
 #' Sample responses from the DINA model for given attribute profiles, Q matrix,
@@ -37,48 +49,8 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #' @param gs     A \eqn{J} `vector` of item guessing parameters.
 #' 
 #' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
-#' @author Steven Andrew Culpepper
-#' @examples
-#' ############################################
-#' # de la Torre (2009) Simulation Replication
-#' ############################################
-#' N = 200
-#' K = 5
-#' J = 30
-#' delta0 = rep(1, 2 ^ K)
-#' 
-#' # Creating Q matrix
-#' Q = matrix(rep(diag(K), 2), 2 * K, K, byrow = TRUE)
-#' for (mm in 2:K) {
-#'   temp = combn(seq_len(K), m = mm)
-#'   tempmat = matrix(0, ncol(temp), K)
-#'   for (j in seq_len(ncol(temp)))
-#'     tempmat[j, temp[, j]] = 1
-#'   Q = rbind(Q, tempmat)
-#' }
-#' Q = Q[seq_len(J), ]
-#' 
-#' # Setting item parameters and generating attribute profiles
-#' ss = gs = rep(.2, J)
-#' PIs = rep(1 / (2 ^ K), 2 ^ K)
-#' CLs = c((1:(2 ^ K)) %*% rmultinom(n = N, size = 1, prob = PIs))
-#' 
-#' # Defining matrix of possible attribute profiles
-#' As = rep(0, K)
-#' for (j in seq_len(K)) {
-#'   temp = combn(1:K, m = j)
-#'   tempmat = matrix(0, ncol(temp), K)
-#'   for (j in seq_len(ncol(temp)))
-#'     tempmat[j, temp[, j]] = 1
-#'   As = rbind(As, tempmat)
-#' }
-#' As = as.matrix(As)
-#' 
-#' # Sample true attribute profiles
-#' Alphas = As[CLs, ]
-#' 
-#' # Simulate data under DINA model
-#' gen = sim_dina(Alphas, Q, ss, gs)
+#' @author Steven Andrew Culpepper and James Joseph Balamuta
+#' @template sim-dina-example-body
 #' @export
 sim_dina <- function(alphas, Q, ss, gs) {
     .Call(`_simcdm_sim_dina`, alphas, Q, ss, gs)
