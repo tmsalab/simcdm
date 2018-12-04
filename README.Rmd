@@ -20,11 +20,11 @@ knitr::opts_chunk$set(
 [![Downloads](http://cranlogs.r-pkg.org/badges/simcdm?color=brightgreen)](http://www.r-pkg.org/pkg/simcdm)
 [![Coverage status](https://codecov.io/gh/tmsalab/simcdm/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/simcdm?branch=master)
 
-The goal of simcdm is to simulate cognitive diagnostic model data
+The goal of simcdm is to simulate cognitive diagnostic model data.
 
 ## Installation
 
-You can install simcdm from github with:
+You can install simcdm from GitHub with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
@@ -33,59 +33,107 @@ devtools::install_github("tmsalab/simcdm")
 
 ## Usage
 
-To use `simcdm`, load the package and design the initial Q matrix that 
-the item response data should be generated from. 
-
-Depending on the model being simulated, e.g. rRUM or DINA, additional parameters
-will need to be supplied. 
-
-Consider the following generation routine for DINA data that follows
-de la Torre (2009) simulation.
+To use `simcdm`, load the package using:
 
 ```{r example}
 library("simcdm")
-N = 200
-K = 5
-J = 30
-delta0 = rep(1, 2 ^ K)
-
-# Creating Q matrix
-Q = matrix(rep(diag(K), 2), 2 * K, K, byrow = TRUE)
-for (mm in 2:K) {
-  temp = combn(seq_len(K), m = mm)
-  tempmat = matrix(0, ncol(temp), K)
-  for (j in seq_len(ncol(temp)))
-    tempmat[j, temp[, j]] = 1
-  Q = rbind(Q, tempmat)
-}
-Q = Q[seq_len(J), ]
-
-# Setting item parameters and generating attribute profiles
-ss = gs = rep(.2, J)
-PIs = rep(1 / (2 ^ K), 2 ^ K)
-CLs = c((1:(2 ^ K)) %*% rmultinom(n = N, size = 1, prob = PIs))
-
-# Defining matrix of possible attribute profiles
-As = rep(0, K)
-for (j in seq_len(K)) {
-  temp = combn(1:K, m = j)
-  tempmat = matrix(0, ncol(temp), K)
-  for (j in seq_len(ncol(temp)))
-    tempmat[j, temp[, j]] = 1
-  As = rbind(As, tempmat)
-}
-As = as.matrix(As)
-
-# Sample true attribute profiles
-Alphas = As[CLs, ]
-
-# Simulate data under DINA model
-gen_data = sim_dina(Alphas, Q, ss, gs)
 ```
 
+There are three distinct sets of functions within the package:
+
+- Matrix: `sim_q_matrix()`, `sim_eta_matrix()`, and `sim_alpha_matrix()`.
+- DINA: `sim_dina_items()` and `sim_dina_attributes()`
+- RRUM: `sim_rrum_items()`
+
+Notice that all functions in the package are named with the prefix of `sim_*()`. 
+This is done to all you to quickly find functions using autocomplete inside
+of _RStudio_.
+
+### Matrix Simulation
+
+```{r}
+# Set a seed for reproducibility
+set.seed(888)
+
+# Setup Parameters
+N = 500    # Number of Examinees / Subjects
+J = 10     # Number of Items
+K = 2      # Number of Skills / Attributes
+
+# Simulate a Q matrix  (J items by K skills)
+Q = sim_q_matrix(J, K)
+
+# Create the ideal response matrix for each trait (J items by 2^K latent classes)
+eta = sim_eta_matrix(K, J, Q)
+
+# Generate latent attribute profile matrix (2^K latent classes by K skills)
+alphas = sim_alpha_matrix(K)
+```
+
+### DINA Simulation
+
+```{r}
+# Assign slipping and guessing values
+ss = gs = rep(.2, J)
+
+# Simulate item data under DINA model 
+dina_items = sim_dina_items(alphas, Q, ss, gs)
+
+# Simulate attribute data under DINA model 
+dina_attributes = sim_dina_attributes(alphas, Q)
+```
+
+### RRUM Simulation
+
+```{r}
+# The probabilities of answering each item correctly for individuals 
+# who do not lack any required attribute
+pistar = rep(.9, J)
+
+# Penalties for failing to have each of the required attributes
+rstar  = .5 * Q
+
+# Latent Class Probabilities
+pis = c(.1, .2, .3, .4)
+
+# Pick an attribute profile
+alpha_local  = alphas[sample(K ^ 2, N, replace = TRUE, pis),]
+
+# Simulate rum items
+rrum_items = sim_rrum_items(Q, rstar, pistar, alpha_local)
+```
 
 ### Package usage
 
+The design of `simcdm` allows the package to be extended using either the 
+_R_ functions or the _C++_ functions with other packages. The next section
+details how to incorporate the _C++_ code into the package or standalone _C++_
+file. 
+
+Note, if you are not familiar with compiled code in _R_ please 
+feel free to use the traditional way to import the _R_ functions.
+
+#### C++ Standalone Usage
+
+Within the a _C++_ file  in `src/`, then add:
+
+```cpp
+#include <RcppArmadillo.h>
+#include <simcdm.h>
+
+// [[Rcpp::depends(simcdm, RcppArmadillo)]]
+
+// [[Rcpp::export]]
+arma::mat example_dina_sim(const arma::mat &alphas, const arma::mat &Q,
+                           const arma::vec &ss, const arma::vec &gs) { 
+                           
+   arma::mat dina_items = simcdm::sim_dina_items(alphas, Q, ss, gs);
+   
+   return dina_items;
+}
+```
+
+#### C++ Package
 
 To use `simcdm` in your R package, modify the `DESCRIPTION` file by adding:
 
@@ -93,35 +141,25 @@ To use `simcdm` in your R package, modify the `DESCRIPTION` file by adding:
     Imports:
         Rcpp (>= 0.12.14)
 
-Within the `C++` file, then add:
-
-```cpp
-#include <simcdm.h> // simcdm header
-```
-
 Reference the simulation functions using `simcdm` namespace like so: 
 
 ```cpp
 #include <simcdm.h>
 
 // [[Rcpp::export]]
-arma::mat example_dina_sim(const arma::mat &alphas, const arma::mat &Q,
-                           const arma::vec &ss, const arma::vec &gs) { 
-   arma::mat items_dina = simcdm::sim_dina(alphas, Q, ss, gs);
-   return items_dina;
-}
-
-// [[Rcpp::export]]
 arma::mat example_rrum_sim(const arma::mat &Q, const arma::mat &rstar,
                            const arma::vec &pistar, const arma::mat &alpha) { 
-   arma::mat items_rrum = simcdm::sim_rrum(Q, rstar, pistar, alpha);
-   return items_rrum;
+                           
+   arma::mat rrum_items = simcdm::sim_rrum_items(Q, rstar, pistar, alpha);
+   
+   return rrum_items;
 }
 ```
 
 ## Authors
 
 James Joseph Balamuta and Steven Andrew Culpepper
+with contributions from Aaron Hudson.
 
 ## License
 
