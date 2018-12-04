@@ -7,11 +7,13 @@
 \title{simcdm: Simulate Cognitive Diagnostic Model (CDM) Data}
 \description{
 Provides efficient R and 'C++' routines to simulate cognitive diagnostic
-    model data for Deterministic Input, Noisy "And" Gate (DINA) and
-    reduced Reparameterized Unified Model (rRUM).
+    model data for Deterministic Input, Noisy "And" Gate (DINA) 
+    from Culpepper (2015) <doi:10.3102/1076998615595403> and
+    reduced Reparameterized Unified Model (rRUM) from
+    Culpepper and Hudson (2017) <doi: 10.1177/0146621617707511>.
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} [copyright holder]
+\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} [copyright holder]
 
 Authors:
 \itemize{
