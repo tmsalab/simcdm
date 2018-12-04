@@ -34,8 +34,8 @@
 #' # Sample true attribute profiles
 #' Alphas = As[CLs, ]
 #' 
-#' # Simulate data under DINA model 
-#' dina_items = sim_dina(Alphas, Q, ss, gs)
+#' # Simulate item data under DINA model 
+#' dina_items = sim_dina_items(Alphas, Q, ss, gs)
 #' 
-#' # Simulate data under DINA model 
+#' # Simulate attribute data under DINA model 
 #' dina_attributes = sim_dina_attributes(Alphas, Q)

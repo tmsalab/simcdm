@@ -43,7 +43,7 @@ arma::mat sim_dina_class(unsigned int N, unsigned int J, const arma::vec &CLASS,
 //'
 //' Generates a DINA model's \eqn{\eta} matrix based on alphas and
 //' the \eqn{\mathbf{Q}} matrix.
-//' @inheritParams sim_dina
+//' @inheritParams sim_dina_items
 //' @author Steven Andrew Culpepper and James Joseph Balamuta
 //' @template sim-dina-example-body
 //' @export
@@ -75,8 +75,8 @@ arma::mat sim_dina_attributes(const arma::mat &alphas, const arma::mat &Q)
 //' and item parmeters. Returns a `matrix` of dichotomous responses
 //' generated under DINA model.
 //'
-//' @param alphas A \eqn{N} by K `matrix` of latent attributes.
-//' @param Q      A \eqn{N} by K `matrix` indicating which skills are required
+//' @param alphas A \eqn{N} by \eqn{K} `matrix` of latent attributes.
+//' @param Q      A \eqn{J} by \eqn{K} `matrix` indicating which skills are required
 //'               for which items.
 //' @param ss     A \eqn{J} `vector` of item slipping parameters.
 //' @param gs     A \eqn{J} `vector` of item guessing parameters.
@@ -86,8 +86,8 @@ arma::mat sim_dina_attributes(const arma::mat &alphas, const arma::mat &Q)
 //' @template sim-dina-example-body
 //' @export
 // [[Rcpp::export]]
-arma::mat sim_dina(const arma::mat &alphas, const arma::mat &Q,
-                   const arma::vec &ss, const arma::vec &gs)
+arma::mat sim_dina_items(const arma::mat &alphas, const arma::mat &Q,
+                         const arma::vec &ss, const arma::vec &gs)
 {
     unsigned int N = alphas.n_rows;
     unsigned int J = Q.n_rows;

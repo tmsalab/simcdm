@@ -28,7 +28,7 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #'
 #' Generates a DINA model's \eqn{\eta} matrix based on alphas and
 #' the \eqn{\mathbf{Q}} matrix.
-#' @inheritParams sim_dina
+#' @inheritParams sim_dina_items
 #' @author Steven Andrew Culpepper and James Joseph Balamuta
 #' @template sim-dina-example-body
 #' @export
@@ -42,8 +42,8 @@ sim_dina_attributes <- function(alphas, Q) {
 #' and item parmeters. Returns a `matrix` of dichotomous responses
 #' generated under DINA model.
 #'
-#' @param alphas A \eqn{N} by K `matrix` of latent attributes.
-#' @param Q      A \eqn{N} by K `matrix` indicating which skills are required
+#' @param alphas A \eqn{N} by \eqn{K} `matrix` of latent attributes.
+#' @param Q      A \eqn{J} by \eqn{K} `matrix` indicating which skills are required
 #'               for which items.
 #' @param ss     A \eqn{J} `vector` of item slipping parameters.
 #' @param gs     A \eqn{J} `vector` of item guessing parameters.
@@ -52,8 +52,8 @@ sim_dina_attributes <- function(alphas, Q) {
 #' @author Steven Andrew Culpepper and James Joseph Balamuta
 #' @template sim-dina-example-body
 #' @export
-sim_dina <- function(alphas, Q, ss, gs) {
-    .Call(`_simcdm_sim_dina`, alphas, Q, ss, gs)
+sim_dina_items <- function(alphas, Q, ss, gs) {
+    .Call(`_simcdm_sim_dina_items`, alphas, Q, ss, gs)
 }
 
 sim_rrum_main <- function(Q, rstar, pistar, alpha) {

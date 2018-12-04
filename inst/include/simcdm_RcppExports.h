@@ -67,17 +67,17 @@ namespace simcdm {
         return Rcpp::as<arma::mat >(rcpp_result_gen);
     }
 
-    inline arma::mat sim_dina(const arma::mat& alphas, const arma::mat& Q, const arma::vec& ss, const arma::vec& gs) {
-        typedef SEXP(*Ptr_sim_dina)(SEXP,SEXP,SEXP,SEXP);
-        static Ptr_sim_dina p_sim_dina = NULL;
-        if (p_sim_dina == NULL) {
-            validateSignature("arma::mat(*sim_dina)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::vec&)");
-            p_sim_dina = (Ptr_sim_dina)R_GetCCallable("simcdm", "_simcdm_sim_dina");
+    inline arma::mat sim_dina_items(const arma::mat& alphas, const arma::mat& Q, const arma::vec& ss, const arma::vec& gs) {
+        typedef SEXP(*Ptr_sim_dina_items)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_sim_dina_items p_sim_dina_items = NULL;
+        if (p_sim_dina_items == NULL) {
+            validateSignature("arma::mat(*sim_dina_items)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::vec&)");
+            p_sim_dina_items = (Ptr_sim_dina_items)R_GetCCallable("simcdm", "_simcdm_sim_dina_items");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_sim_dina(Shield<SEXP>(Rcpp::wrap(alphas)), Shield<SEXP>(Rcpp::wrap(Q)), Shield<SEXP>(Rcpp::wrap(ss)), Shield<SEXP>(Rcpp::wrap(gs)));
+            rcpp_result_gen = p_sim_dina_items(Shield<SEXP>(Rcpp::wrap(alphas)), Shield<SEXP>(Rcpp::wrap(Q)), Shield<SEXP>(Rcpp::wrap(ss)), Shield<SEXP>(Rcpp::wrap(gs)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
