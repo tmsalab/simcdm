@@ -16,3 +16,5 @@ Imports: Rcpp (>= 0.12.13)
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
+Suggests: 
+    testthat
