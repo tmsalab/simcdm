@@ -67,7 +67,7 @@ if (rho > 0) {
 }
 
 # Simulate data under DINA model
-ETA = eta_matrix(K, J, Q)
+ETA = sim_eta_matrix(K, J, Q)
 Y_sim = sim_dina_class(N, J, CLs, ETA, gs, ss)
 }
 \author{
