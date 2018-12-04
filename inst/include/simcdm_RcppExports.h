@@ -151,6 +151,27 @@ namespace simcdm {
         return Rcpp::as<arma::vec >(rcpp_result_gen);
     }
 
+    inline arma::vec inv_bijectionvector(unsigned int K, double CL) {
+        typedef SEXP(*Ptr_inv_bijectionvector)(SEXP,SEXP);
+        static Ptr_inv_bijectionvector p_inv_bijectionvector = NULL;
+        if (p_inv_bijectionvector == NULL) {
+            validateSignature("arma::vec(*inv_bijectionvector)(unsigned int,double)");
+            p_inv_bijectionvector = (Ptr_inv_bijectionvector)R_GetCCallable("simcdm", "_simcdm_inv_bijectionvector");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_inv_bijectionvector(Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(CL)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<arma::vec >(rcpp_result_gen);
+    }
+
 }
 
 #endif // RCPP_simcdm_RCPPEXPORTS_H_GEN_

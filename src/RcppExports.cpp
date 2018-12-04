@@ -228,6 +228,41 @@ RcppExport SEXP _simcdm_bijectionvector(SEXP KSEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// inv_bijectionvector
+arma::vec inv_bijectionvector(unsigned int K, double CL);
+static SEXP _simcdm_inv_bijectionvector_try(SEXP KSEXP, SEXP CLSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< unsigned int >::type K(KSEXP);
+    Rcpp::traits::input_parameter< double >::type CL(CLSEXP);
+    rcpp_result_gen = Rcpp::wrap(inv_bijectionvector(K, CL));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _simcdm_inv_bijectionvector(SEXP KSEXP, SEXP CLSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_simcdm_inv_bijectionvector_try(KSEXP, CLSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 
 // validate (ensure exported C++ functions exist before calling them)
 static int _simcdm_RcppExport_validate(const char* sig) { 
@@ -239,6 +274,7 @@ static int _simcdm_RcppExport_validate(const char* sig) {
         signatures.insert("arma::mat(*sim_rrum_main)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
         signatures.insert("arma::mat(*sim_rrum)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
         signatures.insert("arma::vec(*bijectionvector)(unsigned int)");
+        signatures.insert("arma::vec(*inv_bijectionvector)(unsigned int,double)");
     }
     return signatures.find(sig) != signatures.end();
 }
@@ -251,6 +287,7 @@ RcppExport SEXP _simcdm_RcppExport_registerCCallable() {
     R_RegisterCCallable("simcdm", "_simcdm_sim_rrum_main", (DL_FUNC)_simcdm_sim_rrum_main_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_rrum", (DL_FUNC)_simcdm_sim_rrum_try);
     R_RegisterCCallable("simcdm", "_simcdm_bijectionvector", (DL_FUNC)_simcdm_bijectionvector_try);
+    R_RegisterCCallable("simcdm", "_simcdm_inv_bijectionvector", (DL_FUNC)_simcdm_inv_bijectionvector_try);
     R_RegisterCCallable("simcdm", "_simcdm_RcppExport_validate", (DL_FUNC)_simcdm_RcppExport_validate);
     return R_NilValue;
 }
@@ -262,6 +299,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_simcdm_sim_rrum_main", (DL_FUNC) &_simcdm_sim_rrum_main, 4},
     {"_simcdm_sim_rrum", (DL_FUNC) &_simcdm_sim_rrum, 4},
     {"_simcdm_bijectionvector", (DL_FUNC) &_simcdm_bijectionvector, 1},
+    {"_simcdm_inv_bijectionvector", (DL_FUNC) &_simcdm_inv_bijectionvector, 2},
     {"_simcdm_RcppExport_registerCCallable", (DL_FUNC) &_simcdm_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };

@@ -111,6 +111,16 @@ bijectionvector <- function(K) {
     .Call(`_simcdm_bijectionvector`, K)
 }
 
+#' Inverse Bijection Vector
+#'
+#' @param CL A \code{double} that controls ...
+#' @inheritParams bijectionvector
+#' @return A \code{vec} with length \eqn{K}.
+#' @export
+inv_bijectionvector <- function(K, CL) {
+    .Call(`_simcdm_inv_bijectionvector`, K, CL)
+}
+
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
     .Call('_simcdm_RcppExport_registerCCallable', PACKAGE = 'simcdm')
