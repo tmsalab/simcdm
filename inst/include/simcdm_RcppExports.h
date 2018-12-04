@@ -204,6 +204,18 @@ namespace simcdm {
         {
             RNGScope RCPP_rngScope_gen;
             rcpp_result_gen = p_eta_matrix(Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(J)), Shield<SEXP>(Rcpp::wrap(Q)));
+
+    inline arma::mat sim_alpha_matrix(int K) {
+        typedef SEXP(*Ptr_sim_alpha_matrix)(SEXP);
+        static Ptr_sim_alpha_matrix p_sim_alpha_matrix = NULL;
+        if (p_sim_alpha_matrix == NULL) {
+            validateSignature("arma::mat(*sim_alpha_matrix)(int)");
+            p_sim_alpha_matrix = (Ptr_sim_alpha_matrix)R_GetCCallable("simcdm", "_simcdm_sim_alpha_matrix");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_sim_alpha_matrix(Shield<SEXP>(Rcpp::wrap(K)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();

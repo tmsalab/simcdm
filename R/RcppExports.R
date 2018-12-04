@@ -158,11 +158,12 @@ sim_q_matrix <- function(J, K) {
 #' @export
 #'
 #' @examples
-#' K       = 3
-#'
 #' # Fixed Number of Assessment Items for Q
 #' J = 18
 #'
+#' # Fixed Number of Attributes for Q
+#' K       = 3
+#' 
 #' # Specify Q
 #' qbj = c(4, 2, 1, 4, 2, 1, 4, 2, 1, 6, 5, 3, 6, 5, 3, 7, 7, 7)
 #'
@@ -171,10 +172,35 @@ sim_q_matrix <- function(J, K) {
 #' for (j in seq_len(J)) {
 #'   Q[j,] = inv_bijectionvector(K, qbj[j])
 #' }
+#' 
 #' # Create an eta matrix
 #' ETA = eta_matrix(K, J, Q)
 eta_matrix <- function(K, J, Q) {
     .Call(`_simcdm_eta_matrix`, K, J, Q)
+#' Simulate the Latent Attribute Profile Matrix \eqn{\mathbf{\alpha}_c}
+#'
+#' Generate the \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'} 
+#' attribute profile matrix for members of class \eqn{c} such that \eqn{\alpha_{ck}}
+#' is 1 if members of class \eqn{c} possess skill \eqn{k} and zero otherwise.
+#'
+#' @param K Number of Skills
+#'
+#' @return A \eqn{2^K} by \eqn{K} `matrix` of latent classes
+#' corresponding to entry \eqn{c} of \eqn{pi} based upon 
+#' mastery and nonmastery of the \eqn{K} skills.
+#' 
+#' @author James Joseph Balamuta and Steven Andrew Culpepper
+#' 
+#' @export
+#' 
+#' @examples
+#' # Define test parameters and traits
+#' K = 3
+#' 
+#' # Generate an Latent Attribute Profile (Alpha) Matrix
+#' alphas = sim_alpha_matrix(K)
+sim_alpha_matrix <- function(K) {
+    .Call(`_simcdm_sim_alpha_matrix`, K)
 }
 
 # Register entry points for exported C++ functions
