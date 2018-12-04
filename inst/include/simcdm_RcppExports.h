@@ -39,6 +39,29 @@ namespace simcdm {
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<arma::mat >(rcpp_result_gen);
+    }
+
+    inline arma::mat sim_dina_attributes(const arma::mat& alphas, const arma::mat& Q) {
+        typedef SEXP(*Ptr_sim_dina_attributes)(SEXP,SEXP);
+        static Ptr_sim_dina_attributes p_sim_dina_attributes = NULL;
+        if (p_sim_dina_attributes == NULL) {
+            validateSignature("arma::mat(*sim_dina_attributes)(const arma::mat&,const arma::mat&)");
+            p_sim_dina_attributes = (Ptr_sim_dina_attributes)R_GetCCallable("simcdm", "_simcdm_sim_dina_attributes");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_sim_dina_attributes(Shield<SEXP>(Rcpp::wrap(alphas)), Shield<SEXP>(Rcpp::wrap(Q)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<arma::mat >(rcpp_result_gen);
@@ -58,6 +81,8 @@ namespace simcdm {
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<arma::mat >(rcpp_result_gen);
@@ -77,6 +102,8 @@ namespace simcdm {
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<arma::mat >(rcpp_result_gen);
@@ -96,6 +123,8 @@ namespace simcdm {
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<arma::mat >(rcpp_result_gen);
@@ -115,9 +144,74 @@ namespace simcdm {
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<arma::vec >(rcpp_result_gen);
+    }
+
+    inline arma::vec inv_bijectionvector(unsigned int K, double CL) {
+        typedef SEXP(*Ptr_inv_bijectionvector)(SEXP,SEXP);
+        static Ptr_inv_bijectionvector p_inv_bijectionvector = NULL;
+        if (p_inv_bijectionvector == NULL) {
+            validateSignature("arma::vec(*inv_bijectionvector)(unsigned int,double)");
+            p_inv_bijectionvector = (Ptr_inv_bijectionvector)R_GetCCallable("simcdm", "_simcdm_inv_bijectionvector");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_inv_bijectionvector(Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(CL)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<arma::vec >(rcpp_result_gen);
+    }
+
+    inline arma::mat sim_q_matrix(unsigned int J, unsigned int K) {
+        typedef SEXP(*Ptr_sim_q_matrix)(SEXP,SEXP);
+        static Ptr_sim_q_matrix p_sim_q_matrix = NULL;
+        if (p_sim_q_matrix == NULL) {
+            validateSignature("arma::mat(*sim_q_matrix)(unsigned int,unsigned int)");
+            p_sim_q_matrix = (Ptr_sim_q_matrix)R_GetCCallable("simcdm", "_simcdm_sim_q_matrix");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_sim_q_matrix(Shield<SEXP>(Rcpp::wrap(J)), Shield<SEXP>(Rcpp::wrap(K)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<arma::mat >(rcpp_result_gen);
+    }
+
+    inline arma::mat eta_matrix(unsigned int K, unsigned int J, const arma::mat& Q) {
+        typedef SEXP(*Ptr_eta_matrix)(SEXP,SEXP,SEXP);
+        static Ptr_eta_matrix p_eta_matrix = NULL;
+        if (p_eta_matrix == NULL) {
+            validateSignature("arma::mat(*eta_matrix)(unsigned int,unsigned int,const arma::mat&)");
+            p_eta_matrix = (Ptr_eta_matrix)R_GetCCallable("simcdm", "_simcdm_eta_matrix");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_eta_matrix(Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(J)), Shield<SEXP>(Rcpp::wrap(Q)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<arma::mat >(rcpp_result_gen);
     }
 
 }
