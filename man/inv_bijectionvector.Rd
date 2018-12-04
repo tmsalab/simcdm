@@ -2,18 +2,24 @@
 % Please edit documentation in R/RcppExports.R
 \name{inv_bijectionvector}
 \alias{inv_bijectionvector}
-\title{Inverse Bijection Vector}
+\title{Perform an Inverse Bijection of an Integer to Attribute Pattern}
 \usage{
 inv_bijectionvector(K, CL)
 }
 \arguments{
-\item{K}{Number of Attributes}
+\item{K}{Number of Attributes.}
 
-\item{CL}{A \code{double} that controls ...}
+\item{CL}{An \code{integer} between \eqn{0} and \eqn{2^{K-1}}}
 }
 \value{
-A \code{vec} with length \eqn{K}.
+A \eqn{K}-dimensional vector with an attribute pattern corresponding
+to \code{CL}.
 }
 \description{
-Inverse Bijection Vector
+Convert integer between \eqn{0} and \eqn{2^{K-1}} to
+\eqn{K}-dimensional attribute pattern.
+}
+\examples{
+inv_bijectionvector(5, 1)
+inv_bijectionvector(5, 2)
 }

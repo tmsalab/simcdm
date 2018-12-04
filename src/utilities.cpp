@@ -4,8 +4,8 @@
 
 //' Bijection Vector
 //'
-//' Computes the powers of 2 from 0 up to K - 1.
-//' @param K  Number of Attributes
+//' Computes the powers of 2 from \eqn{0} up to \eqn{K - 1}.
+//' @param K  Number of Attributes.
 //' @return A \code{vec} with length \eqn{K} detailing the power's of 2.
 //' @examples
 //' 
@@ -22,12 +22,22 @@ arma::vec bijectionvector(unsigned int K)
   return vv;
 }
 
-//' Inverse Bijection Vector
+
+
+//' Perform an Inverse Bijection of an Integer to Attribute Pattern 
+//' 
+//' Convert integer between \eqn{0} and \eqn{2^{K-1}} to
+//' \eqn{K}-dimensional attribute pattern.
 //'
-//' @param CL A \code{double} that controls ...
+//' @param CL An `integer` between \eqn{0} and \eqn{2^{K-1}}
 //' @inheritParams bijectionvector
-//' @return A \code{vec} with length \eqn{K}.
+//' @return A \eqn{K}-dimensional vector with an attribute pattern corresponding
+//' to `CL`. 
 //' @export
+//' 
+//' @examples
+//' inv_bijectionvector(5, 1)
+//' inv_bijectionvector(5, 2)
 // [[Rcpp::export]]
 arma::vec inv_bijectionvector(unsigned int K, double CL)
 {
@@ -41,3 +51,4 @@ arma::vec inv_bijectionvector(unsigned int K, double CL)
   
   return alpha;
 }
+
