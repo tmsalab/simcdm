@@ -97,6 +97,17 @@ sim_rrum <- function(Q, rstar, pistar, alpha) {
     .Call(`_simcdm_sim_rrum`, Q, rstar, pistar, alpha)
 }
 
+#' Generate ideal response \eqn{\eta} Matrix
+#'
+#' Creates the ideal response matrix for each trait
+#'
+#' @param K      Number of Attribute Levels
+#' @param J      Number of Assessment Items
+#' @param Q      Q Matrix with dimensions \eqn{K \times J}{K x J}.
+#' @return A `mat` with dimensions \eqn{J \times 2^K}{J x 2^K}.
+#' @noRd
+NULL
+
 #' Bijection Vector
 #'
 #' Computes the powers of 2 from \eqn{0} up to \eqn{K - 1}.

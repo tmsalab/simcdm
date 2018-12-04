@@ -52,3 +52,33 @@ arma::vec inv_bijectionvector(unsigned int K, double CL)
   return alpha;
 }
 
+//' Generate ideal response \eqn{\eta} Matrix
+//'
+//' Creates the ideal response matrix for each trait
+//'
+//' @param K      Number of Attribute Levels
+//' @param J      Number of Assessment Items
+//' @param Q      Q Matrix with dimensions \eqn{K \times J}{K x J}.
+//' @return A `mat` with dimensions \eqn{J \times 2^K}{J x 2^K}.
+//' @noRd
+arma::mat eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
+{
+  double nClass = pow(2, K);
+  
+  arma::mat ETA(J, nClass);
+  
+  for (unsigned int cc = 0; cc < nClass; ++cc) {
+    arma::vec alpha_c = inv_bijectionvector(K, cc);
+    
+    for (unsigned int j = 0; j < J; ++j) {
+      arma::rowvec qj = Q.row(j);
+      // Switch to as_scalar
+      double compare = arma::as_scalar(qj * alpha_c - qj * qj.t());
+      ETA(j, cc) = (compare >= 0);
+    }
+  }
+  
+  return ETA;
+}
+
+

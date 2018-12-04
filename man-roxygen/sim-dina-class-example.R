@@ -36,5 +36,5 @@
 #' }
 #' 
 #' # Simulate data under DINA model
-#' ETA = ETAmat(K, J, Q)
+#' ETA = eta_matrix(K, J, Q)
 #' Y_sim = sim_dina_class(N, J, CLs, ETA, gs, ss)
