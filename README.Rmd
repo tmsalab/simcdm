@@ -12,7 +12,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-# simcdm [![Build Status](https://travis-ci.org/tmsalab/simcdm.svg)](https://travis-ci.org/tmsalab/simcdm) [![Package-License](http://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/simcdm)](https://cran.r-project.org/package=simcdm) [![Downloads](http://cranlogs.r-pkg.org/badges/simcdm?color=brightgreen)](http://www.r-pkg.org/pkg/simcdm)
+# simcdm 
+
+[![Build Status](https://travis-ci.org/tmsalab/simcdm.svg)](https://travis-ci.org/tmsalab/simcdm)
+[![Package-License](http://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![CRAN](http://www.r-pkg.org/badges/version/simcdm)](https://cran.r-project.org/package=simcdm)
+[![Downloads](http://cranlogs.r-pkg.org/badges/simcdm?color=brightgreen)](http://www.r-pkg.org/pkg/simcdm)
+[![Coverage status](https://codecov.io/gh/tmsalab/simcdm/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/simcdm?branch=master)
 
 The goal of simcdm is to simulate cognitive diagnostic model data
 
@@ -115,7 +121,7 @@ arma::mat example_rrum_sim(const arma::mat &Q, const arma::mat &rstar,
 
 ## Authors
 
-James Joseph Balamuta and Prof. Steven Andrew Culpepper
+James Joseph Balamuta and Steven Andrew Culpepper
 
 ## License
 
