@@ -93,8 +93,8 @@ sim_rrum_main <- function(Q, rstar, pistar, alpha) {
 #' @export
 #' @template rrum-example
 #' @template rrum-references
-sim_rrum <- function(Q, rstar, pistar, alpha) {
-    .Call(`_simcdm_sim_rrum`, Q, rstar, pistar, alpha)
+sim_rrum_items <- function(Q, rstar, pistar, alpha) {
+    .Call(`_simcdm_sim_rrum_items`, Q, rstar, pistar, alpha)
 }
 
 #' Bijection Vector

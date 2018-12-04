@@ -157,24 +157,24 @@ RcppExport SEXP _simcdm_sim_rrum_main(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSEX
     UNPROTECT(1);
     return rcpp_result_gen;
 }
-// sim_rrum
-arma::mat sim_rrum(const arma::mat& Q, const arma::mat& rstar, const arma::vec& pistar, const arma::mat& alpha);
-static SEXP _simcdm_sim_rrum_try(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSEXP, SEXP alphaSEXP) {
+// sim_rrum_items
+arma::mat sim_rrum_items(const arma::mat& Q, const arma::mat& rstar, const arma::vec& pistar, const arma::mat& alpha);
+static SEXP _simcdm_sim_rrum_items_try(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSEXP, SEXP alphaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const arma::mat& >::type Q(QSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type rstar(rstarSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type pistar(pistarSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type alpha(alphaSEXP);
-    rcpp_result_gen = Rcpp::wrap(sim_rrum(Q, rstar, pistar, alpha));
+    rcpp_result_gen = Rcpp::wrap(sim_rrum_items(Q, rstar, pistar, alpha));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _simcdm_sim_rrum(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSEXP, SEXP alphaSEXP) {
+RcppExport SEXP _simcdm_sim_rrum_items(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSEXP, SEXP alphaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_simcdm_sim_rrum_try(QSEXP, rstarSEXP, pistarSEXP, alphaSEXP));
+        rcpp_result_gen = PROTECT(_simcdm_sim_rrum_items_try(QSEXP, rstarSEXP, pistarSEXP, alphaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -377,7 +377,7 @@ static int _simcdm_RcppExport_validate(const char* sig) {
         signatures.insert("arma::mat(*sim_dina_attributes)(const arma::mat&,const arma::mat&)");
         signatures.insert("arma::mat(*sim_dina_items)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::vec&)");
         signatures.insert("arma::mat(*sim_rrum_main)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
-        signatures.insert("arma::mat(*sim_rrum)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
+        signatures.insert("arma::mat(*sim_rrum_items)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
         signatures.insert("arma::vec(*bijectionvector)(unsigned int)");
         signatures.insert("arma::vec(*inv_bijectionvector)(unsigned int,double)");
         signatures.insert("arma::mat(*sim_q_matrix)(unsigned int,unsigned int)");
@@ -393,7 +393,7 @@ RcppExport SEXP _simcdm_RcppExport_registerCCallable() {
     R_RegisterCCallable("simcdm", "_simcdm_sim_dina_attributes", (DL_FUNC)_simcdm_sim_dina_attributes_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_dina_items", (DL_FUNC)_simcdm_sim_dina_items_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_rrum_main", (DL_FUNC)_simcdm_sim_rrum_main_try);
-    R_RegisterCCallable("simcdm", "_simcdm_sim_rrum", (DL_FUNC)_simcdm_sim_rrum_try);
+    R_RegisterCCallable("simcdm", "_simcdm_sim_rrum_items", (DL_FUNC)_simcdm_sim_rrum_items_try);
     R_RegisterCCallable("simcdm", "_simcdm_bijectionvector", (DL_FUNC)_simcdm_bijectionvector_try);
     R_RegisterCCallable("simcdm", "_simcdm_inv_bijectionvector", (DL_FUNC)_simcdm_inv_bijectionvector_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_q_matrix", (DL_FUNC)_simcdm_sim_q_matrix_try);
@@ -408,7 +408,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_simcdm_sim_dina_attributes", (DL_FUNC) &_simcdm_sim_dina_attributes, 2},
     {"_simcdm_sim_dina_items", (DL_FUNC) &_simcdm_sim_dina_items, 4},
     {"_simcdm_sim_rrum_main", (DL_FUNC) &_simcdm_sim_rrum_main, 4},
-    {"_simcdm_sim_rrum", (DL_FUNC) &_simcdm_sim_rrum, 4},
+    {"_simcdm_sim_rrum_items", (DL_FUNC) &_simcdm_sim_rrum_items, 4},
     {"_simcdm_bijectionvector", (DL_FUNC) &_simcdm_bijectionvector, 1},
     {"_simcdm_inv_bijectionvector", (DL_FUNC) &_simcdm_inv_bijectionvector, 2},
     {"_simcdm_sim_q_matrix", (DL_FUNC) &_simcdm_sim_q_matrix, 2},
