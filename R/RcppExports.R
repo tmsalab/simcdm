@@ -174,9 +174,17 @@ sim_q_matrix <- function(J, K) {
 #' }
 #' 
 #' # Create an eta matrix
-#' ETA = eta_matrix(K, J, Q)
-eta_matrix <- function(K, J, Q) {
-    .Call(`_simcdm_eta_matrix`, K, J, Q)
+#' ETA = sim_eta_matrix(K, J, Q)
+#' 
+#' # Generate an ETA matrix for a random Q.
+#' 
+#' # Create an eta matrix
+#' Q_sim = sim_q_matrix(K, J)
+#' ETA_gen = sim_eta_matrix(K, J, Q_sim)
+sim_eta_matrix <- function(K, J, Q) {
+    .Call(`_simcdm_sim_eta_matrix`, K, J, Q)
+}
+
 #' Simulate the Latent Attribute Profile Matrix \eqn{\mathbf{\alpha}_c}
 #'
 #' Generate the \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'} 

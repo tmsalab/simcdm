@@ -134,9 +134,10 @@ arma::mat sim_q_matrix(unsigned int J, unsigned int K)
 //' # Generate an ETA matrix for a random Q.
 //' 
 //' # Create an eta matrix
-//' ETA = eta_matrix(K, J, Q)
+//' Q_sim = sim_q_matrix(K, J)
+//' ETA_gen = sim_eta_matrix(K, J, Q_sim)
 // [[Rcpp::export]]
-arma::mat eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
+arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
 {
     double nClass = pow(2, K);
 

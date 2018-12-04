@@ -193,17 +193,26 @@ namespace simcdm {
         return Rcpp::as<arma::mat >(rcpp_result_gen);
     }
 
-    inline arma::mat eta_matrix(unsigned int K, unsigned int J, const arma::mat& Q) {
-        typedef SEXP(*Ptr_eta_matrix)(SEXP,SEXP,SEXP);
-        static Ptr_eta_matrix p_eta_matrix = NULL;
-        if (p_eta_matrix == NULL) {
-            validateSignature("arma::mat(*eta_matrix)(unsigned int,unsigned int,const arma::mat&)");
-            p_eta_matrix = (Ptr_eta_matrix)R_GetCCallable("simcdm", "_simcdm_eta_matrix");
+    inline arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat& Q) {
+        typedef SEXP(*Ptr_sim_eta_matrix)(SEXP,SEXP,SEXP);
+        static Ptr_sim_eta_matrix p_sim_eta_matrix = NULL;
+        if (p_sim_eta_matrix == NULL) {
+            validateSignature("arma::mat(*sim_eta_matrix)(unsigned int,unsigned int,const arma::mat&)");
+            p_sim_eta_matrix = (Ptr_sim_eta_matrix)R_GetCCallable("simcdm", "_simcdm_sim_eta_matrix");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_eta_matrix(Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(J)), Shield<SEXP>(Rcpp::wrap(Q)));
+            rcpp_result_gen = p_sim_eta_matrix(Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(J)), Shield<SEXP>(Rcpp::wrap(Q)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<arma::mat >(rcpp_result_gen);
+    }
 
     inline arma::mat sim_alpha_matrix(int K) {
         typedef SEXP(*Ptr_sim_alpha_matrix)(SEXP);
