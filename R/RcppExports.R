@@ -4,7 +4,7 @@
 #' Simulate Binary Responses for a DINA Model
 #'
 #' Generate the dichotomous item matrix for a DINA Model.
-#' 
+#'
 #' @param N     Number of Observations
 #' @param J     Number of Assessment Items
 #' @param CLASS Does the individual possess all the necessary attributes?
@@ -15,7 +15,7 @@
 #' @param ss    A `vec` describing the probability of slipping or
 #'              the probability of an incorrect response for individuals with
 #'              all of the required attributes
-#' 
+#'
 #' @return A dichotomous item matrix
 #' @author Steven Andrew Culpepper and James Joseph Balamuta
 #' @template sim-dina-class-example
@@ -25,7 +25,7 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 }
 
 #' Simulate a DINA Model's \eqn{\eta} Matrix
-#' 
+#'
 #' Generates a DINA model's \eqn{\eta} matrix based on alphas and
 #' the \eqn{\mathbf{Q}} matrix.
 #' @inheritParams sim_dina
@@ -44,10 +44,10 @@ sim_dina_attributes <- function(alphas, Q) {
 #'
 #' @param alphas A \eqn{N} by K `matrix` of latent attributes.
 #' @param Q      A \eqn{N} by K `matrix` indicating which skills are required
-#'               for which items. 
+#'               for which items.
 #' @param ss     A \eqn{J} `vector` of item slipping parameters.
 #' @param gs     A \eqn{J} `vector` of item guessing parameters.
-#' 
+#'
 #' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
 #' @author Steven Andrew Culpepper and James Joseph Balamuta
 #' @template sim-dina-example-body
@@ -97,6 +97,56 @@ sim_rrum <- function(Q, rstar, pistar, alpha) {
     .Call(`_simcdm_sim_rrum`, Q, rstar, pistar, alpha)
 }
 
+#' Bijection Vector
+#'
+#' Computes the powers of 2 from \eqn{0} up to \eqn{K - 1}.
+#' @param K  Number of Attributes.
+#' @return A \code{vec} with length \eqn{K} detailing the power's of 2.
+#' @examples
+#'
+#' bijectionvector(3)
+#'
+#' @export
+bijectionvector <- function(K) {
+    .Call(`_simcdm_bijectionvector`, K)
+}
+
+#' Perform an Inverse Bijection of an Integer to Attribute Pattern
+#'
+#' Convert integer between \eqn{0} and \eqn{2^{K-1}} to
+#' \eqn{K}-dimensional attribute pattern.
+#'
+#' @param CL An `integer` between \eqn{0} and \eqn{2^{K-1}}
+#' @inheritParams bijectionvector
+#' @return A \eqn{K}-dimensional vector with an attribute pattern corresponding
+#' to `CL`.
+#' @export
+#'
+#' @examples
+#' inv_bijectionvector(5, 1)
+#' inv_bijectionvector(5, 2)
+inv_bijectionvector <- function(K, CL) {
+    .Call(`_simcdm_inv_bijectionvector`, K, CL)
+}
+
+#' Generate random Q matrix
+#'
+#' Simulates a Q matrix containing three identity matrices after a row
+#' permutation.
+#'
+#' @param J Number of Items
+#' @param K Number of Attributes
+#'
+#' @return A dichotomous \code{matrix} for Q.
+#' @examples
+#' sim_q_matrix(7, 2)
+#' 
+#' sim_q_matrix(10, 3)
+#' @export
+sim_q_matrix <- function(J, K) {
+    .Call(`_simcdm_sim_q_matrix`, J, K)
+}
+
 #' Generate ideal response \eqn{\eta} Matrix
 #'
 #' Creates the ideal response matrix for each trait
@@ -105,39 +155,26 @@ sim_rrum <- function(Q, rstar, pistar, alpha) {
 #' @param J      Number of Assessment Items
 #' @param Q      Q Matrix with dimensions \eqn{K \times J}{K x J}.
 #' @return A `mat` with dimensions \eqn{J \times 2^K}{J x 2^K}.
-#' @noRd
-NULL
-
-#' Bijection Vector
-#'
-#' Computes the powers of 2 from \eqn{0} up to \eqn{K - 1}.
-#' @param K  Number of Attributes.
-#' @return A \code{vec} with length \eqn{K} detailing the power's of 2.
-#' @examples
-#' 
-#' bijectionvector(3)
-#' 
 #' @export
-bijectionvector <- function(K) {
-    .Call(`_simcdm_bijectionvector`, K)
-}
-
-#' Perform an Inverse Bijection of an Integer to Attribute Pattern 
-#' 
-#' Convert integer between \eqn{0} and \eqn{2^{K-1}} to
-#' \eqn{K}-dimensional attribute pattern.
 #'
-#' @param CL An `integer` between \eqn{0} and \eqn{2^{K-1}}
-#' @inheritParams bijectionvector
-#' @return A \eqn{K}-dimensional vector with an attribute pattern corresponding
-#' to `CL`. 
-#' @export
-#' 
 #' @examples
-#' inv_bijectionvector(5, 1)
-#' inv_bijectionvector(5, 2)
-inv_bijectionvector <- function(K, CL) {
-    .Call(`_simcdm_inv_bijectionvector`, K, CL)
+#' K       = 3
+#'
+#' # Fixed Number of Assessment Items for Q
+#' J = 18
+#'
+#' # Specify Q
+#' qbj = c(4, 2, 1, 4, 2, 1, 4, 2, 1, 6, 5, 3, 6, 5, 3, 7, 7, 7)
+#'
+#' # Fill Q Matrix
+#' Q = matrix(, J, K)
+#' for (j in seq_len(J)) {
+#'   Q[j,] = inv_bijectionvector(K, qbj[j])
+#' }
+#' # Create an eta matrix
+#' ETA = eta_matrix(K, J, Q)
+eta_matrix <- function(K, J, Q) {
+    .Call(`_simcdm_eta_matrix`, K, J, Q)
 }
 
 # Register entry points for exported C++ functions
