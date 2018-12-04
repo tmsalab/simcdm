@@ -5,7 +5,7 @@
 //' Simulate Binary Responses for a DINA Model
 //'
 //' Generate the dichotomous item matrix for a DINA Model.
-//' 
+//'
 //' @param N     Number of Observations
 //' @param J     Number of Assessment Items
 //' @param CLASS Does the individual possess all the necessary attributes?
@@ -16,7 +16,7 @@
 //' @param ss    A `vec` describing the probability of slipping or
 //'              the probability of an incorrect response for individuals with
 //'              all of the required attributes
-//' 
+//'
 //' @return A dichotomous item matrix
 //' @author Steven Andrew Culpepper and James Joseph Balamuta
 //' @template sim-dina-class-example
@@ -40,7 +40,7 @@ arma::mat sim_dina_class(unsigned int N, unsigned int J, const arma::vec &CLASS,
 }
 
 //' Simulate a DINA Model's \eqn{\eta} Matrix
-//' 
+//'
 //' Generates a DINA model's \eqn{\eta} matrix based on alphas and
 //' the \eqn{\mathbf{Q}} matrix.
 //' @inheritParams sim_dina
@@ -48,26 +48,26 @@ arma::mat sim_dina_class(unsigned int N, unsigned int J, const arma::vec &CLASS,
 //' @template sim-dina-example-body
 //' @export
 // [[Rcpp::export]]
-arma::mat sim_dina_attributes(const arma::mat &alphas, const arma::mat &Q) {
-  unsigned int N = alphas.n_rows;
-  unsigned int J = Q.n_rows;
+arma::mat sim_dina_attributes(const arma::mat &alphas, const arma::mat &Q)
+{
+    unsigned int N = alphas.n_rows;
+    unsigned int J = Q.n_rows;
 
-  arma::mat ETA(N, J);
+    arma::mat ETA(N, J);
 
-  for (unsigned int j = 0; j < J; ++j) {
-    for (unsigned int i = 0; i < N; ++i) {
-      if (arma::dot(alphas.row(i), Q.row(j)) <
-        arma::dot(Q.row(j), Q.row(j))) {
-        ETA(i, j) = 0.0;
-      } else {
-        ETA(i, j) = 1.0;
-      }
+    for (unsigned int j = 0; j < J; ++j) {
+        for (unsigned int i = 0; i < N; ++i) {
+            if (arma::dot(alphas.row(i), Q.row(j)) <
+                arma::dot(Q.row(j), Q.row(j))) {
+                ETA(i, j) = 0.0;
+            } else {
+                ETA(i, j) = 1.0;
+            }
+        }
     }
-  }
-  
-  return ETA;
-}
 
+    return ETA;
+}
 
 //' Simulation Responses from the DINA model
 //'
@@ -77,10 +77,10 @@ arma::mat sim_dina_attributes(const arma::mat &alphas, const arma::mat &Q) {
 //'
 //' @param alphas A \eqn{N} by K `matrix` of latent attributes.
 //' @param Q      A \eqn{N} by K `matrix` indicating which skills are required
-//'               for which items. 
+//'               for which items.
 //' @param ss     A \eqn{J} `vector` of item slipping parameters.
 //' @param gs     A \eqn{J} `vector` of item guessing parameters.
-//' 
+//'
 //' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
 //' @author Steven Andrew Culpepper and James Joseph Balamuta
 //' @template sim-dina-example-body
@@ -99,12 +99,12 @@ arma::mat sim_dina(const arma::mat &alphas, const arma::mat &Q,
     for (unsigned int j = 0; j < J; ++j) {
         for (unsigned int i = 0; i < N; ++i) {
             uij = R::runif(0., 1.);
-          
+
             if (arma::dot(alphas.row(i), Q.row(j)) <
                 arma::dot(Q.row(j), Q.row(j))) {
-              eta_ij = 0.0;
+                eta_ij = 0.0;
             } else {
-              eta_ij = 1.0;
+                eta_ij = 1.0;
             }
 
             if (pow(1.0 - ss(j), eta_ij) * pow(gs(j), 1.0 - eta_ij) > uij) {
@@ -114,6 +114,6 @@ arma::mat sim_dina(const arma::mat &alphas, const arma::mat &Q,
             }
         }
     }
-    
+
     return Y;
 }
