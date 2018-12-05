@@ -41,6 +41,6 @@ ETA = sim_eta_matrix(K, J, Q)
 # Generate an ETA matrix for a random Q.
 
 # Create an eta matrix
-Q_sim = sim_q_matrix(K, J)
+Q_sim = sim_q_matrix(J, K)
 ETA_gen = sim_eta_matrix(K, J, Q_sim)
 }
