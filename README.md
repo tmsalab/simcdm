@@ -34,8 +34,9 @@ There are three distinct sets of functions within the package:
 
   - Matrix: `sim_q_matrix()`, `sim_eta_matrix()`, and
     `sim_alpha_matrix()`.
-  - DINA: `sim_dina_items()` and `sim_dina_attributes()`
-  - RRUM: `sim_rrum_items()`
+  - Deterministic Input, Noisy And Gate (DINA): `sim_dina_items()` and
+    `sim_dina_attributes()`
+  - reduced Reparameterized Unified Model (rRUM): `sim_rrum_items()`
 
 Notice that all functions in the package are named with the prefix of
 `sim_*()`. This is done to all you to quickly find functions using
@@ -75,7 +76,7 @@ dina_items = sim_dina_items(alphas, Q, ss, gs)
 dina_attributes = sim_dina_attributes(alphas, Q)
 ```
 
-### RRUM Simulation
+### rRUM Simulation
 
 ``` r
 # The probabilities of answering each item correctly for individuals 
@@ -97,10 +98,10 @@ rrum_items = sim_rrum_items(Q, rstar, pistar, alpha_local)
 
 ### Package usage
 
-The design of `simcdm` allows the package to be extended using either
-the *R* functions or the *C++* functions with other packages. The next
-section details how to incorporate the *C++* code into the package or
-standalone *C++* file.
+The design of `simcdm` allows the package to be included in other *R*
+packages using either the *R* or *C++* functions. The next section
+details how to incorporate the *C++* code into the package or standalone
+*C++* file.
 
 Note, if you are not familiar with compiled code in *R* please feel free
 to use the traditional way to import the *R* functions.
@@ -132,7 +133,7 @@ adding:
 
     LinkingTo: Rcpp, RcppArmadillo, simcdm
     Imports:
-        Rcpp (>= 0.12.14)
+        Rcpp (>= 1.0.0)
 
 Reference the simulation functions using `simcdm` namespace like so:
 

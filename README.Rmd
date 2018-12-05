@@ -42,8 +42,8 @@ library("simcdm")
 There are three distinct sets of functions within the package:
 
 - Matrix: `sim_q_matrix()`, `sim_eta_matrix()`, and `sim_alpha_matrix()`.
-- DINA: `sim_dina_items()` and `sim_dina_attributes()`
-- RRUM: `sim_rrum_items()`
+- Deterministic Input, Noisy And Gate (DINA): `sim_dina_items()` and `sim_dina_attributes()`
+- reduced Reparameterized Unified Model (rRUM): `sim_rrum_items()`
 
 Notice that all functions in the package are named with the prefix of `sim_*()`. 
 This is done to all you to quickly find functions using autocomplete inside
@@ -83,7 +83,7 @@ dina_items = sim_dina_items(alphas, Q, ss, gs)
 dina_attributes = sim_dina_attributes(alphas, Q)
 ```
 
-### RRUM Simulation
+### rRUM Simulation
 
 ```{r}
 # The probabilities of answering each item correctly for individuals 
@@ -105,10 +105,9 @@ rrum_items = sim_rrum_items(Q, rstar, pistar, alpha_local)
 
 ### Package usage
 
-The design of `simcdm` allows the package to be extended using either the 
-_R_ functions or the _C++_ functions with other packages. The next section
-details how to incorporate the _C++_ code into the package or standalone _C++_
-file. 
+The design of `simcdm` allows the package to be included in other _R_ packages
+using either the _R_ or _C++_ functions.  The next section details how to 
+incorporate the _C++_ code into the package or standalone _C++_ file. 
 
 Note, if you are not familiar with compiled code in _R_ please 
 feel free to use the traditional way to import the _R_ functions.
@@ -137,9 +136,9 @@ arma::mat example_dina_sim(const arma::mat &alphas, const arma::mat &Q,
 
 To use `simcdm` in your R package, modify the `DESCRIPTION` file by adding:
 
-    LinkingTo: Rcpp, RcppArmadillo, simcdm
+    LinkingTo: Rcpp, RcppArmadillo (>= 0.9.200), simcdm
     Imports:
-        Rcpp (>= 0.12.14)
+        Rcpp (>= 1.0.0)
 
 Reference the simulation functions using `simcdm` namespace like so: 
 
