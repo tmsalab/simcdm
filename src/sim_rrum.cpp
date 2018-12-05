@@ -73,8 +73,8 @@ arma::mat sim_rrum_main(const arma::mat &Q, const arma::mat &rstar,
 //' @template rrum-example
 //' @template rrum-references
 // [[Rcpp::export]]
-arma::mat sim_rrum(const arma::mat &Q, const arma::mat &rstar,
-                   const arma::vec &pistar, const arma::mat &alpha)
+arma::mat sim_rrum_items(const arma::mat &Q, const arma::mat &rstar,
+                         const arma::vec &pistar, const arma::mat &alpha)
 {
 
     if (Q.n_rows != rstar.n_rows || Q.n_cols != rstar.n_cols) {

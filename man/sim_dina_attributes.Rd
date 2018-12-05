@@ -7,9 +7,9 @@
 sim_dina_attributes(alphas, Q)
 }
 \arguments{
-\item{alphas}{A \eqn{N} by K \code{matrix} of latent attributes.}
+\item{alphas}{A \eqn{N} by \eqn{K} \code{matrix} of latent attributes.}
 
-\item{Q}{A \eqn{N} by K \code{matrix} indicating which skills are required
+\item{Q}{A \eqn{J} by \eqn{K} \code{matrix} indicating which skills are required
 for which items.}
 }
 \description{
@@ -52,10 +52,10 @@ As = as.matrix(As)
 # Sample true attribute profiles
 Alphas = As[CLs, ]
 
-# Simulate data under DINA model 
-dina_items = sim_dina(Alphas, Q, ss, gs)
+# Simulate item data under DINA model 
+dina_items = sim_dina_items(Alphas, Q, ss, gs)
 
-# Simulate data under DINA model 
+# Simulate attribute data under DINA model 
 dina_attributes = sim_dina_attributes(Alphas, Q)
 }
 \author{
