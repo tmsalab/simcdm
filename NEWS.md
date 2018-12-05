@@ -1,8 +1,12 @@
-# simcdm 0.1.0
+# simcdm 0.0.4
 
-- Added _C++_ and _R_ functions for simulation of item response data for 
-  Deterministic Input, Noisy "And" Gate (DINA) and reduced Reparameterized 
-  Unified Model (rRUM)
-    - _R_ accessors: `sim_rrum()`, `sim_dina()`, `sim_dina_class()`
-    - _C++_ accessors: `sim_rrum()` (check data), `sim_rrum_main()` (no checks),
-                       `sim_dina()`, `sim_dina_class()`
+- Added _C++_ and _R_ functions for simulation of:
+    - Deterministic Input, Noisy "And" Gate (DINA)
+        - Item Response: `sim_dina_items()`
+        - $\eta$ Response: `sim_dina_attributes()`.
+    - reduced Reparameterized Unified Model (rRUM):
+        - Item Reponse: `sim_rrum_items()`
+    - Matrices:
+        - Random Q Matrix: `sim_q_matrix()`
+        - ETA Matrix: `sim_eta_matrix()`
+        - Latent Attribute Profile Matrix: `sim_alpha_matrix()`
