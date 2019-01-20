@@ -9,11 +9,9 @@
 //' @return A \code{vec} with length \eqn{K} detailing the power's of 2.
 //' @examples
 //'
-//' bijectionvector(3)
-//'
-//' @export
+//' biject = attribute_bijection(3)
 // [[Rcpp::export]]
-arma::vec bijectionvector(unsigned int K)
+arma::vec attribute_bijection(unsigned int K)
 {
     arma::vec vv(K);
     for (unsigned int i = 0; i < K; ++i) {
@@ -32,12 +30,11 @@ arma::vec bijectionvector(unsigned int K)
 //' @return A \eqn{K}-dimensional vector with an attribute pattern corresponding
 //' to `CL`.
 //' @export
-//'
 //' @examples
-//' inv_bijectionvector(5, 1)
-//' inv_bijectionvector(5, 2)
+//' inv_biject1 = attribute_inv_bijection(5, 1)
+//' inv_biject2 = attribute_inv_bijection(5, 2)
 // [[Rcpp::export]]
-arma::vec inv_bijectionvector(unsigned int K, double CL)
+arma::vec attribute_inv_bijection(unsigned int K, double CL)
 {
     arma::vec alpha(K);
 
@@ -76,7 +73,7 @@ arma::mat sim_q_matrix(unsigned int J, unsigned int K)
     unsigned int nClass = pow(2, K);
 
     // Form a Bijection
-    arma::vec vv = bijectionvector(K);
+    arma::vec vv = attribute_bijection(K);
 
     // Fill Q bijection vector
     arma::vec Q_biject(J);
@@ -95,7 +92,7 @@ arma::mat sim_q_matrix(unsigned int J, unsigned int K)
     // Create Q Matrix
     arma::mat Q(J, K);
     for (unsigned int j = 0; j < J; ++j) {
-        arma::vec qj = inv_bijectionvector(K, Q_biject(j));
+        arma::vec qj = attribute_inv_bijection(K, Q_biject(j));
         Q.row(j) = qj.t();
     }
 
@@ -125,7 +122,7 @@ arma::mat sim_q_matrix(unsigned int J, unsigned int K)
 //' # Fill Q Matrix
 //' Q = matrix(, J, K)
 //' for (j in seq_len(J)) {
-//'   Q[j,] = inv_bijectionvector(K, qbj[j])
+//'   Q[j,] = attribute_inv_bijection(K, qbj[j])
 //' }
 //' 
 //' # Create an eta matrix
@@ -144,7 +141,7 @@ arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
     arma::mat ETA(J, nClass);
 
     for (unsigned int cc = 0; cc < nClass; ++cc) {
-        arma::vec alpha_c = inv_bijectionvector(K, cc);
+        arma::vec alpha_c = attribute_inv_bijection(K, cc);
 
         for (unsigned int j = 0; j < J; ++j) {
             arma::rowvec qj = Q.row(j);
@@ -187,7 +184,7 @@ arma::mat sim_alpha_matrix(int K) {
     arma::mat alpha_matrix(nClass, K);
     
     for(unsigned int cc = 0; cc < nClass; cc++){     
-        alpha_matrix.row(cc) = inv_bijectionvector(K, cc).t();
+        alpha_matrix.row(cc) = attribute_inv_bijection(K, cc).t();
     }
     
     return alpha_matrix;

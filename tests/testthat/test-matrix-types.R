@@ -4,10 +4,12 @@ test_that("Generate alpha matrix (pi references)", {
   
   # Old, r-specific pi mapping function
   pi_reference = function(K) {
-    biject.vector = bijectionvector(K)
-    As = as.matrix(expand.grid(rep(list(c(0,1)), K)))
-    a = As%*%biject.vector
-    As = As[a+1,]
+    biject.vector = attribute_bijection(K)
+    As = as.matrix(
+      expand.grid( rep( list(c(0, 1)), K) )
+    )
+    a = As %*% biject.vector
+    As = As[a + 1,]
     return(As)
   }
   
