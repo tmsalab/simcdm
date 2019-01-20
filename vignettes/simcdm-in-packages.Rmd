@@ -1,6 +1,6 @@
 ---
 title: "Using `simcdm` in R packages"
-author: "James Balamuta"
+author: "James Joseph Balamuta"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -12,8 +12,9 @@ vignette: >
 # Package usage
 
 The design of `simcdm` allows the package to be included in other _R_ packages
-using either the _R_ or _C++_ functions.  The next section details how to 
-incorporate the _C++_ code into the package or standalone _C++_ file. 
+using either the _R_ or _C++_ functions.  The next section details provides
+with how to incorporate either the _R_ or _C++_ functions into a new _R_
+package or standalone _C++_ file. 
 
 Note, if you are not familiar with compiled code in _R_ please 
 feel free to use the traditional way to import the _R_ functions.
