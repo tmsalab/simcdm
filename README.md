@@ -11,7 +11,8 @@ Status](https://travis-ci.org/tmsalab/simcdm.svg)](https://travis-ci.org/tmsalab
 [![Coverage
 status](https://codecov.io/gh/tmsalab/simcdm/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/simcdm?branch=master)
 
-The goal of simcdm is to simulate cognitive diagnostic model data.
+The goal of `simcdm` is to provide flexible ways to simulate data under
+cognitive diagnostic models.
 
 ## Installation
 
@@ -54,6 +55,16 @@ For more details, please see the [package vignettes](vignettes/):
 
 James Joseph Balamuta and Steven Andrew Culpepper with contributions
 from Aaron Hudson.
+
+## Citing the `simcdm` package
+
+To ensure future development of the package, please cite `simcdm`
+package if used during the analysis or simulations. Citation information
+for the package may be acquired by using in *R*:
+
+``` r
+citation("simcdm")
+```
 
 ## License
 
