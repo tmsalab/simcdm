@@ -189,3 +189,80 @@ arma::mat sim_attribute_classes(int K) {
     
     return alpha_matrix;
 }
+
+//' Simulate Latent Attribute Profiles \eqn{\mathbf{\alpha}_c}
+//'
+//' Generate a sample from the
+//'  \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'} 
+//' attribute profile matrix for members of class \eqn{c} such that \eqn{\alpha_{ck}}
+//' is 1 if members of class \eqn{c} possess skill \eqn{k} and zero otherwise.
+//'
+//' @param N      Number of Observations
+//' @param K      Number of Skills
+//' @param probs  A `vector` of probabilities that sum to 1. 
+//' 
+//' @return 
+//' A \eqn{N} by \eqn{K} `matrix` of latent classes
+//' corresponding to entry \eqn{c} of \eqn{pi} based upon 
+//' mastery and nonmastery of the \eqn{K} skills.
+//' 
+//' @author 
+//' James Joseph Balamuta and Steven Andrew Culpepper
+//' 
+//' @seealso 
+//' [simcdm::sim_attribute_classes()] and [simcdm::attribute_inv_bijection()]
+//' 
+//' @export
+//' @examples
+//' # Define test parameters and traits
+//' N = 100
+//' K = 3
+//' 
+//' # Generate a sample from the Latent Attribute Profile (Alpha) Matrix
+//' # By default, we sample from a uniform distribution weighting of classes.
+//' alphas_builtin = sim_subject_attributes(N, K)
+//' 
+//' # Generate a sample using custom probabilities from the
+//' # Latent Attribute Profile (Alpha) Matrix
+//' probs = rep(1 / (2 ^ K), 2 ^ K)
+//' alphas_custom = sim_subject_attributes(N, K, probs)
+// [[Rcpp::export]]
+arma::mat sim_subject_attributes(int N, int K,
+                             Rcpp::Nullable<Rcpp::NumericVector> probs = R_NilValue) {
+    // Modified version of ETAMatrix
+
+    // Compute the number of attributes
+    double nClass = pow(2, K);
+    
+    // Nullable trick ----
+    arma::vec probs_;
+    
+    // Check if probs is present
+    if (probs.isNotNull()) {
+        
+        // Retrieve probabilities (costly)
+        probs_ = Rcpp::as<arma::vec>(probs);
+        
+        // Verify length is okay.
+        if (probs_.n_elem != (int)nClass) {
+            Rcpp::stop("`probs` must have %s elements instead of %s.", nClass, probs_.size());
+        } 
+    } else {
+        probs_.set_size(nClass);
+        probs_.fill(1.0/nClass);
+    }
+    
+    // --- Profile Matrix
+    
+    // Grab the attribute matrix
+    arma::mat attributes = sim_attribute_classes(K);
+
+    // Generate indices
+    arma::uvec idx = arma::linspace<arma::uvec>(0, nClass - 1, nClass);
+    
+    // Update index
+    idx = Rcpp::RcppArmadillo::sample_main(idx, N, true, probs_);
+    
+    // Retrieve and return profiles
+    return attributes.rows(idx);
+}
