@@ -14,11 +14,11 @@ Provides efficient R and 'C++' routines to simulate cognitive diagnostic
     de la Torre (2009) <doi:10.3102/1076998607309474>.
 }
 \author{
-\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} [copyright holder]
+\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (0000-0003-2826-8458) [copyright holder]
 
 Authors:
 \itemize{
-  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} [copyright holder]
+  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (0000-0003-4226-6176) [copyright holder]
 }
 
 Other contributors:
