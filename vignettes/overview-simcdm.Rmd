@@ -45,6 +45,14 @@ Denoting the skill/attribute "Q" matrix:
   $j$th row of $\boldsymbol Q$ such that $q_{jk}=1$ if 
   attribute $k$ is required for item $j$ and zero otherwise.
 
+# Usage
+
+To use `simcdm`, please load the package.
+
+```{r}
+library(simcdm)
+```
+
 ## Matrix Simulation
 
 Simulations within this section are done underneath the following settings.
