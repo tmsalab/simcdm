@@ -32,8 +32,8 @@ library("simcdm")
 
 There are three distinct sets of functions within the package:
 
-  - Matrix: `sim_q_matrix()`, `sim_eta_matrix()`, and
-    `sim_alpha_matrix()`.
+  - Matrix: `sim_q_matrix()`, `sim_eta_matrix()`,
+    `sim_attribute_classes()`, and `sim_subject_attributes()`.
   - Deterministic Input, Noisy And Gate (DINA): `sim_dina_items()` and
     `sim_dina_attributes()`
   - reduced Reparameterized Unified Model (rRUM): `sim_rrum_items()`
@@ -59,8 +59,14 @@ Q = sim_q_matrix(J, K)
 # Create the ideal response matrix for each trait (J items by 2^K latent classes)
 eta = sim_eta_matrix(K, J, Q)
 
-# Generate latent attribute profile matrix (2^K latent classes by K skills)
-alphas = sim_alpha_matrix(K)
+# Generate latent attribute profile classes (2^K latent classes by K skills)
+class_alphas = sim_attribute_classes(K)
+
+# Generate latent attribute profile class for each subject (N subjects by K skills)
+subject_alphas = sim_subject_attributes(N, K)
+
+# Equivalent to:
+# subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE),]
 ```
 
 ### DINA Simulation
@@ -70,10 +76,10 @@ alphas = sim_alpha_matrix(K)
 ss = gs = rep(.2, J)
 
 # Simulate item data under DINA model 
-dina_items = sim_dina_items(alphas, Q, ss, gs)
+items_dina = sim_dina_items(subject_alphas, Q, ss, gs)
 
 # Simulate attribute data under DINA model 
-dina_attributes = sim_dina_attributes(alphas, Q)
+attributes = sim_dina_attributes(subject_alphas, Q)
 ```
 
 ### rRUM Simulation
@@ -89,11 +95,15 @@ rstar  = .5 * Q
 # Latent Class Probabilities
 pis = c(.1, .2, .3, .4)
 
-# Pick an attribute profile
-alpha_local  = alphas[sample(K ^ 2, N, replace = TRUE, pis),]
+# Generate latent attribute profile with custom probability (N subjects by K skills)
+subject_alphas = sim_subject_attributes(N, K, prob = pis)
+
+# Equivalent to:
+# class_alphas = sim_attribute_classes(K)
+# subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE, prob = pis),]
 
 # Simulate rum items
-rrum_items = sim_rrum_items(Q, rstar, pistar, alpha_local)
+rrum_items = sim_rrum_items(Q, rstar, pistar, subject_alphas)
 ```
 
 ### Package usage
@@ -131,7 +141,7 @@ arma::mat example_dina_sim(const arma::mat &alphas, const arma::mat &Q,
 To use `simcdm` in your R package, modify the `DESCRIPTION` file by
 adding:
 
-    LinkingTo: Rcpp, RcppArmadillo, simcdm
+    LinkingTo: Rcpp, RcppArmadillo (>= 0.9.200), simcdm
     Imports:
         Rcpp (>= 1.0.0)
 
