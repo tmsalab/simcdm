@@ -13,6 +13,14 @@ Provides efficient R and 'C++' routines to simulate cognitive diagnostic
     Culpepper (2015) <doi:10.3102/1076998615595403>, and
     de la Torre (2009) <doi:10.3102/1076998607309474>.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/tmsalab/simcdm}
+  \item Report bugs at \url{https://github.com/tmsalab/simcdm/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (0000-0003-2826-8458) [copyright holder]
 
