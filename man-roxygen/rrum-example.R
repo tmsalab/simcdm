@@ -8,7 +8,7 @@
 #' K = 2 # number of attributes
 #' 
 #' # Matrix where rows represent attribute classes
-#' As = sim_alpha_matrix(K) 
+#' As = sim_attribute_classes(K) 
 #' 
 #' # Latent Class probabilities
 #' pis = c(.1, .2, .3, .4) 

@@ -175,9 +175,9 @@ arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
 //' K = 3
 //' 
 //' # Generate an Latent Attribute Profile (Alpha) Matrix
-//' alphas = sim_alpha_matrix(K)
+//' alphas = sim_attribute_classes(K)
 // [[Rcpp::export]]
-arma::mat sim_alpha_matrix(int K) {
+arma::mat sim_attribute_classes(int K) {
     // Modified version of ETAMatrix
     
     double nClass = pow(2, K);
