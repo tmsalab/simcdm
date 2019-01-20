@@ -45,8 +45,10 @@ Note that all functions in the package are named with the prefix of
 and used through autocomplete inside of the [RStudio
 IDE](https://www.rstudio.com).
 
-For more details, please see the ["Overview of `simcdm`
-vignette](vignettes/overview-simcdm.Rmd).
+For more details, please see the [package vignettes](vignettes/):
+
+  - [Overview of `simcdm`](vignettes/overview-simcdm.html)
+  - [Using `simcdm` in R packages](vignettes/simcdm-in-packages.html)
 
 ## Authors
 
