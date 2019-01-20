@@ -64,11 +64,12 @@ arma::mat sim_rrum_main(const arma::mat &Q, const arma::mat &rstar,
 //'               the number of attributes.  An entry of 1 indicates individual
 //'               \eqn{i} has attained attribute \eqn{k}. An entry of 0
 //'               indicates the attribute has not been attained.
-//'
 //' @return Y     A `matrix` with \eqn{N} rows and \eqn{J} columns indicating
 //'               the indviduals' responses to each of the items, where \eqn{J}
 //'               represents the number of items.
-//' @author Steven Andrew Culpepper and James Joseph Balamuta
+//' @author 
+//' Steven Andrew Culpepper, Aaron Hudson, and James Joseph Balamuta
+//' 
 //' @export
 //' @template rrum-example
 //' @template rrum-references

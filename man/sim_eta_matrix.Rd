@@ -20,11 +20,15 @@ A \code{mat} with dimensions \eqn{J \times 2^K}{J x 2^K}.
 Creates the ideal response matrix for each trait
 }
 \examples{
+## Simulation Settings ----
+
 # Fixed Number of Assessment Items for Q
 J = 18
 
 # Fixed Number of Attributes for Q
-K       = 3
+K = 3
+
+## Pre-specified configuration ----
 
 # Specify Q
 qbj = c(4, 2, 1, 4, 2, 1, 4, 2, 1, 6, 5, 3, 6, 5, 3, 7, 7, 7)
@@ -32,15 +36,24 @@ qbj = c(4, 2, 1, 4, 2, 1, 4, 2, 1, 6, 5, 3, 6, 5, 3, 7, 7, 7)
 # Fill Q Matrix
 Q = matrix(, J, K)
 for (j in seq_len(J)) {
-  Q[j,] = inv_bijectionvector(K, qbj[j])
+  Q[j,] = attribute_inv_bijection(K, qbj[j])
 }
 
 # Create an eta matrix
 ETA = sim_eta_matrix(K, J, Q)
 
-# Generate an ETA matrix for a random Q.
+## Random generation of Q matrix with ETA matrix ----
 
-# Create an eta matrix
+# Construct a random q matrix
 Q_sim = sim_q_matrix(J, K)
+
+# Generate the eta matrix
 ETA_gen = sim_eta_matrix(K, J, Q_sim)
+}
+\seealso{
+\code{\link[simcdm:sim_q_matrix]{simcdm::sim_q_matrix()}}, \code{\link[simcdm:attribute_bijection]{simcdm::attribute_bijection()}}, and
+\code{\link[simcdm:attribute_inv_bijection]{simcdm::attribute_inv_bijection()}}
+}
+\author{
+Steven Andrew Culpepper and James Joseph Balamuta
 }

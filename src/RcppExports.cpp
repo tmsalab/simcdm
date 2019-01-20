@@ -194,21 +194,21 @@ RcppExport SEXP _simcdm_sim_rrum_items(SEXP QSEXP, SEXP rstarSEXP, SEXP pistarSE
     UNPROTECT(1);
     return rcpp_result_gen;
 }
-// bijectionvector
-arma::vec bijectionvector(unsigned int K);
-static SEXP _simcdm_bijectionvector_try(SEXP KSEXP) {
+// attribute_bijection
+arma::vec attribute_bijection(unsigned int K);
+static SEXP _simcdm_attribute_bijection_try(SEXP KSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< unsigned int >::type K(KSEXP);
-    rcpp_result_gen = Rcpp::wrap(bijectionvector(K));
+    rcpp_result_gen = Rcpp::wrap(attribute_bijection(K));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _simcdm_bijectionvector(SEXP KSEXP) {
+RcppExport SEXP _simcdm_attribute_bijection(SEXP KSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_simcdm_bijectionvector_try(KSEXP));
+        rcpp_result_gen = PROTECT(_simcdm_attribute_bijection_try(KSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -228,22 +228,22 @@ RcppExport SEXP _simcdm_bijectionvector(SEXP KSEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
-// inv_bijectionvector
-arma::vec inv_bijectionvector(unsigned int K, double CL);
-static SEXP _simcdm_inv_bijectionvector_try(SEXP KSEXP, SEXP CLSEXP) {
+// attribute_inv_bijection
+arma::vec attribute_inv_bijection(unsigned int K, double CL);
+static SEXP _simcdm_attribute_inv_bijection_try(SEXP KSEXP, SEXP CLSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< unsigned int >::type K(KSEXP);
     Rcpp::traits::input_parameter< double >::type CL(CLSEXP);
-    rcpp_result_gen = Rcpp::wrap(inv_bijectionvector(K, CL));
+    rcpp_result_gen = Rcpp::wrap(attribute_inv_bijection(K, CL));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _simcdm_inv_bijectionvector(SEXP KSEXP, SEXP CLSEXP) {
+RcppExport SEXP _simcdm_attribute_inv_bijection(SEXP KSEXP, SEXP CLSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_simcdm_inv_bijectionvector_try(KSEXP, CLSEXP));
+        rcpp_result_gen = PROTECT(_simcdm_attribute_inv_bijection_try(KSEXP, CLSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -334,21 +334,57 @@ RcppExport SEXP _simcdm_sim_eta_matrix(SEXP KSEXP, SEXP JSEXP, SEXP QSEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
-// sim_alpha_matrix
-arma::mat sim_alpha_matrix(int K);
-static SEXP _simcdm_sim_alpha_matrix_try(SEXP KSEXP) {
+// sim_attribute_classes
+arma::mat sim_attribute_classes(int K);
+static SEXP _simcdm_sim_attribute_classes_try(SEXP KSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< int >::type K(KSEXP);
-    rcpp_result_gen = Rcpp::wrap(sim_alpha_matrix(K));
+    rcpp_result_gen = Rcpp::wrap(sim_attribute_classes(K));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _simcdm_sim_alpha_matrix(SEXP KSEXP) {
+RcppExport SEXP _simcdm_sim_attribute_classes(SEXP KSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_simcdm_sim_alpha_matrix_try(KSEXP));
+        rcpp_result_gen = PROTECT(_simcdm_sim_attribute_classes_try(KSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// sim_subject_attributes
+arma::mat sim_subject_attributes(int N, int K, Rcpp::Nullable<Rcpp::NumericVector> probs);
+static SEXP _simcdm_sim_subject_attributes_try(SEXP NSEXP, SEXP KSEXP, SEXP probsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type N(NSEXP);
+    Rcpp::traits::input_parameter< int >::type K(KSEXP);
+    Rcpp::traits::input_parameter< Rcpp::Nullable<Rcpp::NumericVector> >::type probs(probsSEXP);
+    rcpp_result_gen = Rcpp::wrap(sim_subject_attributes(N, K, probs));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _simcdm_sim_subject_attributes(SEXP NSEXP, SEXP KSEXP, SEXP probsSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_simcdm_sim_subject_attributes_try(NSEXP, KSEXP, probsSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -378,11 +414,12 @@ static int _simcdm_RcppExport_validate(const char* sig) {
         signatures.insert("arma::mat(*sim_dina_items)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::vec&)");
         signatures.insert("arma::mat(*sim_rrum_main)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
         signatures.insert("arma::mat(*sim_rrum_items)(const arma::mat&,const arma::mat&,const arma::vec&,const arma::mat&)");
-        signatures.insert("arma::vec(*bijectionvector)(unsigned int)");
-        signatures.insert("arma::vec(*inv_bijectionvector)(unsigned int,double)");
+        signatures.insert("arma::vec(*attribute_bijection)(unsigned int)");
+        signatures.insert("arma::vec(*attribute_inv_bijection)(unsigned int,double)");
         signatures.insert("arma::mat(*sim_q_matrix)(unsigned int,unsigned int)");
         signatures.insert("arma::mat(*sim_eta_matrix)(unsigned int,unsigned int,const arma::mat&)");
-        signatures.insert("arma::mat(*sim_alpha_matrix)(int)");
+        signatures.insert("arma::mat(*sim_attribute_classes)(int)");
+        signatures.insert("arma::mat(*sim_subject_attributes)(int,int,Rcpp::Nullable<Rcpp::NumericVector>)");
     }
     return signatures.find(sig) != signatures.end();
 }
@@ -394,11 +431,12 @@ RcppExport SEXP _simcdm_RcppExport_registerCCallable() {
     R_RegisterCCallable("simcdm", "_simcdm_sim_dina_items", (DL_FUNC)_simcdm_sim_dina_items_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_rrum_main", (DL_FUNC)_simcdm_sim_rrum_main_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_rrum_items", (DL_FUNC)_simcdm_sim_rrum_items_try);
-    R_RegisterCCallable("simcdm", "_simcdm_bijectionvector", (DL_FUNC)_simcdm_bijectionvector_try);
-    R_RegisterCCallable("simcdm", "_simcdm_inv_bijectionvector", (DL_FUNC)_simcdm_inv_bijectionvector_try);
+    R_RegisterCCallable("simcdm", "_simcdm_attribute_bijection", (DL_FUNC)_simcdm_attribute_bijection_try);
+    R_RegisterCCallable("simcdm", "_simcdm_attribute_inv_bijection", (DL_FUNC)_simcdm_attribute_inv_bijection_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_q_matrix", (DL_FUNC)_simcdm_sim_q_matrix_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_eta_matrix", (DL_FUNC)_simcdm_sim_eta_matrix_try);
-    R_RegisterCCallable("simcdm", "_simcdm_sim_alpha_matrix", (DL_FUNC)_simcdm_sim_alpha_matrix_try);
+    R_RegisterCCallable("simcdm", "_simcdm_sim_attribute_classes", (DL_FUNC)_simcdm_sim_attribute_classes_try);
+    R_RegisterCCallable("simcdm", "_simcdm_sim_subject_attributes", (DL_FUNC)_simcdm_sim_subject_attributes_try);
     R_RegisterCCallable("simcdm", "_simcdm_RcppExport_validate", (DL_FUNC)_simcdm_RcppExport_validate);
     return R_NilValue;
 }
@@ -409,11 +447,12 @@ static const R_CallMethodDef CallEntries[] = {
     {"_simcdm_sim_dina_items", (DL_FUNC) &_simcdm_sim_dina_items, 4},
     {"_simcdm_sim_rrum_main", (DL_FUNC) &_simcdm_sim_rrum_main, 4},
     {"_simcdm_sim_rrum_items", (DL_FUNC) &_simcdm_sim_rrum_items, 4},
-    {"_simcdm_bijectionvector", (DL_FUNC) &_simcdm_bijectionvector, 1},
-    {"_simcdm_inv_bijectionvector", (DL_FUNC) &_simcdm_inv_bijectionvector, 2},
+    {"_simcdm_attribute_bijection", (DL_FUNC) &_simcdm_attribute_bijection, 1},
+    {"_simcdm_attribute_inv_bijection", (DL_FUNC) &_simcdm_attribute_inv_bijection, 2},
     {"_simcdm_sim_q_matrix", (DL_FUNC) &_simcdm_sim_q_matrix, 2},
     {"_simcdm_sim_eta_matrix", (DL_FUNC) &_simcdm_sim_eta_matrix, 3},
-    {"_simcdm_sim_alpha_matrix", (DL_FUNC) &_simcdm_sim_alpha_matrix, 1},
+    {"_simcdm_sim_attribute_classes", (DL_FUNC) &_simcdm_sim_attribute_classes, 1},
+    {"_simcdm_sim_subject_attributes", (DL_FUNC) &_simcdm_sim_subject_attributes, 3},
     {"_simcdm_RcppExport_registerCCallable", (DL_FUNC) &_simcdm_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };

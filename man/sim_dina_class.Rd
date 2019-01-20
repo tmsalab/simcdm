@@ -24,7 +24,7 @@ the probability of an incorrect response for individuals with
 all of the required attributes}
 }
 \value{
-A dichotomous item matrix
+A dichotomous item matrix with dimensions \eqn{N \times J}{N x J}.
 }
 \description{
 Generate the dichotomous item matrix for a DINA Model.
@@ -69,6 +69,9 @@ if (rho > 0) {
 # Simulate data under DINA model
 ETA = sim_eta_matrix(K, J, Q)
 Y_sim = sim_dina_class(N, J, CLs, ETA, gs, ss)
+}
+\seealso{
+\code{\link[simcdm:sim_dina_attributes]{simcdm::sim_dina_attributes()}} and \code{\link[simcdm:sim_dina_items]{simcdm::sim_dina_items()}}
 }
 \author{
 Steven Andrew Culpepper and James Joseph Balamuta

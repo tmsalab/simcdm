@@ -20,6 +20,7 @@ Convert an integer between \eqn{0} and \eqn{2^{K-1}} to
 \eqn{K}-dimensional attribute pattern.
 }
 \examples{
+## Construct an attribute inversion bijection ----
 inv_biject1 = attribute_inv_bijection(5, 1)
 inv_biject2 = attribute_inv_bijection(5, 2)
 }

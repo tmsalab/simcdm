@@ -7,7 +7,7 @@
 sim_attribute_classes(K)
 }
 \arguments{
-\item{K}{Number of Skills}
+\item{K}{Number of Attributes}
 }
 \value{
 A \eqn{2^K} by \eqn{K} \code{matrix} of latent classes
@@ -20,7 +20,9 @@ attribute profile matrix for members of class \eqn{c} such that \eqn{\alpha_{ck}
 is 1 if members of class \eqn{c} possess skill \eqn{k} and zero otherwise.
 }
 \examples{
-# Define test parameters and traits
+## Simulate Attribute Class Matrix ----
+
+# Define number of attributes
 K = 3
 
 # Generate an Latent Attribute Profile (Alpha) Matrix

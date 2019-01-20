@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{sim_subject_attributes}
 \alias{sim_subject_attributes}
-\title{Simulate Latent Attribute Profiles \eqn{\mathbf{\alpha}_c}}
+\title{Simulate Subject Latent Attribute Profiles \eqn{\mathbf{\alpha}_c}}
 \usage{
 sim_subject_attributes(N, K, probs = NULL)
 }
@@ -25,7 +25,7 @@ attribute profile matrix for members of class \eqn{c} such that \eqn{\alpha_{ck}
 is 1 if members of class \eqn{c} possess skill \eqn{k} and zero otherwise.
 }
 \examples{
-# Define test parameters and traits
+# Define number of subjects and attributes
 N = 100
 K = 3
 

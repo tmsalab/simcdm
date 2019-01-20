@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{sim_q_matrix}
 \alias{sim_q_matrix}
-\title{Generate random Q matrix}
+\title{Generate a Random Identifiable Q Matrix}
 \usage{
 sim_q_matrix(J, K)
 }
@@ -16,10 +16,20 @@ A dichotomous \code{matrix} for Q.
 }
 \description{
 Simulates a Q matrix containing three identity matrices after a row
-permutation.
+permutation that is identifiable.
 }
 \examples{
-sim_q_matrix(7, 2)
+## Simulate identifiable Q matrices ----
 
-sim_q_matrix(10, 3)
+# 7 items and 2 attributes
+q_matrix_j7_k2 = sim_q_matrix(7, 2)
+
+# 10 items and 3 attributes
+q_matrix_j10_k3 = sim_q_matrix(10, 3)
+}
+\seealso{
+\code{\link[simcdm:attribute_bijection]{simcdm::attribute_bijection()}} and \code{\link[simcdm:attribute_inv_bijection]{simcdm::attribute_inv_bijection()}}
+}
+\author{
+Steven Andrew Culpepper and James Joseph Balamuta
 }

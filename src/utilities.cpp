@@ -1,14 +1,27 @@
 #include <RcppArmadillo.h>
+#include <RcppArmadilloExtensions/sample.h>
 
 // [[Rcpp::interfaces(r, cpp)]]
 
-//' Bijection Vector
+//' Constructs Unique Attribute Pattern Map
 //'
-//' Computes the powers of 2 from \eqn{0} up to \eqn{K - 1}.
+//' Computes the powers of 2 from \eqn{0} up to \eqn{K - 1} for
+//' \eqn{K}-dimensional attribute pattern.
+//' 
 //' @param K  Number of Attributes.
-//' @return A \code{vec} with length \eqn{K} detailing the power's of 2.
+//' 
+//' @return 
+//' A \code{vec} with length \eqn{K} detailing the power's of 2.
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso 
+//' [simcdm::attribute_inv_bijection()]
+//' 
+//' @export
 //' @examples
-//'
+//' ## Construct an attribute bijection ----
 //' biject = attribute_bijection(3)
 // [[Rcpp::export]]
 arma::vec attribute_bijection(unsigned int K)
@@ -22,15 +35,25 @@ arma::vec attribute_bijection(unsigned int K)
 
 //' Perform an Inverse Bijection of an Integer to Attribute Pattern
 //'
-//' Convert integer between \eqn{0} and \eqn{2^{K-1}} to
+//' Convert an integer between \eqn{0} and \eqn{2^{K-1}} to
 //' \eqn{K}-dimensional attribute pattern.
 //'
 //' @param CL An `integer` between \eqn{0} and \eqn{2^{K-1}}
-//' @inheritParams bijectionvector
-//' @return A \eqn{K}-dimensional vector with an attribute pattern corresponding
+//' @inheritParams attribute_bijection
+//' 
+//' @return 
+//' A \eqn{K}-dimensional vector with an attribute pattern corresponding
 //' to `CL`.
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso 
+//' [simcdm::attribute_bijection()]
+//' 
 //' @export
 //' @examples
+//' ## Construct an attribute inversion bijection ----
 //' inv_biject1 = attribute_inv_bijection(5, 1)
 //' inv_biject2 = attribute_inv_bijection(5, 2)
 // [[Rcpp::export]]
@@ -47,20 +70,32 @@ arma::vec attribute_inv_bijection(unsigned int K, double CL)
     return alpha;
 }
 
-//' Generate random Q matrix
+//' Generate a Random Identifiable Q Matrix
 //'
 //' Simulates a Q matrix containing three identity matrices after a row
-//' permutation.
+//' permutation that is identifiable.
 //'
 //' @param J Number of Items
 //' @param K Number of Attributes
 //'
-//' @return A dichotomous \code{matrix} for Q.
-//' @examples
-//' sim_q_matrix(7, 2)
+//' @return 
+//' A dichotomous \code{matrix} for Q.
 //' 
-//' sim_q_matrix(10, 3)
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso 
+//' [simcdm::attribute_bijection()] and [simcdm::attribute_inv_bijection()]
+//' 
 //' @export
+//' @examples
+//' ## Simulate identifiable Q matrices ----
+//' 
+//' # 7 items and 2 attributes
+//' q_matrix_j7_k2 = sim_q_matrix(7, 2)
+//' 
+//' # 10 items and 3 attributes
+//' q_matrix_j10_k3 = sim_q_matrix(10, 3)
 // [[Rcpp::export]]
 arma::mat sim_q_matrix(unsigned int J, unsigned int K)
 {
@@ -106,15 +141,28 @@ arma::mat sim_q_matrix(unsigned int J, unsigned int K)
 //' @param K      Number of Attribute Levels
 //' @param J      Number of Assessment Items
 //' @param Q      Q Matrix with dimensions \eqn{K \times J}{K x J}.
-//' @return A `mat` with dimensions \eqn{J \times 2^K}{J x 2^K}.
+//' 
+//' @return 
+//' A `mat` with dimensions \eqn{J \times 2^K}{J x 2^K}.
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso 
+//' [simcdm::sim_q_matrix()], [simcdm::attribute_bijection()], and
+//' [simcdm::attribute_inv_bijection()]
+//' 
 //' @export
-//'
 //' @examples
+//' ## Simulation Settings ----
+//' 
 //' # Fixed Number of Assessment Items for Q
 //' J = 18
 //'
 //' # Fixed Number of Attributes for Q
-//' K       = 3
+//' K = 3
+//'
+//' ## Pre-specified configuration ----
 //' 
 //' # Specify Q
 //' qbj = c(4, 2, 1, 4, 2, 1, 4, 2, 1, 6, 5, 3, 6, 5, 3, 7, 7, 7)
@@ -128,10 +176,12 @@ arma::mat sim_q_matrix(unsigned int J, unsigned int K)
 //' # Create an eta matrix
 //' ETA = sim_eta_matrix(K, J, Q)
 //' 
-//' # Generate an ETA matrix for a random Q.
+//' ## Random generation of Q matrix with ETA matrix ----
 //' 
-//' # Create an eta matrix
+//' # Construct a random q matrix
 //' Q_sim = sim_q_matrix(J, K)
+//' 
+//' # Generate the eta matrix
 //' ETA_gen = sim_eta_matrix(K, J, Q_sim)
 // [[Rcpp::export]]
 arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
@@ -154,24 +204,30 @@ arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
     return ETA;
 }
 
-//' Simulate the Latent Attribute Profile Matrix \eqn{\mathbf{\alpha}_c}
+//' Simulate all the Latent Attribute Profile \eqn{\mathbf{\alpha}_c} in Matrix form
 //'
 //' Generate the \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'} 
 //' attribute profile matrix for members of class \eqn{c} such that \eqn{\alpha_{ck}}
 //' is 1 if members of class \eqn{c} possess skill \eqn{k} and zero otherwise.
 //'
-//' @param K Number of Skills
+//' @param K Number of Attributes
 //'
-//' @return A \eqn{2^K} by \eqn{K} `matrix` of latent classes
+//' @return 
+//' A \eqn{2^K} by \eqn{K} `matrix` of latent classes
 //' corresponding to entry \eqn{c} of \eqn{pi} based upon 
 //' mastery and nonmastery of the \eqn{K} skills.
 //' 
-//' @author James Joseph Balamuta and Steven Andrew Culpepper
+//' @author 
+//' James Joseph Balamuta and Steven Andrew Culpepper
+//' 
+//' @seealso
+//' [simcdm::sim_subject_attributes()] and [simcdm::attribute_inv_bijection()]
 //' 
 //' @export
-//' 
 //' @examples
-//' # Define test parameters and traits
+//' ## Simulate Attribute Class Matrix ----
+//' 
+//' # Define number of attributes
 //' K = 3
 //' 
 //' # Generate an Latent Attribute Profile (Alpha) Matrix
@@ -190,7 +246,7 @@ arma::mat sim_attribute_classes(int K) {
     return alpha_matrix;
 }
 
-//' Simulate Latent Attribute Profiles \eqn{\mathbf{\alpha}_c}
+//' Simulate Subject Latent Attribute Profiles \eqn{\mathbf{\alpha}_c}
 //'
 //' Generate a sample from the
 //'  \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'} 
@@ -214,7 +270,7 @@ arma::mat sim_attribute_classes(int K) {
 //' 
 //' @export
 //' @examples
-//' # Define test parameters and traits
+//' # Define number of subjects and attributes
 //' N = 100
 //' K = 3
 //' 
@@ -228,7 +284,7 @@ arma::mat sim_attribute_classes(int K) {
 //' alphas_custom = sim_subject_attributes(N, K, probs)
 // [[Rcpp::export]]
 arma::mat sim_subject_attributes(int N, int K,
-                             Rcpp::Nullable<Rcpp::NumericVector> probs = R_NilValue) {
+                                 Rcpp::Nullable<Rcpp::NumericVector> probs = R_NilValue) {
     // Modified version of ETAMatrix
 
     // Compute the number of attributes
@@ -245,7 +301,8 @@ arma::mat sim_subject_attributes(int N, int K,
         
         // Verify length is okay.
         if (probs_.n_elem != (int)nClass) {
-            Rcpp::stop("`probs` must have %s elements instead of %s.", nClass, probs_.size());
+            Rcpp::stop("`probs` must have %s elements instead of %s.",
+                       nClass, probs_.size());
         } 
     } else {
         probs_.set_size(nClass);

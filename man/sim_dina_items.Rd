@@ -66,6 +66,9 @@ dina_items = sim_dina_items(Alphas, Q, ss, gs)
 # Simulate attribute data under DINA model 
 dina_attributes = sim_dina_attributes(Alphas, Q)
 }
+\seealso{
+\code{\link[simcdm:sim_dina_class]{simcdm::sim_dina_class()}} and \code{\link[simcdm:sim_dina_attributes]{simcdm::sim_dina_attributes()}}
+}
 \author{
 Steven Andrew Culpepper and James Joseph Balamuta
 }

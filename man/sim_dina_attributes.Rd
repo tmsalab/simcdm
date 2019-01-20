@@ -12,6 +12,10 @@ sim_dina_attributes(alphas, Q)
 \item{Q}{A \eqn{J} by \eqn{K} \code{matrix} indicating which skills are required
 for which items.}
 }
+\value{
+The \eqn{\eta} \code{matrix} with dimensions \eqn{N \times J}{N x J} under
+the DINA model.
+}
 \description{
 Generates a DINA model's \eqn{\eta} matrix based on alphas and
 the \eqn{\mathbf{Q}} matrix.
@@ -57,6 +61,9 @@ dina_items = sim_dina_items(Alphas, Q, ss, gs)
 
 # Simulate attribute data under DINA model 
 dina_attributes = sim_dina_attributes(Alphas, Q)
+}
+\seealso{
+\code{\link[simcdm:sim_dina_class]{simcdm::sim_dina_class()}} and \code{\link[simcdm:sim_dina_items]{simcdm::sim_dina_items()}}
 }
 \author{
 Steven Andrew Culpepper and James Joseph Balamuta

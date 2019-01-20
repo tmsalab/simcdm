@@ -130,17 +130,17 @@ namespace simcdm {
         return Rcpp::as<arma::mat >(rcpp_result_gen);
     }
 
-    inline arma::vec bijectionvector(unsigned int K) {
-        typedef SEXP(*Ptr_bijectionvector)(SEXP);
-        static Ptr_bijectionvector p_bijectionvector = NULL;
-        if (p_bijectionvector == NULL) {
-            validateSignature("arma::vec(*bijectionvector)(unsigned int)");
-            p_bijectionvector = (Ptr_bijectionvector)R_GetCCallable("simcdm", "_simcdm_bijectionvector");
+    inline arma::vec attribute_bijection(unsigned int K) {
+        typedef SEXP(*Ptr_attribute_bijection)(SEXP);
+        static Ptr_attribute_bijection p_attribute_bijection = NULL;
+        if (p_attribute_bijection == NULL) {
+            validateSignature("arma::vec(*attribute_bijection)(unsigned int)");
+            p_attribute_bijection = (Ptr_attribute_bijection)R_GetCCallable("simcdm", "_simcdm_attribute_bijection");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_bijectionvector(Shield<SEXP>(Rcpp::wrap(K)));
+            rcpp_result_gen = p_attribute_bijection(Shield<SEXP>(Rcpp::wrap(K)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
@@ -151,17 +151,17 @@ namespace simcdm {
         return Rcpp::as<arma::vec >(rcpp_result_gen);
     }
 
-    inline arma::vec inv_bijectionvector(unsigned int K, double CL) {
-        typedef SEXP(*Ptr_inv_bijectionvector)(SEXP,SEXP);
-        static Ptr_inv_bijectionvector p_inv_bijectionvector = NULL;
-        if (p_inv_bijectionvector == NULL) {
-            validateSignature("arma::vec(*inv_bijectionvector)(unsigned int,double)");
-            p_inv_bijectionvector = (Ptr_inv_bijectionvector)R_GetCCallable("simcdm", "_simcdm_inv_bijectionvector");
+    inline arma::vec attribute_inv_bijection(unsigned int K, double CL) {
+        typedef SEXP(*Ptr_attribute_inv_bijection)(SEXP,SEXP);
+        static Ptr_attribute_inv_bijection p_attribute_inv_bijection = NULL;
+        if (p_attribute_inv_bijection == NULL) {
+            validateSignature("arma::vec(*attribute_inv_bijection)(unsigned int,double)");
+            p_attribute_inv_bijection = (Ptr_attribute_inv_bijection)R_GetCCallable("simcdm", "_simcdm_attribute_inv_bijection");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_inv_bijectionvector(Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(CL)));
+            rcpp_result_gen = p_attribute_inv_bijection(Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(CL)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
@@ -214,17 +214,38 @@ namespace simcdm {
         return Rcpp::as<arma::mat >(rcpp_result_gen);
     }
 
-    inline arma::mat sim_alpha_matrix(int K) {
-        typedef SEXP(*Ptr_sim_alpha_matrix)(SEXP);
-        static Ptr_sim_alpha_matrix p_sim_alpha_matrix = NULL;
-        if (p_sim_alpha_matrix == NULL) {
-            validateSignature("arma::mat(*sim_alpha_matrix)(int)");
-            p_sim_alpha_matrix = (Ptr_sim_alpha_matrix)R_GetCCallable("simcdm", "_simcdm_sim_alpha_matrix");
+    inline arma::mat sim_attribute_classes(int K) {
+        typedef SEXP(*Ptr_sim_attribute_classes)(SEXP);
+        static Ptr_sim_attribute_classes p_sim_attribute_classes = NULL;
+        if (p_sim_attribute_classes == NULL) {
+            validateSignature("arma::mat(*sim_attribute_classes)(int)");
+            p_sim_attribute_classes = (Ptr_sim_attribute_classes)R_GetCCallable("simcdm", "_simcdm_sim_attribute_classes");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_sim_alpha_matrix(Shield<SEXP>(Rcpp::wrap(K)));
+            rcpp_result_gen = p_sim_attribute_classes(Shield<SEXP>(Rcpp::wrap(K)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (Rcpp::internal::isLongjumpSentinel(rcpp_result_gen))
+            throw Rcpp::LongjumpException(rcpp_result_gen);
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<arma::mat >(rcpp_result_gen);
+    }
+
+    inline arma::mat sim_subject_attributes(int N, int K, Rcpp::Nullable<Rcpp::NumericVector> probs = R_NilValue) {
+        typedef SEXP(*Ptr_sim_subject_attributes)(SEXP,SEXP,SEXP);
+        static Ptr_sim_subject_attributes p_sim_subject_attributes = NULL;
+        if (p_sim_subject_attributes == NULL) {
+            validateSignature("arma::mat(*sim_subject_attributes)(int,int,Rcpp::Nullable<Rcpp::NumericVector>)");
+            p_sim_subject_attributes = (Ptr_sim_subject_attributes)R_GetCCallable("simcdm", "_simcdm_sim_subject_attributes");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_sim_subject_attributes(Shield<SEXP>(Rcpp::wrap(N)), Shield<SEXP>(Rcpp::wrap(K)), Shield<SEXP>(Rcpp::wrap(probs)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();

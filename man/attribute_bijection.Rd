@@ -17,7 +17,7 @@ Computes the powers of 2 from \eqn{0} up to \eqn{K - 1} for
 \eqn{K}-dimensional attribute pattern.
 }
 \examples{
-
+## Construct an attribute bijection ----
 biject = attribute_bijection(3)
 }
 \seealso{
