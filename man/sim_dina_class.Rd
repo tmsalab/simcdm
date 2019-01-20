@@ -24,7 +24,7 @@ the probability of an incorrect response for individuals with
 all of the required attributes}
 }
 \value{
-A dichotomous item matrix
+A dichotomous item matrix with dimensions \eqn{N \times J}{N x J}.
 }
 \description{
 Generate the dichotomous item matrix for a DINA Model.
@@ -44,7 +44,7 @@ qbj = c(4, 2, 1, 4, 2, 1, 4, 2, 1, 6, 5, 3, 6, 5, 3, 7, 7, 7)
 # Fill Q Matrix
 Q = matrix(, J, K)
 for (j in seq_len(J)) {
-  Q[j,] = inv_bijectionvector(K, qbj[j])
+  Q[j,] = attribute_inv_bijection(K, qbj[j])
 }
 
 # Item parm vals
@@ -63,12 +63,15 @@ if (rho > 0) {
   X = Z \%*\% chol(Sig)
   thvals = matrix(rep(0, K), N, K, byrow = T)
   Alphas = 1 * (X > thvals)
-  CLs = Alphas \%*\% bijectionvector(K)
+  CLs = Alphas \%*\% attribute_bijection(K)
 }
 
 # Simulate data under DINA model
 ETA = sim_eta_matrix(K, J, Q)
 Y_sim = sim_dina_class(N, J, CLs, ETA, gs, ss)
+}
+\seealso{
+\code{\link[simcdm:sim_dina_attributes]{simcdm::sim_dina_attributes()}} and \code{\link[simcdm:sim_dina_items]{simcdm::sim_dina_items()}}
 }
 \author{
 Steven Andrew Culpepper and James Joseph Balamuta

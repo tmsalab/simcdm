@@ -17,10 +17,17 @@
 //'              the probability of an incorrect response for individuals with
 //'              all of the required attributes
 //'
-//' @return A dichotomous item matrix
-//' @author Steven Andrew Culpepper and James Joseph Balamuta
-//' @template sim-dina-class-example
+//' @return 
+//' A dichotomous item matrix with dimensions \eqn{N \times J}{N x J}.
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso 
+//' [simcdm::sim_dina_attributes()] and [simcdm::sim_dina_items()]
+//' 
 //' @export
+//' @template sim-dina-class-example
 // [[Rcpp::export]]
 arma::mat sim_dina_class(unsigned int N, unsigned int J, const arma::vec &CLASS,
                          const arma::mat &ETA, const arma::vec &gs,
@@ -43,10 +50,21 @@ arma::mat sim_dina_class(unsigned int N, unsigned int J, const arma::vec &CLASS,
 //'
 //' Generates a DINA model's \eqn{\eta} matrix based on alphas and
 //' the \eqn{\mathbf{Q}} matrix.
+//' 
 //' @inheritParams sim_dina_items
-//' @author Steven Andrew Culpepper and James Joseph Balamuta
-//' @template sim-dina-example-body
+//'
+//' @return 
+//' The \eqn{\eta} `matrix` with dimensions \eqn{N \times J}{N x J} under
+//' the DINA model.
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso 
+//' [simcdm::sim_dina_class()] and [simcdm::sim_dina_items()]
+//' 
 //' @export
+//' @template sim-dina-example-body
 // [[Rcpp::export]]
 arma::mat sim_dina_attributes(const arma::mat &alphas, const arma::mat &Q)
 {
@@ -81,10 +99,17 @@ arma::mat sim_dina_attributes(const arma::mat &alphas, const arma::mat &Q)
 //' @param ss     A \eqn{J} `vector` of item slipping parameters.
 //' @param gs     A \eqn{J} `vector` of item guessing parameters.
 //'
-//' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
-//' @author Steven Andrew Culpepper and James Joseph Balamuta
-//' @template sim-dina-example-body
+//' @return 
+//' A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
+//' 
+//' @author 
+//' Steven Andrew Culpepper and James Joseph Balamuta
+//' 
+//' @seealso 
+//' [simcdm::sim_dina_class()] and [simcdm::sim_dina_attributes()]
+//' 
 //' @export
+//' @template sim-dina-example-body
 // [[Rcpp::export]]
 arma::mat sim_dina_items(const arma::mat &alphas, const arma::mat &Q,
                          const arma::vec &ss, const arma::vec &gs)

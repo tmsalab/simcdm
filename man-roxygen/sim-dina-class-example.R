@@ -13,7 +13,7 @@
 #' # Fill Q Matrix
 #' Q = matrix(, J, K)
 #' for (j in seq_len(J)) {
-#'   Q[j,] = inv_bijectionvector(K, qbj[j])
+#'   Q[j,] = attribute_inv_bijection(K, qbj[j])
 #' }
 #' 
 #' # Item parm vals
@@ -32,7 +32,7 @@
 #'   X = Z %*% chol(Sig)
 #'   thvals = matrix(rep(0, K), N, K, byrow = T)
 #'   Alphas = 1 * (X > thvals)
-#'   CLs = Alphas %*% bijectionvector(K)
+#'   CLs = Alphas %*% attribute_bijection(K)
 #' }
 #' 
 #' # Simulate data under DINA model

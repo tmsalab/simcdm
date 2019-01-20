@@ -16,10 +16,17 @@
 #'              the probability of an incorrect response for individuals with
 #'              all of the required attributes
 #'
-#' @return A dichotomous item matrix
-#' @author Steven Andrew Culpepper and James Joseph Balamuta
-#' @template sim-dina-class-example
+#' @return 
+#' A dichotomous item matrix with dimensions \eqn{N \times J}{N x J}.
+#' 
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta
+#' 
+#' @seealso 
+#' [simcdm::sim_dina_attributes()] and [simcdm::sim_dina_items()]
+#' 
 #' @export
+#' @template sim-dina-class-example
 sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
     .Call(`_simcdm_sim_dina_class`, N, J, CLASS, ETA, gs, ss)
 }
@@ -28,10 +35,21 @@ sim_dina_class <- function(N, J, CLASS, ETA, gs, ss) {
 #'
 #' Generates a DINA model's \eqn{\eta} matrix based on alphas and
 #' the \eqn{\mathbf{Q}} matrix.
+#' 
 #' @inheritParams sim_dina_items
-#' @author Steven Andrew Culpepper and James Joseph Balamuta
-#' @template sim-dina-example-body
+#'
+#' @return 
+#' The \eqn{\eta} `matrix` with dimensions \eqn{N \times J}{N x J} under
+#' the DINA model.
+#' 
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta
+#' 
+#' @seealso 
+#' [simcdm::sim_dina_class()] and [simcdm::sim_dina_items()]
+#' 
 #' @export
+#' @template sim-dina-example-body
 sim_dina_attributes <- function(alphas, Q) {
     .Call(`_simcdm_sim_dina_attributes`, alphas, Q)
 }
@@ -48,10 +66,17 @@ sim_dina_attributes <- function(alphas, Q) {
 #' @param ss     A \eqn{J} `vector` of item slipping parameters.
 #' @param gs     A \eqn{J} `vector` of item guessing parameters.
 #'
-#' @return A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
-#' @author Steven Andrew Culpepper and James Joseph Balamuta
-#' @template sim-dina-example-body
+#' @return 
+#' A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
+#' 
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta
+#' 
+#' @seealso 
+#' [simcdm::sim_dina_class()] and [simcdm::sim_dina_attributes()]
+#' 
 #' @export
+#' @template sim-dina-example-body
 sim_dina_items <- function(alphas, Q, ss, gs) {
     .Call(`_simcdm_sim_dina_items`, alphas, Q, ss, gs)
 }
@@ -85,11 +110,12 @@ sim_rrum_main <- function(Q, rstar, pistar, alpha) {
 #'               the number of attributes.  An entry of 1 indicates individual
 #'               \eqn{i} has attained attribute \eqn{k}. An entry of 0
 #'               indicates the attribute has not been attained.
-#'
 #' @return Y     A `matrix` with \eqn{N} rows and \eqn{J} columns indicating
 #'               the indviduals' responses to each of the items, where \eqn{J}
 #'               represents the number of items.
-#' @author Steven Andrew Culpepper and James Joseph Balamuta
+#' @author 
+#' Steven Andrew Culpepper, Aaron Hudson, and James Joseph Balamuta
+#' 
 #' @export
 #' @template rrum-example
 #' @template rrum-references
@@ -97,52 +123,83 @@ sim_rrum_items <- function(Q, rstar, pistar, alpha) {
     .Call(`_simcdm_sim_rrum_items`, Q, rstar, pistar, alpha)
 }
 
-#' Bijection Vector
+#' Constructs Unique Attribute Pattern Map
 #'
-#' Computes the powers of 2 from \eqn{0} up to \eqn{K - 1}.
+#' Computes the powers of 2 from \eqn{0} up to \eqn{K - 1} for
+#' \eqn{K}-dimensional attribute pattern.
+#' 
 #' @param K  Number of Attributes.
-#' @return A \code{vec} with length \eqn{K} detailing the power's of 2.
-#' @examples
-#'
-#' bijectionvector(3)
-#'
+#' 
+#' @return 
+#' A \code{vec} with length \eqn{K} detailing the power's of 2.
+#' 
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta
+#' 
+#' @seealso 
+#' [simcdm::attribute_inv_bijection()]
+#' 
 #' @export
-bijectionvector <- function(K) {
-    .Call(`_simcdm_bijectionvector`, K)
+#' @examples
+#' ## Construct an attribute bijection ----
+#' biject = attribute_bijection(3)
+attribute_bijection <- function(K) {
+    .Call(`_simcdm_attribute_bijection`, K)
 }
 
 #' Perform an Inverse Bijection of an Integer to Attribute Pattern
 #'
-#' Convert integer between \eqn{0} and \eqn{2^{K-1}} to
+#' Convert an integer between \eqn{0} and \eqn{2^{K-1}} to
 #' \eqn{K}-dimensional attribute pattern.
 #'
 #' @param CL An `integer` between \eqn{0} and \eqn{2^{K-1}}
-#' @inheritParams bijectionvector
-#' @return A \eqn{K}-dimensional vector with an attribute pattern corresponding
+#' @inheritParams attribute_bijection
+#' 
+#' @return 
+#' A \eqn{K}-dimensional vector with an attribute pattern corresponding
 #' to `CL`.
+#' 
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta
+#' 
+#' @seealso 
+#' [simcdm::attribute_bijection()]
+#' 
 #' @export
-#'
 #' @examples
-#' inv_bijectionvector(5, 1)
-#' inv_bijectionvector(5, 2)
-inv_bijectionvector <- function(K, CL) {
-    .Call(`_simcdm_inv_bijectionvector`, K, CL)
+#' ## Construct an attribute inversion bijection ----
+#' inv_biject1 = attribute_inv_bijection(5, 1)
+#' inv_biject2 = attribute_inv_bijection(5, 2)
+attribute_inv_bijection <- function(K, CL) {
+    .Call(`_simcdm_attribute_inv_bijection`, K, CL)
 }
 
-#' Generate random Q matrix
+#' Generate a Random Identifiable Q Matrix
 #'
 #' Simulates a Q matrix containing three identity matrices after a row
-#' permutation.
+#' permutation that is identifiable.
 #'
 #' @param J Number of Items
 #' @param K Number of Attributes
 #'
-#' @return A dichotomous \code{matrix} for Q.
-#' @examples
-#' sim_q_matrix(7, 2)
+#' @return 
+#' A dichotomous \code{matrix} for Q.
 #' 
-#' sim_q_matrix(10, 3)
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta
+#' 
+#' @seealso 
+#' [simcdm::attribute_bijection()] and [simcdm::attribute_inv_bijection()]
+#' 
 #' @export
+#' @examples
+#' ## Simulate identifiable Q matrices ----
+#' 
+#' # 7 items and 2 attributes
+#' q_matrix_j7_k2 = sim_q_matrix(7, 2)
+#' 
+#' # 10 items and 3 attributes
+#' q_matrix_j10_k3 = sim_q_matrix(10, 3)
 sim_q_matrix <- function(J, K) {
     .Call(`_simcdm_sim_q_matrix`, J, K)
 }
@@ -154,15 +211,28 @@ sim_q_matrix <- function(J, K) {
 #' @param K      Number of Attribute Levels
 #' @param J      Number of Assessment Items
 #' @param Q      Q Matrix with dimensions \eqn{K \times J}{K x J}.
-#' @return A `mat` with dimensions \eqn{J \times 2^K}{J x 2^K}.
+#' 
+#' @return 
+#' A `mat` with dimensions \eqn{J \times 2^K}{J x 2^K}.
+#' 
+#' @author 
+#' Steven Andrew Culpepper and James Joseph Balamuta
+#' 
+#' @seealso 
+#' [simcdm::sim_q_matrix()], [simcdm::attribute_bijection()], and
+#' [simcdm::attribute_inv_bijection()]
+#' 
 #' @export
-#'
 #' @examples
+#' ## Simulation Settings ----
+#' 
 #' # Fixed Number of Assessment Items for Q
 #' J = 18
 #'
 #' # Fixed Number of Attributes for Q
-#' K       = 3
+#' K = 3
+#'
+#' ## Pre-specified configuration ----
 #' 
 #' # Specify Q
 #' qbj = c(4, 2, 1, 4, 2, 1, 4, 2, 1, 6, 5, 3, 6, 5, 3, 7, 7, 7)
@@ -170,45 +240,93 @@ sim_q_matrix <- function(J, K) {
 #' # Fill Q Matrix
 #' Q = matrix(, J, K)
 #' for (j in seq_len(J)) {
-#'   Q[j,] = inv_bijectionvector(K, qbj[j])
+#'   Q[j,] = attribute_inv_bijection(K, qbj[j])
 #' }
 #' 
 #' # Create an eta matrix
 #' ETA = sim_eta_matrix(K, J, Q)
 #' 
-#' # Generate an ETA matrix for a random Q.
+#' ## Random generation of Q matrix with ETA matrix ----
 #' 
-#' # Create an eta matrix
+#' # Construct a random q matrix
 #' Q_sim = sim_q_matrix(J, K)
+#' 
+#' # Generate the eta matrix
 #' ETA_gen = sim_eta_matrix(K, J, Q_sim)
 sim_eta_matrix <- function(K, J, Q) {
     .Call(`_simcdm_sim_eta_matrix`, K, J, Q)
 }
 
-#' Simulate the Latent Attribute Profile Matrix \eqn{\mathbf{\alpha}_c}
+#' Simulate all the Latent Attribute Profile \eqn{\mathbf{\alpha}_c} in Matrix form
 #'
 #' Generate the \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'} 
 #' attribute profile matrix for members of class \eqn{c} such that \eqn{\alpha_{ck}}
 #' is 1 if members of class \eqn{c} possess skill \eqn{k} and zero otherwise.
 #'
-#' @param K Number of Skills
+#' @param K Number of Attributes
 #'
-#' @return A \eqn{2^K} by \eqn{K} `matrix` of latent classes
+#' @return 
+#' A \eqn{2^K} by \eqn{K} `matrix` of latent classes
 #' corresponding to entry \eqn{c} of \eqn{pi} based upon 
 #' mastery and nonmastery of the \eqn{K} skills.
 #' 
-#' @author James Joseph Balamuta and Steven Andrew Culpepper
+#' @author 
+#' James Joseph Balamuta and Steven Andrew Culpepper
+#' 
+#' @seealso
+#' [simcdm::sim_subject_attributes()] and [simcdm::attribute_inv_bijection()]
 #' 
 #' @export
-#' 
 #' @examples
-#' # Define test parameters and traits
+#' ## Simulate Attribute Class Matrix ----
+#' 
+#' # Define number of attributes
 #' K = 3
 #' 
 #' # Generate an Latent Attribute Profile (Alpha) Matrix
-#' alphas = sim_alpha_matrix(K)
-sim_alpha_matrix <- function(K) {
-    .Call(`_simcdm_sim_alpha_matrix`, K)
+#' alphas = sim_attribute_classes(K)
+sim_attribute_classes <- function(K) {
+    .Call(`_simcdm_sim_attribute_classes`, K)
+}
+
+#' Simulate Subject Latent Attribute Profiles \eqn{\mathbf{\alpha}_c}
+#'
+#' Generate a sample from the
+#'  \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'} 
+#' attribute profile matrix for members of class \eqn{c} such that \eqn{\alpha_{ck}}
+#' is 1 if members of class \eqn{c} possess skill \eqn{k} and zero otherwise.
+#'
+#' @param N      Number of Observations
+#' @param K      Number of Skills
+#' @param probs  A `vector` of probabilities that sum to 1. 
+#' 
+#' @return 
+#' A \eqn{N} by \eqn{K} `matrix` of latent classes
+#' corresponding to entry \eqn{c} of \eqn{pi} based upon 
+#' mastery and nonmastery of the \eqn{K} skills.
+#' 
+#' @author 
+#' James Joseph Balamuta and Steven Andrew Culpepper
+#' 
+#' @seealso 
+#' [simcdm::sim_attribute_classes()] and [simcdm::attribute_inv_bijection()]
+#' 
+#' @export
+#' @examples
+#' # Define number of subjects and attributes
+#' N = 100
+#' K = 3
+#' 
+#' # Generate a sample from the Latent Attribute Profile (Alpha) Matrix
+#' # By default, we sample from a uniform distribution weighting of classes.
+#' alphas_builtin = sim_subject_attributes(N, K)
+#' 
+#' # Generate a sample using custom probabilities from the
+#' # Latent Attribute Profile (Alpha) Matrix
+#' probs = rep(1 / (2 ^ K), 2 ^ K)
+#' alphas_custom = sim_subject_attributes(N, K, probs)
+sim_subject_attributes <- function(N, K, probs = NULL) {
+    .Call(`_simcdm_sim_subject_attributes`, N, K, probs)
 }
 
 # Register entry points for exported C++ functions

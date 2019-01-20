@@ -1,4 +1,4 @@
-# simcdm 0.0.4
+# simcdm 0.0.5
 
 - Added _C++_ and _R_ functions for simulation of:
     - Deterministic Input, Noisy "And" Gate (DINA)
@@ -9,4 +9,5 @@
     - Matrices:
         - Random Q Matrix: `sim_q_matrix()`
         - ETA Matrix: `sim_eta_matrix()`
-        - Latent Attribute Profile Matrix: `sim_alpha_matrix()`
+        - Latent Attribute Profile Matrix: `sim_attribute_classes()`
+        - Latent Attribute Profiles for Subjects: `sim_subject_attributes()`
