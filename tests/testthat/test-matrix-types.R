@@ -1,27 +1,21 @@
 context("Simulation Matrix")
 
-test_that("Generate alpha matrix (pi references)", {
+test_that("Reproducible Q matrix simulations", {
   
-  # Old, r-specific pi mapping function
-  pi_reference = function(K) {
-    biject.vector = attribute_bijection(K)
-    As = as.matrix(
-      expand.grid( rep( list(c(0, 1)), K) )
-    )
-    a = As %*% biject.vector
-    As = As[a + 1,]
-    return(As)
-  }
+  set.seed(888)
+  q1 = sim_q_matrix(20, 3)
   
-  # Check equality
-  expect_equal(attribute_classes(2), pi_reference(2), check.attributes = FALSE,
-               info = "Verify latent class mapping is correct.")
+  set.seed(888)
+  q2 = sim_q_matrix(20, 3)
   
-  # Check equality
-  expect_equal(attribute_classes(5), pi_reference(5), check.attributes = FALSE,
-               info = "Verify latent class mapping is correct.")
+  expect_equal(q1,  q2, info = "Verify Q matrix is able to be regenerated")
+})
+
+
+test_that("Incorrect dimensions for an identifiable Q matrix creation", {
   
-  # Check equality
-  expect_equal(attribute_classes(8), pi_reference(8), check.attributes = FALSE,
-               info = "Verify latent class mapping is correct.")
+  # Verify Q matrix throws error if J < 3 * K - 1.
+  
+  # Todo: tighten this check.
+  expect_error(sim_q_matrix(5, 3), info = "")
 })
