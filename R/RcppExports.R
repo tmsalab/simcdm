@@ -284,9 +284,9 @@ sim_eta_matrix <- function(K, J, Q) {
 #' K = 3
 #' 
 #' # Generate an Latent Attribute Profile (Alpha) Matrix
-#' alphas = sim_attribute_classes(K)
-sim_attribute_classes <- function(K) {
-    .Call(`_simcdm_sim_attribute_classes`, K)
+#' alphas = attribute_classes(K)
+attribute_classes <- function(K) {
+    .Call(`_simcdm_attribute_classes`, K)
 }
 
 #' Simulate Subject Latent Attribute Profiles \eqn{\mathbf{\alpha}_c}
@@ -309,7 +309,7 @@ sim_attribute_classes <- function(K) {
 #' James Joseph Balamuta and Steven Andrew Culpepper
 #' 
 #' @seealso 
-#' [simcdm::sim_attribute_classes()] and [simcdm::attribute_inv_bijection()]
+#' [simcdm::attribute_classes()] and [simcdm::attribute_inv_bijection()]
 #' 
 #' @export
 #' @examples
