@@ -1,4 +1,4 @@
-context("Simulation Matrix")
+context("test-matrix-types")
 
 test_that("Reproducible Q matrix simulations", {
   
