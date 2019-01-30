@@ -71,3 +71,24 @@ test_that("Simulation of attributes matches", {
   expect_equal(subject_alphas_func, subject_alphas_base,
                info = "Equivalent subject alpha Generation")
 })
+
+test_that("Simulation of attributes matches with probs", {
+  
+  N = 20   # Number of Examinees / Subjects
+  K = 2    # Number of Skills / Attributes
+  
+  # Latent Class Probabilities
+  pis = c(.1, .2, .3, .4)
+  
+  set.seed(991)
+  # Generate latent attribute profile with custom probability (N subjects by K skills)
+  subject_alphas_func = sim_subject_attributes(N, K, prob = pis)
+  
+  set.seed(991)
+  class_alphas = attribute_classes(K)
+  subject_alphas_base = class_alphas[sample(2 ^ K, N, replace = TRUE, prob = pis),]
+  
+  expect_equal(subject_alphas_func, subject_alphas_base,
+               info = "Equivalent subject alphas generation under probabilities.")
+})
+
