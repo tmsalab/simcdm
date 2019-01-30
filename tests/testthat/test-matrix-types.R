@@ -14,14 +14,14 @@ test_that("Generate alpha matrix (pi references)", {
   }
   
   # Check equality
-  expect_equal(sim_attribute_classes(2), pi_reference(2), check.attributes = FALSE,
+  expect_equal(attribute_classes(2), pi_reference(2), check.attributes = FALSE,
                info = "Verify latent class mapping is correct.")
   
   # Check equality
-  expect_equal(sim_attribute_classes(5), pi_reference(5), check.attributes = FALSE,
+  expect_equal(attribute_classes(5), pi_reference(5), check.attributes = FALSE,
                info = "Verify latent class mapping is correct.")
   
   # Check equality
-  expect_equal(sim_attribute_classes(8), pi_reference(8), check.attributes = FALSE,
+  expect_equal(attribute_classes(8), pi_reference(8), check.attributes = FALSE,
                info = "Verify latent class mapping is correct.")
 })

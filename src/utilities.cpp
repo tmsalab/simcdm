@@ -231,9 +231,9 @@ arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
 //' K = 3
 //' 
 //' # Generate an Latent Attribute Profile (Alpha) Matrix
-//' alphas = sim_attribute_classes(K)
+//' alphas = attribute_classes(K)
 // [[Rcpp::export]]
-arma::mat sim_attribute_classes(int K) {
+arma::mat attribute_classes(int K) {
     // Modified version of ETAMatrix
     
     double nClass = pow(2, K);
@@ -266,7 +266,7 @@ arma::mat sim_attribute_classes(int K) {
 //' James Joseph Balamuta and Steven Andrew Culpepper
 //' 
 //' @seealso 
-//' [simcdm::sim_attribute_classes()] and [simcdm::attribute_inv_bijection()]
+//' [simcdm::attribute_classes()] and [simcdm::attribute_inv_bijection()]
 //' 
 //' @export
 //' @examples
@@ -312,7 +312,7 @@ arma::mat sim_subject_attributes(int N, int K,
     // --- Profile Matrix
     
     // Grab the attribute matrix
-    arma::mat attributes = sim_attribute_classes(K);
+    arma::mat attributes = attribute_classes(K);
 
     // Generate indices
     arma::uvec idx = arma::linspace<arma::uvec>(0, nClass - 1, nClass);

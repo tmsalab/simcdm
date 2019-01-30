@@ -214,17 +214,17 @@ namespace simcdm {
         return Rcpp::as<arma::mat >(rcpp_result_gen);
     }
 
-    inline arma::mat sim_attribute_classes(int K) {
-        typedef SEXP(*Ptr_sim_attribute_classes)(SEXP);
-        static Ptr_sim_attribute_classes p_sim_attribute_classes = NULL;
-        if (p_sim_attribute_classes == NULL) {
-            validateSignature("arma::mat(*sim_attribute_classes)(int)");
-            p_sim_attribute_classes = (Ptr_sim_attribute_classes)R_GetCCallable("simcdm", "_simcdm_sim_attribute_classes");
+    inline arma::mat attribute_classes(int K) {
+        typedef SEXP(*Ptr_attribute_classes)(SEXP);
+        static Ptr_attribute_classes p_attribute_classes = NULL;
+        if (p_attribute_classes == NULL) {
+            validateSignature("arma::mat(*attribute_classes)(int)");
+            p_attribute_classes = (Ptr_attribute_classes)R_GetCCallable("simcdm", "_simcdm_attribute_classes");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_sim_attribute_classes(Shield<SEXP>(Rcpp::wrap(K)));
+            rcpp_result_gen = p_attribute_classes(Shield<SEXP>(Rcpp::wrap(K)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();

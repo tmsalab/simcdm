@@ -90,7 +90,7 @@ eta
 Generate latent attribute profile classes ($2^K$ latent classes by $K$ skills).
 
 ```{r}
-class_alphas = sim_attribute_classes(K)
+class_alphas = attribute_classes(K)
 class_alphas
 ```
 
@@ -172,7 +172,7 @@ pis = c(.1, .2, .3, .4)
 subject_alphas = sim_subject_attributes(N, K, prob = pis)
 
 # Equivalent to:
-# class_alphas = sim_attribute_classes(K)
+# class_alphas = attribute_classes(K)
 # subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE, prob = pis),]
 ```
 

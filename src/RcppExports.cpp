@@ -334,21 +334,21 @@ RcppExport SEXP _simcdm_sim_eta_matrix(SEXP KSEXP, SEXP JSEXP, SEXP QSEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
-// sim_attribute_classes
-arma::mat sim_attribute_classes(int K);
-static SEXP _simcdm_sim_attribute_classes_try(SEXP KSEXP) {
+// attribute_classes
+arma::mat attribute_classes(int K);
+static SEXP _simcdm_attribute_classes_try(SEXP KSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< int >::type K(KSEXP);
-    rcpp_result_gen = Rcpp::wrap(sim_attribute_classes(K));
+    rcpp_result_gen = Rcpp::wrap(attribute_classes(K));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _simcdm_sim_attribute_classes(SEXP KSEXP) {
+RcppExport SEXP _simcdm_attribute_classes(SEXP KSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_simcdm_sim_attribute_classes_try(KSEXP));
+        rcpp_result_gen = PROTECT(_simcdm_attribute_classes_try(KSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -418,7 +418,7 @@ static int _simcdm_RcppExport_validate(const char* sig) {
         signatures.insert("arma::vec(*attribute_inv_bijection)(unsigned int,double)");
         signatures.insert("arma::mat(*sim_q_matrix)(unsigned int,unsigned int)");
         signatures.insert("arma::mat(*sim_eta_matrix)(unsigned int,unsigned int,const arma::mat&)");
-        signatures.insert("arma::mat(*sim_attribute_classes)(int)");
+        signatures.insert("arma::mat(*attribute_classes)(int)");
         signatures.insert("arma::mat(*sim_subject_attributes)(int,int,Rcpp::Nullable<Rcpp::NumericVector>)");
     }
     return signatures.find(sig) != signatures.end();
@@ -435,7 +435,7 @@ RcppExport SEXP _simcdm_RcppExport_registerCCallable() {
     R_RegisterCCallable("simcdm", "_simcdm_attribute_inv_bijection", (DL_FUNC)_simcdm_attribute_inv_bijection_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_q_matrix", (DL_FUNC)_simcdm_sim_q_matrix_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_eta_matrix", (DL_FUNC)_simcdm_sim_eta_matrix_try);
-    R_RegisterCCallable("simcdm", "_simcdm_sim_attribute_classes", (DL_FUNC)_simcdm_sim_attribute_classes_try);
+    R_RegisterCCallable("simcdm", "_simcdm_attribute_classes", (DL_FUNC)_simcdm_attribute_classes_try);
     R_RegisterCCallable("simcdm", "_simcdm_sim_subject_attributes", (DL_FUNC)_simcdm_sim_subject_attributes_try);
     R_RegisterCCallable("simcdm", "_simcdm_RcppExport_validate", (DL_FUNC)_simcdm_RcppExport_validate);
     return R_NilValue;
@@ -451,7 +451,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_simcdm_attribute_inv_bijection", (DL_FUNC) &_simcdm_attribute_inv_bijection, 2},
     {"_simcdm_sim_q_matrix", (DL_FUNC) &_simcdm_sim_q_matrix, 2},
     {"_simcdm_sim_eta_matrix", (DL_FUNC) &_simcdm_sim_eta_matrix, 3},
-    {"_simcdm_sim_attribute_classes", (DL_FUNC) &_simcdm_sim_attribute_classes, 1},
+    {"_simcdm_attribute_classes", (DL_FUNC) &_simcdm_attribute_classes, 1},
     {"_simcdm_sim_subject_attributes", (DL_FUNC) &_simcdm_sim_subject_attributes, 3},
     {"_simcdm_RcppExport_registerCCallable", (DL_FUNC) &_simcdm_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
