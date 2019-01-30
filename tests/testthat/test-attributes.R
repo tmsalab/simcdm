@@ -53,3 +53,21 @@ test_that("Valid attribute classes (alpha matrix / pi references)", {
   expect_equal(attribute_classes(8), pi_reference(8), check.attributes = FALSE,
                info = "Verify latent class mapping is correct.")
 })
+
+test_that("Simulation of attributes matches", {
+  
+  N = 20   # Number of Examinees / Subjects
+  K = 3    # Number of Skills / Attributes
+  
+  class_alphas = attribute_classes(K)
+  class_alphas
+  
+  set.seed(888)
+  subject_alphas_func = sim_subject_attributes(N, K)
+
+  set.seed(888)
+  subject_alphas_base = class_alphas[sample(2 ^ K, N, replace = TRUE),]
+  
+  expect_equal(subject_alphas_func, subject_alphas_base,
+               info = "Equivalent subject alpha Generation")
+})
