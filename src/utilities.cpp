@@ -28,7 +28,7 @@ arma::vec attribute_bijection(unsigned int K)
 {
     arma::vec vv(K);
     for (unsigned int i = 0; i < K; ++i) {
-        vv(i) = pow(2, K - i - 1);
+        vv(i) = std::pow(2.0, static_cast<double>(K - i) - 1.0);
     }
     return vv;
 }
@@ -62,7 +62,7 @@ arma::vec attribute_inv_bijection(unsigned int K, double CL)
     arma::vec alpha(K);
 
     for (unsigned int k = 0; k < K; ++k) {
-        double twopow = pow(2, K - k - 1);
+        double twopow = std::pow(2.0, static_cast<double>(K - k) - 1.0);
         alpha(k) = (twopow <= CL);
         CL = CL - twopow * alpha(k);
     }
@@ -105,8 +105,10 @@ arma::mat sim_q_matrix(unsigned int J, unsigned int K)
     }
     
     // Calculate number of classes
-    unsigned int nClass = pow(2, K);
-
+    unsigned int nClass = static_cast<unsigned int>( 
+        std::pow(2.0, static_cast<double>(K) ) 
+    );
+    
     // Form a Bijection
     arma::vec vv = attribute_bijection(K);
 
@@ -186,8 +188,11 @@ arma::mat sim_q_matrix(unsigned int J, unsigned int K)
 // [[Rcpp::export]]
 arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
 {
-    double nClass = pow(2, K);
-
+    // Calculate number of classes
+    unsigned int nClass = static_cast<unsigned int>( 
+        std::pow(2.0, static_cast<double>(K) ) 
+    );
+    
     arma::mat ETA(J, nClass);
 
     for (unsigned int cc = 0; cc < nClass; ++cc) {
@@ -236,13 +241,20 @@ arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
 arma::mat attribute_classes(int K) {
     // Modified version of ETAMatrix
     
-    double nClass = pow(2, K);
+    // Calculate number of classes
+    unsigned int nClass = static_cast<unsigned int>( 
+        std::pow(2.0, static_cast<double>(K) ) 
+    );
+    
+    // Create alpha matrix
     arma::mat alpha_matrix(nClass, K);
     
+    // Fill alpha matrix with classes under an inverse bijection
     for(unsigned int cc = 0; cc < nClass; cc++){     
         alpha_matrix.row(cc) = attribute_inv_bijection(K, cc).t();
     }
     
+    // Release result
     return alpha_matrix;
 }
 
@@ -287,8 +299,10 @@ arma::mat sim_subject_attributes(int N, int K,
                                  Rcpp::Nullable<Rcpp::NumericVector> probs = R_NilValue) {
     // Modified version of ETAMatrix
 
-    // Compute the number of attributes
-    double nClass = pow(2, K);
+    // Calculate number of classes
+    unsigned int nClass = static_cast<unsigned int>( 
+        std::pow(2.0, static_cast<double>(K) ) 
+    );
     
     // Nullable trick ----
     arma::vec probs_;

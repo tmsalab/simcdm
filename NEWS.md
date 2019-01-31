@@ -3,10 +3,11 @@
 ## Changes
 
 - Renamed `sim_attribute_classes()` to `attribute_classes()`.
+- Addressed ambiguous calls to `std::pow(<int>, <int>)`
 
 ## Documentation
 
-- Added a CITATION file for the package
+- Added a `CITATION` file for the package
 - Improved Vignette Examples
 - Improved README contents
 
