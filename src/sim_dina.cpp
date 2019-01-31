@@ -17,15 +17,15 @@
 //'              the probability of an incorrect response for individuals with
 //'              all of the required attributes
 //'
-//' @return 
+//' @return
 //' A dichotomous item matrix with dimensions \eqn{N \times J}{N x J}.
-//' 
-//' @author 
+//'
+//' @author
 //' Steven Andrew Culpepper and James Joseph Balamuta
-//' 
-//' @seealso 
+//'
+//' @seealso
 //' [simcdm::sim_dina_attributes()] and [simcdm::sim_dina_items()]
-//' 
+//'
 //' @export
 //' @template sim-dina-class-example
 // [[Rcpp::export]]
@@ -50,19 +50,19 @@ arma::mat sim_dina_class(unsigned int N, unsigned int J, const arma::vec &CLASS,
 //'
 //' Generates a DINA model's \eqn{\eta} matrix based on alphas and
 //' the \eqn{\mathbf{Q}} matrix.
-//' 
+//'
 //' @inheritParams sim_dina_items
 //'
-//' @return 
+//' @return
 //' The \eqn{\eta} `matrix` with dimensions \eqn{N \times J}{N x J} under
 //' the DINA model.
-//' 
-//' @author 
+//'
+//' @author
 //' Steven Andrew Culpepper and James Joseph Balamuta
-//' 
-//' @seealso 
+//'
+//' @seealso
 //' [simcdm::sim_dina_class()] and [simcdm::sim_dina_items()]
-//' 
+//'
 //' @export
 //' @template sim-dina-example-body
 // [[Rcpp::export]]
@@ -94,20 +94,20 @@ arma::mat sim_dina_attributes(const arma::mat &alphas, const arma::mat &Q)
 //' generated under DINA model.
 //'
 //' @param alphas A \eqn{N} by \eqn{K} `matrix` of latent attributes.
-//' @param Q      A \eqn{J} by \eqn{K} `matrix` indicating which skills are required
-//'               for which items.
-//' @param ss     A \eqn{J} `vector` of item slipping parameters.
+//' @param Q      A \eqn{J} by \eqn{K} `matrix` indicating which skills are
+//'               required for which items.
+//' @param ss     A \eqn{J} `vector` of item slipping parameters. 
 //' @param gs     A \eqn{J} `vector` of item guessing parameters.
 //'
-//' @return 
+//' @return
 //' A \eqn{N} by \eqn{J} `matrix` of responses from the DINA model.
-//' 
-//' @author 
+//'
+//' @author
 //' Steven Andrew Culpepper and James Joseph Balamuta
-//' 
-//' @seealso 
+//'
+//' @seealso
 //' [simcdm::sim_dina_class()] and [simcdm::sim_dina_attributes()]
-//' 
+//'
 //' @export
 //' @template sim-dina-example-body
 // [[Rcpp::export]]
