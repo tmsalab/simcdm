@@ -13,6 +13,7 @@
 ## Deployment
 
 - Added Unit Tests to verify simulation routines and attribute generations.
+- Added testing on Travis-CI for the previous release of _R_, e.g. the `oldrel`.
 
 # simcdm 0.0.5
 
