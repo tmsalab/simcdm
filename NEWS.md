@@ -4,9 +4,16 @@
 
 - Renamed `sim_attribute_classes()` to `attribute_classes()`.
 
+## Documentation
+
+- Added a CITATION file for the package
+- Improved Vignette Examples
+- Improved README contents
+
 ## Deployment
 
 - Added Unit Tests to verify simulation routines and attribute generations.
+- Added testing on Travis-CI for the previous release of _R_, e.g. the `oldrel`.
 
 # simcdm 0.0.5
 
