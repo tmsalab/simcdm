@@ -1,27 +1,48 @@
-context("Simulation Matrix")
+context("test-matrix-types")
 
-test_that("Generate alpha matrix (pi references)", {
+test_that("Reproducible Q matrix simulations", {
   
-  # Old, r-specific pi mapping function
-  pi_reference = function(K) {
-    biject.vector = attribute_bijection(K)
-    As = as.matrix(
-      expand.grid( rep( list(c(0, 1)), K) )
-    )
-    a = As %*% biject.vector
-    As = As[a + 1,]
-    return(As)
-  }
+  # Item configuration
+  J = 20
+  K = 3
   
-  # Check equality
-  expect_equal(attribute_classes(2), pi_reference(2), check.attributes = FALSE,
-               info = "Verify latent class mapping is correct.")
+  set.seed(888)
+  q1 = sim_q_matrix(J, K)
   
-  # Check equality
-  expect_equal(attribute_classes(5), pi_reference(5), check.attributes = FALSE,
-               info = "Verify latent class mapping is correct.")
+  set.seed(888)
+  q2 = sim_q_matrix(J, K)
   
-  # Check equality
-  expect_equal(attribute_classes(8), pi_reference(8), check.attributes = FALSE,
-               info = "Verify latent class mapping is correct.")
+  expect_equal(q1,  q2, info = "Verify Q matrix is able to be regenerated")
 })
+
+
+test_that("Incorrect dimensions for an identifiable Q matrix creation", {
+  
+  # Verify Q matrix throws error if J < 3 * K - 1.
+  
+  # Todo: tighten this check.
+  expect_error(sim_q_matrix(5, 3), info = "")
+})
+
+
+test_that("Reproducible eta matrix simulations", {
+  
+  # Item configuration
+  J = 25
+  K = 3
+  
+  set.seed(998)
+  # Construct a random q matrix
+  Q_sim = sim_q_matrix(J, K)
+  
+  set.seed(125)
+  # Generate the eta matrix
+  eta1 = sim_eta_matrix(K, J, Q_sim)
+  
+  set.seed(125)
+  # Re-generate the eta matrix
+  eta2 = sim_eta_matrix(K, J, Q_sim)
+  
+  expect_equal(eta1,  eta2, info = "Verify eta matrix is able to be regenerated")
+})
+

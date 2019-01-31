@@ -4,6 +4,9 @@
 
 - Renamed `sim_attribute_classes()` to `attribute_classes()`.
 
+## Deployment
+
+- Added Unit Tests to verify simulation routines and attribute generations.
 
 # simcdm 0.0.5
 
