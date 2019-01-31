@@ -31,7 +31,7 @@ Authors:
 
 Other contributors:
 \itemize{
-  \item Aaron Hudson \email{awhudson@uw.edu} [contributor, copyright holder]
+  \item Aaron Hudson \email{awhudson@uw.edu} (0000-0002-9731-2224) [contributor, copyright holder]
 }
 
 }
