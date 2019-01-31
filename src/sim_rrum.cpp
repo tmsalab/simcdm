@@ -67,9 +67,9 @@ arma::mat sim_rrum_main(const arma::mat &Q, const arma::mat &rstar,
 //' @return Y     A `matrix` with \eqn{N} rows and \eqn{J} columns indicating
 //'               the indviduals' responses to each of the items, where \eqn{J}
 //'               represents the number of items.
-//' @author 
+//' @author
 //' Steven Andrew Culpepper, Aaron Hudson, and James Joseph Balamuta
-//' 
+//'
 //' @export
 //' @template rrum-example
 //' @template rrum-references
