@@ -1,5 +1,9 @@
 # simcdm 0.1.1
 
+## Changes
+
+- Addressed a signed vs. unsigned integer comparison.
+
 ## Documentation
 
 - Fixed spacing issues brought on from an organization of _C++_ code.

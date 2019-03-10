@@ -316,7 +316,7 @@ sim_subject_attributes(int N, int K,
         probs_ = Rcpp::as<arma::vec>(probs);
 
         // Verify length is okay.
-        if (probs_.n_elem != (int)nClass) {
+        if (probs_.n_elem != nClass) {
             Rcpp::stop("`probs` must have %s elements instead of %s.", nClass,
                        probs_.size());
         }
