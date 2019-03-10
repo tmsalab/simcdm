@@ -9,8 +9,8 @@ sim_dina_attributes(alphas, Q)
 \arguments{
 \item{alphas}{A \eqn{N} by \eqn{K} \code{matrix} of latent attributes.}
 
-\item{Q}{A \eqn{J} by \eqn{K} \code{matrix} indicating which skills are required
-for which items.}
+\item{Q}{A \eqn{J} by \eqn{K} \code{matrix} indicating which skills are
+required for which items.}
 }
 \value{
 The \eqn{\eta} \code{matrix} with dimensions \eqn{N \times J}{N x J} under

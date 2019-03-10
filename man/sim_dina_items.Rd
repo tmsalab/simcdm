@@ -9,8 +9,8 @@ sim_dina_items(alphas, Q, ss, gs)
 \arguments{
 \item{alphas}{A \eqn{N} by \eqn{K} \code{matrix} of latent attributes.}
 
-\item{Q}{A \eqn{J} by \eqn{K} \code{matrix} indicating which skills are required
-for which items.}
+\item{Q}{A \eqn{J} by \eqn{K} \code{matrix} indicating which skills are
+required for which items.}
 
 \item{ss}{A \eqn{J} \code{vector} of item slipping parameters.}
 

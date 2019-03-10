@@ -207,13 +207,13 @@ arma::mat sim_eta_matrix(unsigned int K, unsigned int J, const arma::mat &Q)
     return ETA;
 }
 
-//' Simulate all the Latent Attribute Profile \eqn{\mathbf{\alpha}_c} in Matrix
-//form
+//' Simulate all the Latent Attribute Profile \eqn{\mathbf{\alpha}_c} in
+//' Matrix form
 //'
 //' Generate the \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'}
-//' attribute profile matrix for members of class \eqn{c} such that
-//\eqn{\alpha_{ck}} ' is 1 if members of class \eqn{c} possess skill \eqn{k} and
-//zero otherwise.
+//' attribute profile matrix for members of class \eqn{c} such that 
+//' \eqn{\alpha_{ck}} ' is 1 if members of class \eqn{c} possess skill \eqn{k}
+//' and zero otherwise.
 //'
 //' @param K Number of Attributes
 //'
@@ -263,8 +263,8 @@ arma::mat attribute_classes(int K)
 //' Generate a sample from the
 //'  \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'}
 //' attribute profile matrix for members of class \eqn{c} such that
-//\eqn{\alpha_{ck}} ' is 1 if members of class \eqn{c} possess skill \eqn{k} and
-//zero otherwise.
+//' \eqn{\alpha_{ck}} ' is 1 if members of class \eqn{c} possess skill \eqn{k} 
+//' and zero otherwise.
 //'
 //' @param N      Number of Observations
 //' @param K      Number of Skills
