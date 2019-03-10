@@ -4,11 +4,11 @@
 \name{simcdm-package}
 \alias{simcdm}
 \alias{simcdm-package}
-\title{simcdm: Simulate Cognitive Diagnostic Model (CDM) Data}
+\title{simcdm: Simulate Cognitive Diagnostic Model ('CDM') Data}
 \description{
 Provides efficient R and 'C++' routines to simulate cognitive diagnostic
-    model data for Deterministic Input, Noisy "And" Gate (DINA) and
-    reduced Reparameterized Unified Model (rRUM) from 
+    model data for Deterministic Input, Noisy "And" Gate ('DINA') and
+    reduced Reparameterized Unified Model ('rRUM') from 
     Culpepper and Hudson (2017) <doi: 10.1177/0146621617707511>,
     Culpepper (2015) <doi:10.3102/1076998615595403>, and
     de la Torre (2009) <doi:10.3102/1076998607309474>.

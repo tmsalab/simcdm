@@ -56,6 +56,9 @@ test_that("Valid attribute classes (alpha matrix / pi references)", {
 
 test_that("Simulation of attributes matches", {
   
+  # Use old RNG version for equality check
+  suppressWarnings(RNGversion("3.5.0"))
+  
   N = 20   # Number of Examinees / Subjects
   K = 3    # Number of Skills / Attributes
   
@@ -73,6 +76,9 @@ test_that("Simulation of attributes matches", {
 })
 
 test_that("Simulation of attributes matches with probs", {
+  
+  # Use old RNG version for equality check
+  suppressWarnings(RNGversion("3.5.0"))
   
   N = 20   # Number of Examinees / Subjects
   K = 2    # Number of Skills / Attributes

@@ -8,16 +8,13 @@
 
 0 errors | 0 warnings | 1 note
 
-Days since last update: 1
-
 Possibly mis-spelled words in DESCRIPTION:
   Culpepper (22:5, 23:5)
   Torre (24:11)
   de (24:5)
 
-- We are issuing a patch for the package 1 day after it was listed because 
-  of a compilation failure on Solaris, which is caused by an ambiguous overload
-  of the `pow()` function.
+- We are issuing a patch for the package to address an issue with the 
+  unit tests governing the random number generation.
 - Regarding mis-spellings:
   - `Culpepper`, `de`, and `Torre` are either parts of names or lastnames.
 

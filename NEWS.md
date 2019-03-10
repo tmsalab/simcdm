@@ -1,3 +1,18 @@
+# simcdm 0.1.1
+
+## Changes
+
+- Addressed a signed vs. unsigned integer comparison.
+
+## Documentation
+
+- Fixed spacing issues brought on from an organization of _C++_ code.
+
+## Deployment
+
+- Changed unit tests to use R 3.5.0's RNG setup in anticipation for the RNG
+  change in R 3.6.0.
+
 # simcdm 0.1.0
 
 ## Changes

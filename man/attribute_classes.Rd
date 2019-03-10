@@ -2,7 +2,8 @@
 % Please edit documentation in R/RcppExports.R
 \name{attribute_classes}
 \alias{attribute_classes}
-\title{Simulate all the Latent Attribute Profile \eqn{\mathbf{\alpha}_c} in Matrix form}
+\title{Simulate all the Latent Attribute Profile \eqn{\mathbf{\alpha}_c} in
+Matrix form}
 \usage{
 attribute_classes(K)
 }
@@ -16,8 +17,9 @@ mastery and nonmastery of the \eqn{K} skills.
 }
 \description{
 Generate the \eqn{\mathbf{\alpha}_c = (\alpha_{c1}, \ldots, \alpha_{cK})'}
-attribute profile matrix for members of class \eqn{c} such that \eqn{\alpha_{ck}}
-is 1 if members of class \eqn{c} possess skill \eqn{k} and zero otherwise.
+attribute profile matrix for members of class \eqn{c} such that
+\eqn{\alpha_{ck}} ' is 1 if members of class \eqn{c} possess skill \eqn{k}
+and zero otherwise.
 }
 \examples{
 ## Simulate Attribute Class Matrix ----
