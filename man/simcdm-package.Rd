@@ -16,6 +16,7 @@ Provides efficient R and 'C++' routines to simulate cognitive diagnostic
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://tmsalab.github.io/simcdm}
   \item \url{https://github.com/tmsalab/simcdm}
   \item Report bugs at \url{https://github.com/tmsalab/simcdm/issues}
 }

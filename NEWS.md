@@ -1,3 +1,9 @@
+# simcdm 0.1.1.900
+
+## Documentation
+
+- Added a `pkgdown` website that deploys to <http://tmsalab.github.io/dina>.
+
 # simcdm 0.1.1
 
 ## Changes
