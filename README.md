@@ -3,8 +3,10 @@
 
 # simcdm
 
+<!-- badges: start -->
+
 [![Build
-Status](https://travis-ci.org/tmsalab/simcdm.svg)](https://travis-ci.org/tmsalab/simcdm)
+Status](https://travis-ci.com/tmsalab/simcdm.svg)](https://travis-ci.com/tmsalab/simcdm)
 [![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN Version
 Badge](http://www.r-pkg.org/badges/version/simcdm)](https://cran.r-project.org/package=simcdm)
@@ -14,8 +16,9 @@ Status](https://cranchecks.info/badges/worst/simcdm)](https://cran.r-project.org
 Downloads](http://cranlogs.r-pkg.org/badges/simcdm?color=brightgreen)](http://www.r-pkg.org/pkg/simcdm)
 [![RStudio CRAN Mirror’s Total
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/simcdm?color=brightgreen)](http://www.r-pkg.org/pkg/simcdm)
-[![Coverage
-status](https://codecov.io/gh/tmsalab/simcdm/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/simcdm?branch=master)
+[![Coverage test
+coverage](https://codecov.io/gh/tmsalab/simcdm/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/simcdm?branch=master)
+<!-- badges: end -->
 
 The goal of `simcdm` is to provide flexible ways to simulate data under
 cognitive diagnostic models.
