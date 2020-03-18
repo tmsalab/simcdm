@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![Build
-Status](https://travis-ci.com/tmsalab/simcdm.svg)](https://travis-ci.com/tmsalab/simcdm)
+[![R build
+status](https://github.com/tmsalab/simcdm/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/simcdm/actions)
 [![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN Version
 Badge](http://www.r-pkg.org/badges/version/simcdm)](https://cran.r-project.org/package=simcdm)
@@ -59,15 +59,17 @@ likely be moved to a different package.
 
 For more details, please see the [package vignettes](vignettes/):
 
-  - [Overview of `simcdm`](vignettes/overview-simcdm.html)
-  - [Using `simcdm` in R packages](vignettes/simcdm-in-packages.html)
+  - [Overview of
+    `simcdm`](https://tmsalab.github.io/simcdm/articles/overview-simcdm.html)
+  - [Using `simcdm` in R
+    packages](https://tmsalab.github.io/simcdm/articles/simcdm-in-packages.html)
 
 ## Authors
 
 James Joseph Balamuta and Steven Andrew Culpepper with contributions
 from Aaron Hudson.
 
-## Citing the `simcdm` package
+## Citing the simcdm package
 
 To ensure future development of the package, please cite `simcdm`
 package if used during the analysis or simulations. Citation information
