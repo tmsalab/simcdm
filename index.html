@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulate Cognitive Diagnostic Model (CDM) Data • simcdm</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Simulate Cognitive Diagnostic Model (CDM) Data">
 <meta property="og:description" content='Provides efficient R and C++ routines to simulate cognitive diagnostic
     model data for Deterministic Input, Noisy "And" Gate (DINA) and
@@ -28,7 +29,9 @@
   gtag('config', 'UA-151562227-1');
 </script>
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -41,23 +44,17 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">simcdm</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.900</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1.900</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -77,8 +74,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/tmsalab/simcdm/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tmsalab/simcdm/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -94,28 +91,30 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="simcdm" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#simcdm" class="anchor"></a>simcdm</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="simcdm">simcdm<a class="anchor" aria-label="anchor" href="#simcdm"></a>
+</h1></div>
 <!-- badges: start -->
 
 <p>The goal of <code>simcdm</code> is to provide flexible ways to simulate data under cognitive diagnostic models.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>You can install simcdm from GitHub with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("devtools")</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"tmsalab/simcdm"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"tmsalab/simcdm"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
 <p>To use <code>simcdm</code>, load the package using:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"simcdm"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://tmsalab.github.io/simcdm" class="external-link">"simcdm"</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="overview" class="section level2">
-<h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
 <p>There are four distinct sets of functions within the package:</p>
 <ul>
 <li>Attributes: <code><a href="reference/attribute_classes.html">attribute_classes()</a></code>, <code><a href="reference/attribute_bijection.html">attribute_bijection()</a></code>, <code><a href="reference/attribute_inv_bijection.html">attribute_inv_bijection()</a></code>, and <code><a href="reference/sim_subject_attributes.html">sim_subject_attributes()</a></code>.</li>
@@ -126,27 +125,28 @@
 <li>reduced Reparameterized Unified Model (rRUM): <code><a href="reference/sim_rrum_items.html">sim_rrum_items()</a></code>
 </li>
 </ul>
-<p>Functions that use random numbers to simulate values are named with the prefix of <code>sim_*()</code>. This is done to allow for functions to be quickly identified and used through autocomplete inside of the <a href="https://www.rstudio.com">RStudio IDE</a>. At a later time, the <code>attribute_*()</code> will likely be moved to a different package.</p>
+<p>Functions that use random numbers to simulate values are named with the prefix of <code>sim_*()</code>. This is done to allow for functions to be quickly identified and used through autocomplete inside of the <a href="https://www.rstudio.com" class="external-link">RStudio IDE</a>. At a later time, the <code>attribute_*()</code> will likely be moved to a different package.</p>
 <p>For more details, please see the <a href="vignettes/">package vignettes</a>:</p>
 <ul>
-<li><a href="https://tmsalab.github.io/simcdm/articles/overview-simcdm.html">Overview of <code>simcdm</code></a></li>
-<li><a href="https://tmsalab.github.io/simcdm/articles/simcdm-in-packages.html">Using <code>simcdm</code> in R packages</a></li>
+<li><a href="https://tmsalab.github.io/simcdm/articles/overview-simcdm.html" class="external-link">Overview of <code>simcdm</code></a></li>
+<li><a href="https://tmsalab.github.io/simcdm/articles/simcdm-in-packages.html" class="external-link">Using <code>simcdm</code> in R packages</a></li>
 </ul>
 </div>
-<div id="authors" class="section level2">
-<h2 class="hasAnchor">
-<a href="#authors" class="anchor"></a>Authors</h2>
+<div class="section level2">
+<h2 id="authors">Authors<a class="anchor" aria-label="anchor" href="#authors"></a>
+</h2>
 <p>James Joseph Balamuta and Steven Andrew Culpepper with contributions from Aaron Hudson.</p>
 </div>
-<div id="citing-the-simcdm-package" class="section level2">
-<h2 class="hasAnchor">
-<a href="#citing-the-simcdm-package" class="anchor"></a>Citing the simcdm package</h2>
+<div class="section level2">
+<h2 id="citing-the-simcdm-package">Citing the simcdm package<a class="anchor" aria-label="anchor" href="#citing-the-simcdm-package"></a>
+</h2>
 <p>To ensure future development of the package, please cite <code>simcdm</code> package if used during the analysis or simulations. Citation information for the package may be acquired by using in <em>R</em>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">"simcdm"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"simcdm"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="license" class="section level2">
-<h2 class="hasAnchor">
-<a href="#license" class="anchor"></a>License</h2>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
 <p>GPL (&gt;= 2)</p>
 </div>
 </div>
@@ -154,59 +154,63 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=simcdm">https://​cloud.r-project.org/​package=simcdm</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/tmsalab/simcdm/">https://​github.com/​tmsalab/​simcdm/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/tmsalab/simcdm/issues">https://​github.com/​tmsalab/​simcdm/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=simcdm" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/tmsalab/simcdm/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/tmsalab/simcdm/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>GPL (&gt;= 2)</li>
 </ul>
 </div>
+
+
 <div class="citation">
-<h2>Citation</h2>
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html">Citing simcdm</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>James Joseph Balamuta <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0003-2826-8458" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Steven Andrew Culpepper <br><small class="roles"> Author, copyright holder </small> <a href="https://orcid.org/0000-0003-4226-6176" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing simcdm</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/tmsalab/simcdm/actions"><img src="https://github.com/tmsalab/simcdm/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="http://www.gnu.org/licenses/gpl-2.0.html"><img src="http://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat" alt="Package-License"></a></li>
-<li><a href="https://cran.r-project.org/package=simcdm"><img src="http://www.r-pkg.org/badges/version/simcdm" alt="CRAN Version Badge"></a></li>
-<li><a href="https://cran.r-project.org/web/checks/check_results_simcdm.html"><img src="https://cranchecks.info/badges/worst/simcdm" alt="CRAN Status"></a></li>
-<li><a href="http://www.r-pkg.org/pkg/simcdm"><img src="http://cranlogs.r-pkg.org/badges/simcdm?color=brightgreen" alt="RStudio CRAN Mirror’s Monthly Downloads"></a></li>
-<li><a href="http://www.r-pkg.org/pkg/simcdm"><img src="http://cranlogs.r-pkg.org/badges/grand-total/simcdm?color=brightgreen" alt="RStudio CRAN Mirror’s Total Downloads"></a></li>
-<li><a href="https://codecov.io/github/tmsalab/simcdm?branch=master"><img src="https://codecov.io/gh/tmsalab/simcdm/branch/master/graph/badge.svg" alt="Coverage test coverage"></a></li>
+<li>James Joseph Balamuta <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0003-2826-8458" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Steven Andrew Culpepper <br><small class="roles"> Author, copyright holder </small> <a href="https://orcid.org/0000-0003-4226-6176" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/tmsalab/simcdm/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/tmsalab/simcdm/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="http://www.gnu.org/licenses/gpl-2.0.html" class="external-link"><img src="http://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat" alt="Package-License"></a></li>
+<li><a href="https://cran.r-project.org/package=simcdm" class="external-link"><img src="http://www.r-pkg.org/badges/version/simcdm" alt="CRAN Version Badge"></a></li>
+<li><a href="https://cran.r-project.org/web/checks/check_results_simcdm.html" class="external-link"><img src="https://cranchecks.info/badges/worst/simcdm" alt="CRAN Status"></a></li>
+<li><a href="http://www.r-pkg.org/pkg/simcdm" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/simcdm?color=brightgreen" alt="RStudio CRAN Mirror’s Monthly Downloads"></a></li>
+<li><a href="http://www.r-pkg.org/pkg/simcdm" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/grand-total/simcdm?color=brightgreen" alt="RStudio CRAN Mirror’s Total Downloads"></a></li>
+<li><a href="https://codecov.io/github/tmsalab/simcdm?branch=master" class="external-link"><img src="https://codecov.io/gh/tmsalab/simcdm/branch/master/graph/badge.svg" alt="Coverage test coverage"></a></li>
+</ul>
 </div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by James Joseph Balamuta, Steven Andrew Culpepper.</p>
+  <p></p>
+<p>Developed by James Joseph Balamuta, Steven Andrew Culpepper.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -214,6 +218,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -1,8 +1,8 @@
-pandoc: 2.7.3
-pkgdown: 1.4.1.9000
-pkgdown_sha: 630bf9f05b53a6b63d658bf2643855a8b7eda0c0
+pandoc: 2.19.2
+pkgdown: 2.0.7
+pkgdown_sha: ~
 articles:
   overview-simcdm: overview-simcdm.html
   simcdm-in-packages: simcdm-in-packages.html
-last_built: 2020-03-18T03:49Z
+last_built: 2023-11-29T02:52Z
 

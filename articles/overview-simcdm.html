@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Overview of `simcdm` • simcdm</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Overview of `simcdm`">
 <meta property="og:description" content="simcdm">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -23,7 +24,9 @@
   gtag('config', 'UA-151562227-1');
 </script>
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -36,23 +39,17 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">simcdm</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.900</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1.900</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -72,8 +69,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/tmsalab/simcdm/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tmsalab/simcdm/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -90,294 +87,328 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Overview of <code>simcdm</code>
+      <h1 data-toc-skip>Overview of <code>simcdm</code>
 </h1>
-                        <h4 class="author">James Joseph Balamuta</h4>
+                        <h4 data-toc-skip class="author">James Joseph
+Balamuta</h4>
             
-            <h4 class="date">2020-03-18</h4>
+            <h4 data-toc-skip class="date">2023-11-29</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/tmsalab/simcdm/blob/master/vignettes/overview-simcdm.Rmd"><code>vignettes/overview-simcdm.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/tmsalab/simcdm/blob/HEAD/vignettes/overview-simcdm.Rmd" class="external-link"><code>vignettes/overview-simcdm.Rmd</code></a></small>
       <div class="hidden name"><code>overview-simcdm.Rmd</code></div>
 
     </div>
 
     
     
-<div id="overview" class="section level1">
-<h1 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h1>
-<p>Within this document, we highlight the different features of the <code>simcdm</code> package as it relates to simulating cognitive diagnostic modeling data.</p>
-<div id="notation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#notation" class="anchor"></a>Notation</h2>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<p>Within this document, we highlight the different features of the
+<code>simcdm</code> package as it relates to simulating cognitive
+diagnostic modeling data.</p>
+<div class="section level3">
+<h3 id="notation">Notation<a class="anchor" aria-label="anchor" href="#notation"></a>
+</h3>
 <p>For consistency, we aim to use the following notation.</p>
 <p>Denoting individuals:</p>
 <ul>
 <li>
-<span class="math inline">\(N\)</span> is the total number of individuals taking the assessment.</li>
+<span class="math inline">\(N\)</span> is the total number of
+individuals taking the assessment.</li>
 <li>
-<span class="math inline">\(i\)</span> is the current individual.</li>
+<span class="math inline">\(i\)</span> is the current
+individual.</li>
 </ul>
 <p>Denoting items:</p>
 <ul>
 <li>
-<span class="math inline">\(J\)</span> is the total number of items on the assessment.</li>
+<span class="math inline">\(J\)</span> is the total number of items
+on the assessment.</li>
 <li>
 <span class="math inline">\(j\)</span> is the current item</li>
 <li>
-<span class="math inline">\(Y_{ij}\)</span> is the observed binary response for individual <span class="math inline">\(i\)</span> (<span class="math inline">\(1\leq i \leq N\)</span>) to item <span class="math inline">\(j\)</span> (<span class="math inline">\(1\leq j\leq J\)</span>).</li>
+<span class="math inline">\(Y_{ij}\)</span> is the observed binary
+response for individual <span class="math inline">\(i\)</span> (<span class="math inline">\(1\leq i \leq N\)</span>) to item <span class="math inline">\(j\)</span> (<span class="math inline">\(1\leq
+j\leq J\)</span>).</li>
 <li>
-<span class="math inline">\(s_j\)</span> is the probability of slipping on item <span class="math inline">\(j\)</span>.</li>
+<span class="math inline">\(s_j\)</span> is the probability of
+slipping on item <span class="math inline">\(j\)</span>.</li>
 <li>
-<span class="math inline">\(g_j\)</span> is the probability of guessing on item <span class="math inline">\(j\)</span>.</li>
+<span class="math inline">\(g_j\)</span> is the probability of
+guessing on item <span class="math inline">\(j\)</span>.</li>
 </ul>
 <p>Denoting attributes:</p>
 <ul>
 <li>
-<span class="math inline">\(K\)</span> is the total number of attributes for the assessment item.</li>
+<span class="math inline">\(K\)</span> is the total number of
+attributes for the assessment item.</li>
 <li>
-<span class="math inline">\(k\)</span> is the current attribute.</li>
+<span class="math inline">\(k\)</span> is the current
+attribute.</li>
 <li>
-<span class="math inline">\(\boldsymbol\alpha_i=\left(\alpha_{i1},\dots,\alpha_{iK}\right)^\prime\)</span> where <span class="math inline">\(\boldsymbol\alpha_i\in \left\{0,1\right\}^K\)</span> and <span class="math inline">\(\alpha_{ik}\)</span> is the latent binary attribute for individual <span class="math inline">\(i\)</span> on attribute <span class="math inline">\(k\)</span> (<span class="math inline">\(1\leq k\leq K\)</span>).</li>
+<span class="math inline">\(\boldsymbol\alpha_i=\left(\alpha_{i1},\dots,\alpha_{iK}\right)^\prime\)</span>
+where <span class="math inline">\(\boldsymbol\alpha_i\in
+\left\{0,1\right\}^K\)</span> and <span class="math inline">\(\alpha_{ik}\)</span> is the latent binary
+attribute for individual <span class="math inline">\(i\)</span> on
+attribute <span class="math inline">\(k\)</span> (<span class="math inline">\(1\leq k\leq K\)</span>).</li>
 </ul>
 <p>Denoting the skill/attribute “Q” matrix:</p>
 <ul>
 <li>
-<span class="math inline">\(\boldsymbol q_{j}=\left(q_{j1},\dots,q_{jK}\right)^\prime\)</span> be the <span class="math inline">\(j\)</span>th row of <span class="math inline">\(\boldsymbol Q\)</span> such that <span class="math inline">\(q_{jk}=1\)</span> if attribute <span class="math inline">\(k\)</span> is required for item <span class="math inline">\(j\)</span> and zero otherwise.</li>
+<span class="math inline">\(\boldsymbol
+q_{j}=\left(q_{j1},\dots,q_{jK}\right)^\prime\)</span> be the <span class="math inline">\(j\)</span>th row of <span class="math inline">\(\boldsymbol Q\)</span> such that <span class="math inline">\(q_{jk}=1\)</span> if attribute <span class="math inline">\(k\)</span> is required for item <span class="math inline">\(j\)</span> and zero otherwise.</li>
 </ul>
 </div>
 </div>
-<div id="usage" class="section level1">
-<h1 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h1>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
 <p>To use <code>simcdm</code>, please load the package.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(simcdm)</span></code></pre></div>
-<div id="matrix-simulation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#matrix-simulation" class="anchor"></a>Matrix Simulation</h2>
-<p>Simulations within this section are done underneath the following settings.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">888</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Setup Parameters</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>N =<span class="st"> </span><span class="dv">15</span>   <span class="co"># Number of Examinees / Subjects</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>J =<span class="st"> </span><span class="dv">10</span>   <span class="co"># Number of Items</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>K =<span class="st"> </span><span class="dv">2</span>    <span class="co"># Number of Skills / Attributes</span></span></code></pre></div>
-<div id="identifiable-q-matrix-simulation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#identifiable-q-matrix-simulation" class="anchor"></a>Identifiable Q Matrix Simulation</h3>
-<p>Simulate an identifiable <span class="math inline">\(Q\)</span> matrix (<span class="math inline">\(J\)</span> items by <span class="math inline">\(K\)</span> skills).</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">1512</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Simulate an identifiable Q matrix</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>Q =<span class="st"> </span><span class="kw"><a href="../reference/sim_q_matrix.html">sim_q_matrix</a></span>(J, K)</span>
-<span id="cb3-6"><a href="#cb3-6"></a>Q</span></code></pre></div>
-<pre><code>##       [,1] [,2]
-##  [1,]    1    0
-##  [2,]    1    0
-##  [3,]    0    1
-##  [4,]    0    1
-##  [5,]    0    1
-##  [6,]    0    1
-##  [7,]    1    1
-##  [8,]    1    0
-##  [9,]    1    0
-## [10,]    0    1</code></pre>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tmsalab.github.io/simcdm" class="external-link">simcdm</a></span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="matrix-simulation">Matrix Simulation<a class="anchor" aria-label="anchor" href="#matrix-simulation"></a>
+</h3>
+<p>Simulations within this section are done underneath the following
+settings.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">888</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Setup Parameters</span></span>
+<span><span class="va">N</span> <span class="op">=</span> <span class="fl">15</span>   <span class="co"># Number of Examinees / Subjects</span></span>
+<span><span class="va">J</span> <span class="op">=</span> <span class="fl">10</span>   <span class="co"># Number of Items</span></span>
+<span><span class="va">K</span> <span class="op">=</span> <span class="fl">2</span>    <span class="co"># Number of Skills / Attributes</span></span></code></pre></div>
+<div class="section level4">
+<h4 id="identifiable-q-matrix-simulation">Identifiable Q Matrix Simulation<a class="anchor" aria-label="anchor" href="#identifiable-q-matrix-simulation"></a>
+</h4>
+<p>Simulate an identifiable <span class="math inline">\(Q\)</span>
+matrix (<span class="math inline">\(J\)</span> items by <span class="math inline">\(K\)</span> skills).</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1512</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Simulate an identifiable Q matrix</span></span>
+<span><span class="va">Q</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_q_matrix.html">sim_q_matrix</a></span><span class="op">(</span><span class="va">J</span>, <span class="va">K</span><span class="op">)</span></span>
+<span><span class="va">Q</span></span></code></pre></div>
+<pre><code><span><span class="co">##       [,1] [,2]</span></span>
+<span><span class="co">##  [1,]    1    0</span></span>
+<span><span class="co">##  [2,]    1    0</span></span>
+<span><span class="co">##  [3,]    0    1</span></span>
+<span><span class="co">##  [4,]    0    1</span></span>
+<span><span class="co">##  [5,]    0    1</span></span>
+<span><span class="co">##  [6,]    0    1</span></span>
+<span><span class="co">##  [7,]    1    1</span></span>
+<span><span class="co">##  [8,]    1    0</span></span>
+<span><span class="co">##  [9,]    1    0</span></span>
+<span><span class="co">## [10,]    0    1</span></span></code></pre>
 </div>
-<div id="eta-matrix-simulation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#eta-matrix-simulation" class="anchor"></a><span class="math inline">\(\eta\)</span> Matrix Simulation</h3>
+<div class="section level4">
+<h4 id="eta-matrix-simulation">
+<span class="math inline">\(\eta\)</span> Matrix Simulation<a class="anchor" aria-label="anchor" href="#eta-matrix-simulation"></a>
+</h4>
 <p>Create the ideal response matrix for each trait (<span class="math inline">\(J\)</span> items by <span class="math inline">\(2^K\)</span> latent classes).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">4421</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Simulate an eta matrix</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>eta =<span class="st"> </span><span class="kw"><a href="../reference/sim_eta_matrix.html">sim_eta_matrix</a></span>(K, J, Q)</span>
-<span id="cb5-6"><a href="#cb5-6"></a>eta</span></code></pre></div>
-<pre><code>##       [,1] [,2] [,3] [,4]
-##  [1,]    0    0    1    1
-##  [2,]    0    0    1    1
-##  [3,]    0    1    0    1
-##  [4,]    0    1    0    1
-##  [5,]    0    1    0    1
-##  [6,]    0    1    0    1
-##  [7,]    0    0    0    1
-##  [8,]    0    0    1    1
-##  [9,]    0    0    1    1
-## [10,]    0    1    0    1</code></pre>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">4421</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Simulate an eta matrix</span></span>
+<span><span class="va">eta</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_eta_matrix.html">sim_eta_matrix</a></span><span class="op">(</span><span class="va">K</span>, <span class="va">J</span>, <span class="va">Q</span><span class="op">)</span></span>
+<span><span class="va">eta</span></span></code></pre></div>
+<pre><code><span><span class="co">##       [,1] [,2] [,3] [,4]</span></span>
+<span><span class="co">##  [1,]    0    0    1    1</span></span>
+<span><span class="co">##  [2,]    0    0    1    1</span></span>
+<span><span class="co">##  [3,]    0    1    0    1</span></span>
+<span><span class="co">##  [4,]    0    1    0    1</span></span>
+<span><span class="co">##  [5,]    0    1    0    1</span></span>
+<span><span class="co">##  [6,]    0    1    0    1</span></span>
+<span><span class="co">##  [7,]    0    0    0    1</span></span>
+<span><span class="co">##  [8,]    0    0    1    1</span></span>
+<span><span class="co">##  [9,]    0    0    1    1</span></span>
+<span><span class="co">## [10,]    0    1    0    1</span></span></code></pre>
 </div>
-<div id="attribute-profile-simulation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#attribute-profile-simulation" class="anchor"></a>Attribute profile simulation</h3>
+<div class="section level4">
+<h4 id="attribute-profile-simulation">Attribute profile simulation<a class="anchor" aria-label="anchor" href="#attribute-profile-simulation"></a>
+</h4>
 <p>Generate latent attribute profile classes (<span class="math inline">\(2^K\)</span> latent classes by <span class="math inline">\(K\)</span> skills).</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Create a listing of all attribute classes </span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>class_alphas =<span class="st"> </span><span class="kw"><a href="../reference/attribute_classes.html">attribute_classes</a></span>(K)</span>
-<span id="cb7-3"><a href="#cb7-3"></a>class_alphas</span></code></pre></div>
-<pre><code>##      [,1] [,2]
-## [1,]    0    0
-## [2,]    0    1
-## [3,]    1    0
-## [4,]    1    1</code></pre>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Create a listing of all attribute classes </span></span>
+<span><span class="va">class_alphas</span> <span class="op">=</span> <span class="fu"><a href="../reference/attribute_classes.html">attribute_classes</a></span><span class="op">(</span><span class="va">K</span><span class="op">)</span></span>
+<span><span class="va">class_alphas</span></span></code></pre></div>
+<pre><code><span><span class="co">##      [,1] [,2]</span></span>
+<span><span class="co">## [1,]    0    0</span></span>
+<span><span class="co">## [2,]    0    1</span></span>
+<span><span class="co">## [3,]    1    0</span></span>
+<span><span class="co">## [4,]    1    1</span></span></code></pre>
 <p>Generate latent attribute profile class for each subject (<span class="math inline">\(N\)</span> subjects by <span class="math inline">\(K\)</span> skills).</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">5126</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># Create attributes for a subject </span></span>
-<span id="cb9-5"><a href="#cb9-5"></a>subject_alphas =<span class="st"> </span><span class="kw"><a href="../reference/sim_subject_attributes.html">sim_subject_attributes</a></span>(N, K)</span>
-<span id="cb9-6"><a href="#cb9-6"></a>subject_alphas</span></code></pre></div>
-<pre><code>##       [,1] [,2]
-##  [1,]    0    0
-##  [2,]    1    1
-##  [3,]    1    0
-##  [4,]    1    1
-##  [5,]    0    0
-##  [6,]    0    1
-##  [7,]    0    1
-##  [8,]    1    0
-##  [9,]    0    1
-## [10,]    0    1
-## [11,]    0    1
-## [12,]    0    1
-## [13,]    1    0
-## [14,]    0    0
-## [15,]    1    0</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Equivalent to:</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="co"># subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE),]</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">5126</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Create attributes for a subject </span></span>
+<span><span class="va">subject_alphas</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_subject_attributes.html">sim_subject_attributes</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">K</span><span class="op">)</span></span>
+<span><span class="va">subject_alphas</span></span></code></pre></div>
+<pre><code><span><span class="co">##       [,1] [,2]</span></span>
+<span><span class="co">##  [1,]    0    0</span></span>
+<span><span class="co">##  [2,]    1    1</span></span>
+<span><span class="co">##  [3,]    1    0</span></span>
+<span><span class="co">##  [4,]    1    1</span></span>
+<span><span class="co">##  [5,]    0    0</span></span>
+<span><span class="co">##  [6,]    0    1</span></span>
+<span><span class="co">##  [7,]    0    1</span></span>
+<span><span class="co">##  [8,]    1    0</span></span>
+<span><span class="co">##  [9,]    0    1</span></span>
+<span><span class="co">## [10,]    0    1</span></span>
+<span><span class="co">## [11,]    0    1</span></span>
+<span><span class="co">## [12,]    0    1</span></span>
+<span><span class="co">## [13,]    1    0</span></span>
+<span><span class="co">## [14,]    0    0</span></span>
+<span><span class="co">## [15,]    1    0</span></span></code></pre>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Equivalent to:</span></span>
+<span><span class="co"># subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE),]</span></span></code></pre></div>
 </div>
-<div id="dina-simulation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dina-simulation" class="anchor"></a>DINA Simulation</h3>
-<p>Simulations within this section are done underneath the following settings.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">888</span>)</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Setup Parameters</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>N =<span class="st"> </span><span class="dv">15</span>   <span class="co"># Number of Examinees / Subjects</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>J =<span class="st"> </span><span class="dv">10</span>   <span class="co"># Number of Items</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>K =<span class="st"> </span><span class="dv">2</span>    <span class="co"># Number of Skills / Attributes</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="co"># Assign slipping and guessing values for each item</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a>ss =<span class="st"> </span>gs =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(.<span class="dv">2</span>, J)</span>
-<span id="cb12-11"><a href="#cb12-11"></a></span>
-<span id="cb12-12"><a href="#cb12-12"></a><span class="co"># Simulate identifiable Q matrix</span></span>
-<span id="cb12-13"><a href="#cb12-13"></a>Q =<span class="st"> </span><span class="kw"><a href="../reference/sim_q_matrix.html">sim_q_matrix</a></span>(J, K)</span>
-<span id="cb12-14"><a href="#cb12-14"></a></span>
-<span id="cb12-15"><a href="#cb12-15"></a><span class="co"># Simulate subject attributes</span></span>
-<span id="cb12-16"><a href="#cb12-16"></a>subject_alphas =<span class="st"> </span><span class="kw"><a href="../reference/sim_subject_attributes.html">sim_subject_attributes</a></span>(N, K)</span></code></pre></div>
+<div class="section level4">
+<h4 id="dina-simulation">DINA Simulation<a class="anchor" aria-label="anchor" href="#dina-simulation"></a>
+</h4>
+<p>Simulations within this section are done underneath the following
+settings.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">888</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Setup Parameters</span></span>
+<span><span class="va">N</span> <span class="op">=</span> <span class="fl">15</span>   <span class="co"># Number of Examinees / Subjects</span></span>
+<span><span class="va">J</span> <span class="op">=</span> <span class="fl">10</span>   <span class="co"># Number of Items</span></span>
+<span><span class="va">K</span> <span class="op">=</span> <span class="fl">2</span>    <span class="co"># Number of Skills / Attributes</span></span>
+<span></span>
+<span><span class="co"># Assign slipping and guessing values for each item</span></span>
+<span><span class="va">ss</span> <span class="op">=</span> <span class="va">gs</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">.2</span>, <span class="va">J</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Simulate identifiable Q matrix</span></span>
+<span><span class="va">Q</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_q_matrix.html">sim_q_matrix</a></span><span class="op">(</span><span class="va">J</span>, <span class="va">K</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Simulate subject attributes</span></span>
+<span><span class="va">subject_alphas</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_subject_attributes.html">sim_subject_attributes</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">K</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="dina-item-simulation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dina-item-simulation" class="anchor"></a>DINA Item Simulation</h3>
-<p>Simulate item data, <span class="math inline">\(Y\)</span>, under DINA model (<span class="math inline">\(N\)</span> by <span class="math inline">\(J\)</span>)</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">2019</span>)</span>
-<span id="cb13-3"><a href="#cb13-3"></a></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="co"># Simulate items under the DINA model</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a>items_dina =<span class="st"> </span><span class="kw"><a href="../reference/sim_dina_items.html">sim_dina_items</a></span>(subject_alphas, Q, ss, gs)</span>
-<span id="cb13-6"><a href="#cb13-6"></a>items_dina</span></code></pre></div>
-<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-##  [1,]    0    0    0    1    1    0    0    0    1     1
-##  [2,]    1    1    1    0    1    1    1    1    0     1
-##  [3,]    0    0    0    0    1    0    0    0    1     1
-##  [4,]    1    1    1    0    0    0    1    1    1     0
-##  [5,]    1    1    1    1    1    1    1    1    1     1
-##  [6,]    1    1    1    1    0    1    0    1    0     1
-##  [7,]    0    0    0    1    1    0    0    0    0     1
-##  [8,]    1    0    1    1    1    0    0    1    0     1
-##  [9,]    1    1    1    1    0    1    1    1    1     1
-## [10,]    0    1    0    1    1    0    0    0    1     1
-## [11,]    1    1    1    1    1    1    1    0    1     1
-## [12,]    0    0    0    0    1    0    0    0    1     0
-## [13,]    0    0    0    0    1    0    0    0    1     1
-## [14,]    1    0    0    1    1    0    0    0    0     0
-## [15,]    1    1    0    1    0    0    1    1    0     0</code></pre>
+<div class="section level4">
+<h4 id="dina-item-simulation">DINA Item Simulation<a class="anchor" aria-label="anchor" href="#dina-item-simulation"></a>
+</h4>
+<p>Simulate item data, <span class="math inline">\(Y\)</span>, under
+DINA model (<span class="math inline">\(N\)</span> by <span class="math inline">\(J\)</span>)</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">2019</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Simulate items under the DINA model</span></span>
+<span><span class="va">items_dina</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_dina_items.html">sim_dina_items</a></span><span class="op">(</span><span class="va">subject_alphas</span>, <span class="va">Q</span>, <span class="va">ss</span>, <span class="va">gs</span><span class="op">)</span></span>
+<span><span class="va">items_dina</span></span></code></pre></div>
+<pre><code><span><span class="co">##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]</span></span>
+<span><span class="co">##  [1,]    0    0    0    1    1    0    0    0    1     1</span></span>
+<span><span class="co">##  [2,]    1    1    1    0    1    1    1    1    0     1</span></span>
+<span><span class="co">##  [3,]    0    0    0    0    1    0    0    0    1     1</span></span>
+<span><span class="co">##  [4,]    1    1    1    0    0    0    1    1    1     0</span></span>
+<span><span class="co">##  [5,]    1    1    1    1    1    1    1    1    1     1</span></span>
+<span><span class="co">##  [6,]    1    1    1    1    0    1    0    1    0     1</span></span>
+<span><span class="co">##  [7,]    0    0    0    1    1    0    0    0    0     1</span></span>
+<span><span class="co">##  [8,]    1    0    1    1    1    0    0    1    0     1</span></span>
+<span><span class="co">##  [9,]    1    1    1    1    0    1    1    1    1     1</span></span>
+<span><span class="co">## [10,]    0    1    0    1    1    0    0    0    1     1</span></span>
+<span><span class="co">## [11,]    1    1    1    1    1    1    1    0    1     1</span></span>
+<span><span class="co">## [12,]    0    0    0    0    1    0    0    0    1     0</span></span>
+<span><span class="co">## [13,]    0    0    0    0    1    0    0    0    1     1</span></span>
+<span><span class="co">## [14,]    1    0    0    1    1    0    0    0    0     0</span></span>
+<span><span class="co">## [15,]    1    1    0    1    0    0    1    1    0     0</span></span></code></pre>
 </div>
-<div id="dina-attribute-simulation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dina-attribute-simulation" class="anchor"></a>DINA Attribute Simulation</h3>
+<div class="section level4">
+<h4 id="dina-attribute-simulation">DINA Attribute Simulation<a class="anchor" aria-label="anchor" href="#dina-attribute-simulation"></a>
+</h4>
 <p>Simulate attribute data under DINA model (<span class="math inline">\(N\)</span> by <span class="math inline">\(J\)</span>)</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">51823</span>)</span>
-<span id="cb15-3"><a href="#cb15-3"></a></span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># Simulate attributes under the DINA model</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>attributes =<span class="st"> </span><span class="kw"><a href="../reference/sim_dina_attributes.html">sim_dina_attributes</a></span>(subject_alphas, Q)</span>
-<span id="cb15-6"><a href="#cb15-6"></a>attributes</span></code></pre></div>
-<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-##  [1,]    0    0    0    1    1    0    0    0    1     1
-##  [2,]    1    1    1    1    1    1    1    1    1     1
-##  [3,]    0    0    0    1    1    0    0    0    1     1
-##  [4,]    1    1    1    0    0    0    1    1    0     0
-##  [5,]    1    1    1    1    1    1    1    1    1     1
-##  [6,]    1    1    1    1    1    1    1    1    1     1
-##  [7,]    0    0    0    1    1    0    0    0    1     1
-##  [8,]    1    1    1    1    1    1    1    1    1     1
-##  [9,]    1    1    1    1    1    1    1    1    1     1
-## [10,]    0    0    0    1    1    0    0    0    1     1
-## [11,]    1    1    1    1    1    1    1    1    1     1
-## [12,]    0    0    0    1    1    0    0    0    1     1
-## [13,]    0    0    0    1    1    0    0    0    1     1
-## [14,]    0    0    0    0    0    0    0    0    0     0
-## [15,]    1    1    1    0    0    0    1    1    0     0</code></pre>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">51823</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Simulate attributes under the DINA model</span></span>
+<span><span class="va">attributes</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_dina_attributes.html">sim_dina_attributes</a></span><span class="op">(</span><span class="va">subject_alphas</span>, <span class="va">Q</span><span class="op">)</span></span>
+<span><span class="va">attributes</span></span></code></pre></div>
+<pre><code><span><span class="co">##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]</span></span>
+<span><span class="co">##  [1,]    0    0    0    1    1    0    0    0    1     1</span></span>
+<span><span class="co">##  [2,]    1    1    1    1    1    1    1    1    1     1</span></span>
+<span><span class="co">##  [3,]    0    0    0    1    1    0    0    0    1     1</span></span>
+<span><span class="co">##  [4,]    1    1    1    0    0    0    1    1    0     0</span></span>
+<span><span class="co">##  [5,]    1    1    1    1    1    1    1    1    1     1</span></span>
+<span><span class="co">##  [6,]    1    1    1    1    1    1    1    1    1     1</span></span>
+<span><span class="co">##  [7,]    0    0    0    1    1    0    0    0    1     1</span></span>
+<span><span class="co">##  [8,]    1    1    1    1    1    1    1    1    1     1</span></span>
+<span><span class="co">##  [9,]    1    1    1    1    1    1    1    1    1     1</span></span>
+<span><span class="co">## [10,]    0    0    0    1    1    0    0    0    1     1</span></span>
+<span><span class="co">## [11,]    1    1    1    1    1    1    1    1    1     1</span></span>
+<span><span class="co">## [12,]    0    0    0    1    1    0    0    0    1     1</span></span>
+<span><span class="co">## [13,]    0    0    0    1    1    0    0    0    1     1</span></span>
+<span><span class="co">## [14,]    0    0    0    0    0    0    0    0    0     0</span></span>
+<span><span class="co">## [15,]    1    1    1    0    0    0    1    1    0     0</span></span></code></pre>
 </div>
 </div>
-<div id="rrum-simulation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#rrum-simulation" class="anchor"></a>rRUM Simulation</h2>
+<div class="section level3">
+<h3 id="rrum-simulation">rRUM Simulation<a class="anchor" aria-label="anchor" href="#rrum-simulation"></a>
+</h3>
 <p>The rRUM simulations are done using the following settings.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">888</span>)</span>
-<span id="cb17-3"><a href="#cb17-3"></a></span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="co"># Setup Parameters</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a>N =<span class="st"> </span><span class="dv">15</span>   <span class="co"># Number of Examinees / Subjects</span></span>
-<span id="cb17-6"><a href="#cb17-6"></a>J =<span class="st"> </span><span class="dv">10</span>   <span class="co"># Number of Items</span></span>
-<span id="cb17-7"><a href="#cb17-7"></a>K =<span class="st"> </span><span class="dv">2</span>    <span class="co"># Number of Skills / Attributes</span></span>
-<span id="cb17-8"><a href="#cb17-8"></a></span>
-<span id="cb17-9"><a href="#cb17-9"></a><span class="co"># The probabilities of answering each item correctly for individuals </span></span>
-<span id="cb17-10"><a href="#cb17-10"></a><span class="co"># who do not lack any required attribute</span></span>
-<span id="cb17-11"><a href="#cb17-11"></a>pistar =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/rep.html">rep</a></span>(.<span class="dv">9</span>, J)</span>
-<span id="cb17-12"><a href="#cb17-12"></a></span>
-<span id="cb17-13"><a href="#cb17-13"></a><span class="co"># Simulate an identifiable Q matrix</span></span>
-<span id="cb17-14"><a href="#cb17-14"></a>Q =<span class="st"> </span><span class="kw"><a href="../reference/sim_q_matrix.html">sim_q_matrix</a></span>(J, K)</span>
-<span id="cb17-15"><a href="#cb17-15"></a></span>
-<span id="cb17-16"><a href="#cb17-16"></a><span class="co"># Penalties for failing to have each of the required attributes</span></span>
-<span id="cb17-17"><a href="#cb17-17"></a>rstar  =<span class="st"> </span><span class="fl">.5</span> <span class="op">*</span><span class="st"> </span>Q</span>
-<span id="cb17-18"><a href="#cb17-18"></a></span>
-<span id="cb17-19"><a href="#cb17-19"></a><span class="co"># Latent Class Probabilities</span></span>
-<span id="cb17-20"><a href="#cb17-20"></a>pis =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(.<span class="dv">1</span>, <span class="fl">.2</span>, <span class="fl">.3</span>, <span class="fl">.4</span>)</span>
-<span id="cb17-21"><a href="#cb17-21"></a></span>
-<span id="cb17-22"><a href="#cb17-22"></a><span class="co"># Generate latent attribute profile with custom probability (N subjects by K skills)</span></span>
-<span id="cb17-23"><a href="#cb17-23"></a>subject_alphas =<span class="st"> </span><span class="kw"><a href="../reference/sim_subject_attributes.html">sim_subject_attributes</a></span>(N, K, <span class="dt">prob =</span> pis)</span>
-<span id="cb17-24"><a href="#cb17-24"></a></span>
-<span id="cb17-25"><a href="#cb17-25"></a><span class="co"># Equivalent to:</span></span>
-<span id="cb17-26"><a href="#cb17-26"></a><span class="co"># class_alphas = attribute_classes(K)</span></span>
-<span id="cb17-27"><a href="#cb17-27"></a><span class="co"># subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE, prob = pis),]</span></span></code></pre></div>
-<div id="simulate-rrum-items" class="section level3">
-<h3 class="hasAnchor">
-<a href="#simulate-rrum-items" class="anchor"></a>Simulate rRUM items</h3>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">888</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Setup Parameters</span></span>
+<span><span class="va">N</span> <span class="op">=</span> <span class="fl">15</span>   <span class="co"># Number of Examinees / Subjects</span></span>
+<span><span class="va">J</span> <span class="op">=</span> <span class="fl">10</span>   <span class="co"># Number of Items</span></span>
+<span><span class="va">K</span> <span class="op">=</span> <span class="fl">2</span>    <span class="co"># Number of Skills / Attributes</span></span>
+<span></span>
+<span><span class="co"># The probabilities of answering each item correctly for individuals </span></span>
+<span><span class="co"># who do not lack any required attribute</span></span>
+<span><span class="va">pistar</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">.9</span>, <span class="va">J</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Simulate an identifiable Q matrix</span></span>
+<span><span class="va">Q</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_q_matrix.html">sim_q_matrix</a></span><span class="op">(</span><span class="va">J</span>, <span class="va">K</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Penalties for failing to have each of the required attributes</span></span>
+<span><span class="va">rstar</span>  <span class="op">=</span> <span class="fl">.5</span> <span class="op">*</span> <span class="va">Q</span></span>
+<span></span>
+<span><span class="co"># Latent Class Probabilities</span></span>
+<span><span class="va">pis</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.1</span>, <span class="fl">.2</span>, <span class="fl">.3</span>, <span class="fl">.4</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate latent attribute profile with custom probability (N subjects by K skills)</span></span>
+<span><span class="va">subject_alphas</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_subject_attributes.html">sim_subject_attributes</a></span><span class="op">(</span><span class="va">N</span>, <span class="va">K</span>, prob <span class="op">=</span> <span class="va">pis</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Equivalent to:</span></span>
+<span><span class="co"># class_alphas = attribute_classes(K)</span></span>
+<span><span class="co"># subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE, prob = pis),]</span></span></code></pre></div>
+<div class="section level4">
+<h4 id="simulate-rrum-items">Simulate rRUM items<a class="anchor" aria-label="anchor" href="#simulate-rrum-items"></a>
+</h4>
 <p>Simulate rRUM item data <span class="math inline">\(Y\)</span> (<span class="math inline">\(N\)</span> by <span class="math inline">\(J\)</span>)</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Set a seed for reproducibility</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">912</span>)</span>
-<span id="cb18-3"><a href="#cb18-3"></a></span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="co"># Generate rRUM items</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a>rrum_items =<span class="st"> </span><span class="kw"><a href="../reference/sim_rrum_items.html">sim_rrum_items</a></span>(Q, rstar, pistar, subject_alphas)</span>
-<span id="cb18-6"><a href="#cb18-6"></a>rrum_items</span></code></pre></div>
-<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-##  [1,]    1    1    1    0    1    0    1    1    1     0
-##  [2,]    1    1    0    1    1    0    1    0    0     0
-##  [3,]    0    1    1    1    0    1    1    1    0     0
-##  [4,]    0    1    1    1    0    1    1    1    1     0
-##  [5,]    1    1    0    0    1    0    1    1    1     0
-##  [6,]    1    1    1    1    0    0    1    1    0     1
-##  [7,]    1    0    1    0    1    0    0    0    0     1
-##  [8,]    0    0    1    0    0    0    1    0    0     1
-##  [9,]    0    1    0    1    1    1    0    1    1     0
-## [10,]    1    1    1    1    0    0    0    1    1     0
-## [11,]    1    1    1    0    0    0    1    1    0     1
-## [12,]    0    1    0    1    1    0    1    1    1     1
-## [13,]    1    0    1    1    1    0    1    1    1     1
-## [14,]    1    0    1    1    1    1    1    1    1     1
-## [15,]    0    0    1    0    1    1    1    1    1     1</code></pre>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Set a seed for reproducibility</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">912</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate rRUM items</span></span>
+<span><span class="va">rrum_items</span> <span class="op">=</span> <span class="fu"><a href="../reference/sim_rrum_items.html">sim_rrum_items</a></span><span class="op">(</span><span class="va">Q</span>, <span class="va">rstar</span>, <span class="va">pistar</span>, <span class="va">subject_alphas</span><span class="op">)</span></span>
+<span><span class="va">rrum_items</span></span></code></pre></div>
+<pre><code><span><span class="co">##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]</span></span>
+<span><span class="co">##  [1,]    1    1    1    0    1    0    1    1    1     0</span></span>
+<span><span class="co">##  [2,]    1    1    0    1    1    0    1    0    0     0</span></span>
+<span><span class="co">##  [3,]    0    1    1    1    0    1    1    1    0     0</span></span>
+<span><span class="co">##  [4,]    0    1    1    1    0    1    1    1    1     0</span></span>
+<span><span class="co">##  [5,]    1    1    0    0    1    0    1    1    1     0</span></span>
+<span><span class="co">##  [6,]    1    1    1    1    0    0    1    1    0     1</span></span>
+<span><span class="co">##  [7,]    1    0    1    0    1    0    0    0    0     1</span></span>
+<span><span class="co">##  [8,]    0    0    1    0    0    0    1    0    0     1</span></span>
+<span><span class="co">##  [9,]    0    1    0    1    1    1    0    1    1     0</span></span>
+<span><span class="co">## [10,]    1    1    1    1    0    0    0    1    1     0</span></span>
+<span><span class="co">## [11,]    1    1    1    0    0    0    1    1    0     1</span></span>
+<span><span class="co">## [12,]    0    1    0    1    1    0    1    1    1     1</span></span>
+<span><span class="co">## [13,]    1    0    1    1    1    0    1    1    1     1</span></span>
+<span><span class="co">## [14,]    1    0    1    1    1    1    1    1    1     1</span></span>
+<span><span class="co">## [15,]    0    0    1    0    1    1    1    1    1     1</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -385,35 +416,22 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li>
-<a href="#overview">Overview</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#notation">Notation</a></li>
-      </ul>
-</li>
-      <li>
-<a href="#usage">Usage</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#matrix-simulation">Matrix Simulation</a></li>
-      <li><a href="#rrum-simulation">rRUM Simulation</a></li>
-      </ul>
-</li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
 
 
       <footer><div class="copyright">
-  <p>Developed by James Joseph Balamuta, Steven Andrew Culpepper.</p>
+  <p></p>
+<p>Developed by James Joseph Balamuta, Steven Andrew Culpepper.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -421,6 +439,8 @@
 
   
 
+
+  
 
   </body>
 </html>
