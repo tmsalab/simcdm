@@ -21,7 +21,7 @@ Computes the powers of 2 from \eqn{0} up to \eqn{K - 1} for
 biject = attribute_bijection(3)
 }
 \seealso{
-\code{\link[simcdm:attribute_inv_bijection]{simcdm::attribute_inv_bijection()}}
+\code{\link[=attribute_inv_bijection]{attribute_inv_bijection()}}
 }
 \author{
 Steven Andrew Culpepper and James Joseph Balamuta

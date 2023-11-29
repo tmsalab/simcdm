@@ -6,12 +6,7 @@
 \alias{simcdm-package}
 \title{simcdm: Simulate Cognitive Diagnostic Model ('CDM') Data}
 \description{
-Provides efficient R and 'C++' routines to simulate cognitive diagnostic
-    model data for Deterministic Input, Noisy "And" Gate ('DINA') and
-    reduced Reparameterized Unified Model ('rRUM') from 
-    Culpepper and Hudson (2017) <doi: 10.1177/0146621617707511>,
-    Culpepper (2015) <doi:10.3102/1076998615595403>, and
-    de la Torre (2009) <doi:10.3102/1076998607309474>.
+Provides efficient R and 'C++' routines to simulate cognitive diagnostic model data for Deterministic Input, Noisy "And" Gate ('DINA') and reduced Reparameterized Unified Model ('rRUM') from Culpepper and Hudson (2017) \doi{ 10.1177/0146621617707511}, Culpepper (2015) \doi{10.3102/1076998615595403}, and de la Torre (2009) \doi{10.3102/1076998607309474}.
 }
 \seealso{
 Useful links:
@@ -23,16 +18,16 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (0000-0003-2826-8458) [copyright holder]
+\strong{Maintainer}: James Joseph Balamuta \email{balamut2@illinois.edu} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{
-  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (0000-0003-4226-6176) [copyright holder]
+  \item Steven Andrew Culpepper \email{sculpepp@illinois.edu} (\href{https://orcid.org/0000-0003-4226-6176}{ORCID}) [copyright holder]
 }
 
 Other contributors:
 \itemize{
-  \item Aaron Hudson \email{awhudson@uw.edu} (0000-0002-9731-2224) [contributor, copyright holder]
+  \item Aaron Hudson \email{awhudson@uw.edu} (\href{https://orcid.org/0000-0002-9731-2224}{ORCID}) [contributor, copyright holder]
 }
 
 }
