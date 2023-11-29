@@ -71,7 +71,7 @@ ETA = sim_eta_matrix(K, J, Q)
 Y_sim = sim_dina_class(N, J, CLs, ETA, gs, ss)
 }
 \seealso{
-\code{\link[simcdm:sim_dina_attributes]{simcdm::sim_dina_attributes()}} and \code{\link[simcdm:sim_dina_items]{simcdm::sim_dina_items()}}
+\code{\link[=sim_dina_attributes]{sim_dina_attributes()}} and \code{\link[=sim_dina_items]{sim_dina_items()}}
 }
 \author{
 Steven Andrew Culpepper and James Joseph Balamuta

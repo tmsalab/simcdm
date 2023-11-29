@@ -334,5 +334,5 @@ sim_subject_attributes <- function(N, K, probs = NULL) {
 
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
-    .Call('_simcdm_RcppExport_registerCCallable', PACKAGE = 'simcdm')
+    .Call(`_simcdm_RcppExport_registerCCallable`)
 })

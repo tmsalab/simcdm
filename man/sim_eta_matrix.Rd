@@ -51,8 +51,8 @@ Q_sim = sim_q_matrix(J, K)
 ETA_gen = sim_eta_matrix(K, J, Q_sim)
 }
 \seealso{
-\code{\link[simcdm:sim_q_matrix]{simcdm::sim_q_matrix()}}, \code{\link[simcdm:attribute_bijection]{simcdm::attribute_bijection()}}, and
-\code{\link[simcdm:attribute_inv_bijection]{simcdm::attribute_inv_bijection()}}
+\code{\link[=sim_q_matrix]{sim_q_matrix()}}, \code{\link[=attribute_bijection]{attribute_bijection()}}, and
+\code{\link[=attribute_inv_bijection]{attribute_inv_bijection()}}
 }
 \author{
 Steven Andrew Culpepper and James Joseph Balamuta

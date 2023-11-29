@@ -40,7 +40,7 @@ probs = rep(1 / (2 ^ K), 2 ^ K)
 alphas_custom = sim_subject_attributes(N, K, probs)
 }
 \seealso{
-\code{\link[simcdm:attribute_classes]{simcdm::attribute_classes()}} and \code{\link[simcdm:attribute_inv_bijection]{simcdm::attribute_inv_bijection()}}
+\code{\link[=attribute_classes]{attribute_classes()}} and \code{\link[=attribute_inv_bijection]{attribute_inv_bijection()}}
 }
 \author{
 James Joseph Balamuta and Steven Andrew Culpepper

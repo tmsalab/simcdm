@@ -28,7 +28,7 @@ q_matrix_j7_k2 = sim_q_matrix(7, 2)
 q_matrix_j10_k3 = sim_q_matrix(10, 3)
 }
 \seealso{
-\code{\link[simcdm:attribute_bijection]{simcdm::attribute_bijection()}} and \code{\link[simcdm:attribute_inv_bijection]{simcdm::attribute_inv_bijection()}}
+\code{\link[=attribute_bijection]{attribute_bijection()}} and \code{\link[=attribute_inv_bijection]{attribute_inv_bijection()}}
 }
 \author{
 Steven Andrew Culpepper and James Joseph Balamuta
