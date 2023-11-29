@@ -5,9 +5,8 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/tmsalab/simcdm/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/simcdm/actions)
-[![Package-License](http://img.shields.io/badge/license-GPL%20\(%3E=2\)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![R-CMD-check](https://github.com/tmsalab/simcdm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tmsalab/simcdm/actions/workflows/R-CMD-check.yaml)
+[![Package-License](http://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN Version
 Badge](http://www.r-pkg.org/badges/version/simcdm)](https://cran.r-project.org/package=simcdm)
 [![CRAN
@@ -44,12 +43,12 @@ library("simcdm")
 
 There are four distinct sets of functions within the package:
 
-  - Attributes: `attribute_classes()`, `attribute_bijection()`,
-    `attribute_inv_bijection()`, and `sim_subject_attributes()`.
-  - Matrix: `sim_q_matrix()` and `sim_eta_matrix()`
-  - Deterministic Input, Noisy And Gate (DINA): `sim_dina_items()` and
-    `sim_dina_attributes()`
-  - reduced Reparameterized Unified Model (rRUM): `sim_rrum_items()`
+- Attributes: `attribute_classes()`, `attribute_bijection()`,
+  `attribute_inv_bijection()`, and `sim_subject_attributes()`.
+- Matrix: `sim_q_matrix()` and `sim_eta_matrix()`
+- Deterministic Input, Noisy And Gate (DINA): `sim_dina_items()` and
+  `sim_dina_attributes()`
+- reduced Reparameterized Unified Model (rRUM): `sim_rrum_items()`
 
 Functions that use random numbers to simulate values are named with the
 prefix of `sim_*()`. This is done to allow for functions to be quickly
@@ -59,10 +58,10 @@ likely be moved to a different package.
 
 For more details, please see the [package vignettes](vignettes/):
 
-  - [Overview of
-    `simcdm`](https://tmsalab.github.io/simcdm/articles/overview-simcdm.html)
-  - [Using `simcdm` in R
-    packages](https://tmsalab.github.io/simcdm/articles/simcdm-in-packages.html)
+- [Overview of
+  `simcdm`](https://tmsalab.github.io/simcdm/articles/overview-simcdm.html)
+- [Using `simcdm` in R
+  packages](https://tmsalab.github.io/simcdm/articles/simcdm-in-packages.html)
 
 ## Authors
 

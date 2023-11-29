@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 # simcdm 
 
 <!-- badges: start -->
-[![R build status](https://github.com/tmsalab/simcdm/workflows/R-CMD-check/badge.svg)](https://github.com/tmsalab/simcdm/actions)
+[![R-CMD-check](https://github.com/tmsalab/simcdm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tmsalab/simcdm/actions/workflows/R-CMD-check.yaml)
 [![Package-License](http://img.shields.io/badge/license-GPL%20(%3E=2)-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN Version Badge](http://www.r-pkg.org/badges/version/simcdm)](https://cran.r-project.org/package=simcdm)
 [![CRAN Status](https://cranchecks.info/badges/worst/simcdm)](https://cran.r-project.org/web/checks/check_results_simcdm.html)
@@ -31,7 +31,9 @@ cognitive diagnostic models.
 
 You can install simcdm from GitHub with:
 
-```{r gh-installation, eval = FALSE}
+```{r}
+#| label: gh-installation
+#| eval: false
 # install.packages("devtools")
 devtools::install_github("tmsalab/simcdm")
 ```
@@ -40,7 +42,9 @@ devtools::install_github("tmsalab/simcdm")
 
 To use `simcdm`, load the package using:
 
-```{r example}
+```{r}
+#| label: example
+#| eval: false
 library("simcdm")
 ```
 
