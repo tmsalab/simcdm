@@ -10,13 +10,13 @@
 [![CRAN Version
 Badge](http://www.r-pkg.org/badges/version/simcdm)](https://cran.r-project.org/package=simcdm)
 [![CRAN
-Status](https://cranchecks.info/badges/worst/simcdm)](https://cran.r-project.org/web/checks/check_results_simcdm.html)
+Status](https://badges.cranchecks.info/worst/simcdm.svg)](https://cran.r-project.org/web/checks/check_results_simcdm.html)
 [![RStudio CRAN Mirror’s Monthly
 Downloads](http://cranlogs.r-pkg.org/badges/simcdm?color=brightgreen)](http://www.r-pkg.org/pkg/simcdm)
 [![RStudio CRAN Mirror’s Total
 Downloads](http://cranlogs.r-pkg.org/badges/grand-total/simcdm?color=brightgreen)](http://www.r-pkg.org/pkg/simcdm)
 [![Coverage test
-coverage](https://codecov.io/gh/tmsalab/simcdm/branch/master/graph/badge.svg)](https://codecov.io/github/tmsalab/simcdm?branch=master)
+coverage](https://codecov.io/gh/tmsalab/simcdm/branch/main/graph/badge.svg)](https://codecov.io/github/tmsalab/simcdm?branch=main)
 <!-- badges: end -->
 
 The goal of `simcdm` is to provide flexible ways to simulate data under
@@ -24,11 +24,11 @@ cognitive diagnostic models.
 
 ## Installation
 
-You can install simcdm from GitHub with:
+You can install `simcdm` from GitHub with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("tmsalab/simcdm")
+# install.packages("remotes")
+remotes::install_github("tmsalab/simcdm")
 ```
 
 ## Usage
@@ -53,8 +53,9 @@ There are four distinct sets of functions within the package:
 Functions that use random numbers to simulate values are named with the
 prefix of `sim_*()`. This is done to allow for functions to be quickly
 identified and used through autocomplete inside of the [RStudio
-IDE](https://www.rstudio.com). At a later time, the `attribute_*()` will
-likely be moved to a different package.
+IDE](https://www.rstudio.com) or [VS
+Code](https://code.visualstudio.com/). At a later time, the
+`attribute_*()` will likely be moved to a different package.
 
 For more details, please see the [package vignettes](vignettes/):
 
