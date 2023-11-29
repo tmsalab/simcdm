@@ -14,3 +14,4 @@
 ^\.github/workflows/R-CMD-check\.yaml$
 ^\.github/workflows/pkgdown\.yaml$
 ^\.github$
+^CRAN-SUBMISSION$

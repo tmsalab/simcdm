@@ -1,8 +1,18 @@
-# simcdm 0.1.1.900
+# simcdm 0.1.2
+
+## Bugfix
+
+- Addressed two issues in R-devel related to C++ usage (deprecation of `CXX_STD` and attribute compilation woes). ([#22](https://github.com/tmsalab/simcdm/issues/22))
 
 ## Documentation
 
-- Added a `pkgdown` website that deploys to <http://tmsalab.github.io/dina>.
+- Added a `pkgdown` website that deploys to <https://tmsalab.github.io/simcdm/>.
+  ([#17](https://github.com/tmsalab/simcdm/pull/17))
+
+## Deployment
+
+- Updated GitHub Actions workflows for testing, code coverage, and pkgdown. 
+  ([#23](https://github.com/tmsalab/simcdm/pull/23))
 
 # simcdm 0.1.1
 
