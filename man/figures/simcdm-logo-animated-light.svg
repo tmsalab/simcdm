@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 600" width="520" height="600" role="img" aria-labelledby="simcdmlTitle simcdmlDesc">
+<title id="simcdmlTitle">simcdm</title>
+<desc id="simcdmlDesc">Hexagonal logo for the R package simcdm, drawn as a die seen corner-on: three faces meet at the centre, and their pips are a small simulated cognitive diagnostic data set. The left face is solid ink with the Q matrix cut out of it as square cells: a diagonal of three for the items that each need one skill, and a full column of three for the item that needs all of them. The right face is plain, with a faint dot grid and orange cells for four examinees' skill profiles. The top face is orange, with the simulated right answers cut out of it in a staircase that funnels toward the corner, two slips and two guesses away from what the profiles and Q predict. Pips on neighbouring faces line up across the edges they share. Below them the word simcdm wraps around the front corner: sim cut out of the ink face, cdm printed on the plain face.</desc>
+<defs>
+<clipPath id="simcdmlClip"><path d="M260 5 L515 152.5 L515 447.5 L260 595 L5 447.5 L5 152.5 Z"/></clipPath>
+</defs>
+<style>
+@keyframes simcdmlDrawA1 {
+  0%, 16% { opacity: 1; }
+  20%, 29% { opacity: 0; }
+  31.5%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawA2 {
+  0%, 16% { opacity: 1; }
+  20%, 34% { opacity: 0; }
+  36.5%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawA3 {
+  0%, 16% { opacity: 1; }
+  20%, 39% { opacity: 0; }
+  41.5%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY00 {
+  0%, 12% { opacity: 1; }
+  16%, 46% { opacity: 0; }
+  47.2%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY10 {
+  0%, 12% { opacity: 1; }
+  16%, 48.1% { opacity: 0; }
+  49.3%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY20 {
+  0%, 12% { opacity: 1; }
+  16%, 50.2% { opacity: 0; }
+  51.4%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY30 {
+  0%, 12% { opacity: 1; }
+  16%, 52.3% { opacity: 0; }
+  53.5%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY11 {
+  0%, 12% { opacity: 1; }
+  16%, 56.5% { opacity: 0; }
+  57.7%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY21 {
+  0%, 12% { opacity: 1; }
+  16%, 58.6% { opacity: 0; }
+  59.8%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY31 {
+  0%, 12% { opacity: 1; }
+  16%, 60.7% { opacity: 0; }
+  61.9%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY22 {
+  0%, 12% { opacity: 1; }
+  16%, 67% { opacity: 0; }
+  68.2%, 100% { opacity: 1; }
+}
+@keyframes simcdmlDrawY33 {
+  0%, 12% { opacity: 1; }
+  16%, 77.5% { opacity: 0; }
+  78.7%, 100% { opacity: 1; }
+}
+@keyframes simcdmlFire0 {
+  0%, 45.6% { opacity: 1; }
+  47.6% { opacity: .3; }
+  50.6%, 100% { opacity: 1; }
+}
+@keyframes simcdmlFire1 {
+  0%, 54% { opacity: 1; }
+  56% { opacity: .3; }
+  59%, 100% { opacity: 1; }
+}
+@keyframes simcdmlFire2 {
+  0%, 62.4% { opacity: 1; }
+  64.4% { opacity: .3; }
+  67.4%, 100% { opacity: 1; }
+}
+@keyframes simcdmlFire3 {
+  0%, 70.8% { opacity: 1; }
+  72.8% { opacity: .3; }
+  75.8%, 100% { opacity: 1; }
+}
+.simcdmlA1 { animation: simcdmlDrawA1 8s linear infinite; }
+.simcdmlA2 { animation: simcdmlDrawA2 8s linear infinite; }
+.simcdmlA3 { animation: simcdmlDrawA3 8s linear infinite; }
+.simcdmlY00 { animation: simcdmlDrawY00 8s linear infinite; }
+.simcdmlY10 { animation: simcdmlDrawY10 8s linear infinite; }
+.simcdmlY20 { animation: simcdmlDrawY20 8s linear infinite; }
+.simcdmlY30 { animation: simcdmlDrawY30 8s linear infinite; }
+.simcdmlY11 { animation: simcdmlDrawY11 8s linear infinite; }
+.simcdmlY21 { animation: simcdmlDrawY21 8s linear infinite; }
+.simcdmlY31 { animation: simcdmlDrawY31 8s linear infinite; }
+.simcdmlY22 { animation: simcdmlDrawY22 8s linear infinite; }
+.simcdmlY33 { animation: simcdmlDrawY33 8s linear infinite; }
+.simcdmlQ0 { animation: simcdmlFire0 8s ease-in-out infinite; }
+.simcdmlQ1 { animation: simcdmlFire1 8s ease-in-out infinite; }
+.simcdmlQ2 { animation: simcdmlFire2 8s ease-in-out infinite; }
+.simcdmlQ3 { animation: simcdmlFire3 8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .simcdmlA1, .simcdmlA2, .simcdmlA3, .simcdmlY00, .simcdmlY10, .simcdmlY20, .simcdmlY30, .simcdmlY11, .simcdmlY21, .simcdmlY31, .simcdmlY22, .simcdmlY33, .simcdmlQ0, .simcdmlQ1, .simcdmlQ2, .simcdmlQ3 { animation: none; }
+}
+</style>
+<g clip-path="url(#simcdmlClip)">
+<path d="M260 5 L515 152.5 L515 447.5 L260 595 L5 447.5 L5 152.5 Z" fill="#f7f6f2"/>
+<path d="M5 148.5 L260 296 L260 595 L5 447.5 Z" fill="#13294B"/>
+<path d="M260 5 L515 152.5 L260 300 L5 152.5 Z" fill="#FF5F05"/>
+<path d="M272.9 333.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M452.7 229.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M272.9 385.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M407.7 307.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M452.7 281.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M272.9 437.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M407.7 359.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M452.7 333.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M452.7 385.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M452.7 437.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0" fill="#13294B" fill-opacity="0.28"/>
+<g transform="matrix(0.8644 -0.5 0 1 260 300)" fill="#FF5F05"><rect class="simcdmlA1" x="156" y="25" width="34" height="34" rx="3"/><rect class="simcdmlA2" x="104" y="25" width="34" height="34" rx="3"/><rect class="simcdmlA2" x="104" y="77" width="34" height="34" rx="3"/><rect class="simcdmlA2" x="104" y="129" width="34" height="34" rx="3"/><rect class="simcdmlA3" x="52" y="25" width="34" height="34" rx="3"/><rect class="simcdmlA3" x="52" y="77" width="34" height="34" rx="3"/><rect class="simcdmlA3" x="52" y="129" width="34" height="34" rx="3"/></g>
+<path d="M243.5 333.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M153.6 281.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M108.7 255.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M243.5 385.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M198.6 359.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M108.7 307.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M243.5 437.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M198.6 411.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M153.6 385.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M108.7 411.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M63.7 385.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M108.7 463.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0M63.7 437.5a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0" fill="#f7f6f2" fill-opacity="0.28"/>
+<g transform="matrix(0.8644 0.5 0 1 5 152.5)" fill="#f7f6f2"><rect class="simcdmlQ0" x="209" y="25" width="34" height="34" rx="3"/><rect class="simcdmlQ1" x="157" y="77" width="34" height="34" rx="3"/><rect class="simcdmlQ2" x="105" y="129" width="34" height="34" rx="3"/><rect class="simcdmlQ3" x="53" y="25" width="34" height="34" rx="3"/><rect class="simcdmlQ3" x="53" y="77" width="34" height="34" rx="3"/><rect class="simcdmlQ3" x="53" y="129" width="34" height="34" rx="3"/></g>
+<g transform="matrix(-0.8644 -0.5 0.8644 -0.5 260 300)" fill="#f7f6f2"><rect class="simcdmlY00" x="52" y="208" width="34" height="34" rx="3"/><rect class="simcdmlY10" x="52" y="156" width="34" height="34" rx="3"/><rect class="simcdmlY20" x="52" y="104" width="34" height="34" rx="3"/><rect class="simcdmlY30" x="52" y="52" width="34" height="34" rx="3"/><rect class="simcdmlY11" x="104" y="156" width="34" height="34" rx="3"/><rect class="simcdmlY21" x="104" y="104" width="34" height="34" rx="3"/><rect class="simcdmlY31" x="104" y="52" width="34" height="34" rx="3"/><rect class="simcdmlY22" x="156" y="104" width="34" height="34" rx="3"/><rect class="simcdmlY33" x="208" y="52" width="34" height="34" rx="3"/></g>
+<path transform="matrix(0.8644 0.5 0 1 5 152.5) translate(142.1 248)" d="M23.3 1.1Q17.03 1.1 12.26 -0.96Q7.48 -3.02 4.65 -6.57Q1.81 -10.13 1.38 -14.61H15.08Q15.5 -13.15 16.52 -11.89Q17.54 -10.64 19.19 -9.89Q20.85 -9.13 23.04 -9.13Q25.31 -9.13 26.72 -9.75Q28.14 -10.37 28.82 -11.35Q29.49 -12.33 29.49 -13.36Q29.49 -14.91 28.42 -15.75Q27.36 -16.6 25.33 -17.24Q23.3 -17.88 20.55 -18.61Q17.51 -19.44 14.35 -20.37Q11.18 -21.3 8.55 -22.71Q5.93 -24.13 4.33 -26.41Q2.73 -28.68 2.73 -32.14Q2.73 -36.17 5 -39.49Q7.26 -42.82 11.58 -44.78Q15.9 -46.74 22.01 -46.74Q30.53 -46.74 35.53 -42.9Q40.52 -39.07 41.4 -32.47H28.53Q28.02 -34.38 26.33 -35.41Q24.64 -36.43 21.99 -36.43Q19.08 -36.43 17.53 -35.39Q15.97 -34.35 15.97 -32.92Q15.97 -31.78 17.11 -30.97Q18.25 -30.15 20.3 -29.56Q22.36 -28.96 25.15 -28.19Q30.29 -26.9 34.35 -25.47Q38.41 -24.05 40.82 -21.52Q43.22 -18.99 43.22 -14.25Q43.31 -9.88 40.87 -6.4Q38.43 -2.92 33.96 -0.91Q29.49 1.1 23.3 1.1ZM48.18 0V-45.63H61.98V0ZM55.12 -50.41Q51.42 -50.41 49.09 -52.57Q46.76 -54.72 46.76 -57.93Q46.76 -61.19 49.09 -63.35Q51.41 -65.5 55.12 -65.5Q58.86 -65.5 61.19 -63.35Q63.53 -61.19 63.53 -57.92Q63.53 -54.73 61.19 -52.57Q58.86 -50.41 55.12 -50.41ZM68.86 0V-45.63H80.91L82.06 -37.95H82.43Q84.45 -42.34 88.2 -44.54Q91.95 -46.74 97.08 -46.74Q100.46 -46.74 103.32 -45.85Q106.19 -44.97 108.44 -43.01Q110.7 -41.06 112.2 -37.79H112.56Q115.12 -41.97 118.95 -44.36Q122.78 -46.74 128.74 -46.74Q134.08 -46.74 137.91 -44.23Q141.73 -41.71 143.8 -36.94Q145.87 -32.16 145.87 -25.28V0H132.16V-24.04Q132.16 -29.31 130.15 -32.23Q128.13 -35.16 123.66 -35.16Q120.77 -35.16 118.68 -33.86Q116.58 -32.56 115.42 -30.09Q114.27 -27.61 114.27 -24.04V0H100.54V-24.04Q100.54 -29.31 98.52 -32.23Q96.51 -35.16 91.94 -35.16Q89.28 -35.16 87.18 -33.75Q85.09 -32.34 83.88 -29.75Q82.66 -27.17 82.66 -23.5V0Z" fill="#f7f6f2"/>
+<path transform="matrix(0.8644 -0.5 0 1 260 300) translate(4.7 248)" d="M26.6 1.1Q19.29 1.1 13.83 -1.99Q8.38 -5.09 5.34 -10.47Q2.3 -15.86 2.3 -22.78Q2.3 -29.78 5.38 -35.15Q8.46 -40.51 13.95 -43.62Q19.44 -46.74 26.63 -46.74Q35.66 -46.74 41.86 -42.02Q48.07 -37.29 49.75 -28.88H35.06Q34.28 -31.83 32 -33.47Q29.71 -35.1 26.51 -35.1Q23.56 -35.1 21.27 -33.61Q18.98 -32.12 17.67 -29.35Q16.35 -26.58 16.35 -22.82Q16.35 -20.03 17.08 -17.81Q17.82 -15.59 19.18 -13.97Q20.54 -12.36 22.38 -11.5Q24.22 -10.64 26.53 -10.64Q28.65 -10.64 30.36 -11.37Q32.07 -12.09 33.32 -13.45Q34.57 -14.82 35.06 -16.75H49.75Q48.07 -8.55 41.85 -3.72Q35.63 1.1 26.6 1.1ZM73.68 1.1Q67.29 1.1 62.49 -1.97Q57.69 -5.03 55.03 -10.43Q52.37 -15.82 52.37 -22.82Q52.37 -29.78 55.03 -35.19Q57.69 -40.6 62.55 -43.67Q67.42 -46.74 73.93 -46.74Q78.96 -46.74 82.84 -44.87Q86.73 -43.01 89 -40.18V-64.4H102.8V0H91.2L90.53 -7.83H90.16Q88.51 -5.08 86.12 -3.09Q83.74 -1.1 80.67 0Q77.6 1.1 73.68 1.1ZM77.83 -10.15Q81.31 -10.15 83.9 -11.79Q86.49 -13.43 87.93 -16.27Q89.38 -19.11 89.38 -22.91Q89.38 -26.64 87.93 -29.49Q86.49 -32.35 83.89 -33.98Q81.29 -35.62 77.8 -35.62Q74.45 -35.62 71.82 -33.98Q69.19 -32.33 67.76 -29.47Q66.33 -26.61 66.33 -22.91Q66.33 -19.13 67.76 -16.28Q69.19 -13.44 71.81 -11.79Q74.44 -10.15 77.83 -10.15ZM108.61 0V-45.63H120.65L121.81 -37.95H122.17Q124.19 -42.34 127.94 -44.54Q131.69 -46.74 136.83 -46.74Q140.21 -46.74 143.07 -45.85Q145.93 -44.97 148.19 -43.01Q150.44 -41.06 151.94 -37.79H152.31Q154.86 -41.97 158.69 -44.36Q162.52 -46.74 168.48 -46.74Q173.82 -46.74 177.65 -44.23Q181.48 -41.71 183.55 -36.94Q185.62 -32.16 185.62 -25.28V0H171.91V-24.04Q171.91 -29.31 169.89 -32.23Q167.88 -35.16 163.41 -35.16Q160.52 -35.16 158.42 -33.86Q156.32 -32.56 155.17 -30.09Q154.01 -27.61 154.01 -24.04V0H140.28V-24.04Q140.28 -29.31 138.27 -32.23Q136.25 -35.16 131.68 -35.16Q129.02 -35.16 126.93 -33.75Q124.83 -32.34 123.62 -29.75Q122.41 -27.17 122.41 -23.5V0Z" fill="#13294B"/>
+</g>
+<path d="M260 5 L515 152.5 L515 447.5 L260 595 L5 447.5 L5 152.5 Z" fill="none" stroke="#13294B" stroke-width="9" stroke-linejoin="round"/>
+</svg>
