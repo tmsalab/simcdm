@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# simcdm
+# simcdm <a href="https://tmsalab.github.io/simcdm/"><picture><source media="(prefers-color-scheme: dark)" srcset="man/figures/simcdm-logo-animated-dark.svg"><img src="man/figures/simcdm-logo-animated-light.svg" width="150" align="right" alt="A hexagonal logo for simcdm drawn as a die seen corner-on: the solid navy left face has the Q matrix cut out of it as square cells, the plain right face carries four examinees' skill profiles as orange cells, and the orange top face has their simulated responses cut out of it in a staircase, with the word simcdm wrapped around the front corner."/></picture></a>
 
 <!-- badges: start -->
 

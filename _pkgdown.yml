@@ -1,4 +1,10 @@
+url: https://tmsalab.github.io/simcdm/
+
 template:
   params:
     bootswatch: cerulean
     ganalytics: UA-151562227-1
+  opengraph:
+    image:
+      src: man/figures/simcdm-logo-static-light.svg
+      alt: The simcdm hex logo, a die whose three faces carry a simulation's Q matrix, skill profiles and responses.
